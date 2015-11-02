@@ -1,0 +1,35 @@
+{
+  "name": "makerhawaii",
+  "version": "1.0.0",
+  "description": "Makerspaces in Hawaii",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rbvea/makerhawaii.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rbvea/makerhawaii/issues"
+  },
+  "homepage": "https://github.com/rbvea/makerhawaii#readme",
+  "dependencies": {
+    "babel-core": "^6.0.15",
+    "babel-loader": "^6.0.0",
+    "babel-preset-stage-0": "^6.0.15",
+    "css-loader": "^0.21.0",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "install": "^0.2.3",
+    "mapbox": "^0.10.0",
+    "normalize.css": "^3.0.3",
+    "npm": "^3.3.10",
+    "postcss-loader": "^0.7.0",
+    "postcss-nesting": "^2.0.6",
+    "style-loader": "^0.13.0",
+    "waypoints": "^4.0.0",
+    "webpack": "^1.12.2"
+  }
+}
