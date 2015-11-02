@@ -1,0 +1,29 @@
+{
+    "name": "rbvea/makerhawaii",
+    "description": "Makerspaces in Hawaii",
+    "license": "ISC",
+    "authors": [
+        {
+            "name": "Russell Vea",
+            "email": "russellbvea@gmail.com"
+        }
+    ],
+    "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "advanced-custom-fields/advanced-custom-fields-pro",
+        "version": "5.1.3",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "http://connect.advancedcustomfields.com/index.php?t=5.1.3&p=pro&a=download&k=b3JkZXJfaWQ9Njc4NTZ8dHlwZT1wZXJzb25hbHxkYXRlPTIwMTUtMTEtMDIgMDM6MzM6MTQ="
+        }
+      }
+    }
+  ],
+  "require": {
+      "jarednova/timber": "0.22.*",
+      "advanced-custom-fields/advanced-custom-fields-pro": "5.1.3"
+  }
+}
