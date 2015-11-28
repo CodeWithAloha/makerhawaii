@@ -8,6 +8,7 @@ if ( ! class_exists( 'Timber' ) ) {
 }
 
 Timber::$dirname = array('templates', 'views');
+require_once(dirname(__FILE__) . '/inc/routes.php');
 
 class StarterSite extends TimberSite {
 
@@ -110,11 +111,10 @@ class StarterSite extends TimberSite {
 
 	function add_to_twig( $twig ) {
 		/* this is where you can add your own fuctions to twig */
-		$twig->addExtension( new Twig_Extension_StringLoader() );
-		$twig->addFilter( 'myfoo', new Twig_Filter_Function( 'myfoo' ) );
 		return $twig;
 	}
 
 }
 
 new StarterSite();
+?>

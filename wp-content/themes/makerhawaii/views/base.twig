@@ -2,11 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/wp-content/themes/makerhawaii/style.css" media="screen" title="no title" charset="utf-8">
     <title>Maker Hawaii</title>
   </head>
-  <body>
+  <body class="app">
+    <header class="header">
+      <nav class="header__nav"><a class="header__title" href="/">Maker Hawaii</a></nav>
+    </header>
     {% block content %}{% endblock %}
+    <footer></footer>
   </body>
   <script type="text/javascript" src="/wp-content/themes/makerhawaii/js/bundle.js"></script>
 </html>

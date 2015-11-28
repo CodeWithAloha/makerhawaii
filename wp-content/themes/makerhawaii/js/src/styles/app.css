@@ -8,10 +8,11 @@
  * Tags: makerspaces
  */
 
-.bodyStyle {
-  background: #ccc;
-}
+/* config */
+@import "normalize.css";
+@import "colors.css/myth/variables.css";
+@import "config/structure.css";
 
-:global(.foo) {
-  background: black;
-}
+/* fragments */
+@import "./fragments/header.css";
+@import "./fragments/map.css";

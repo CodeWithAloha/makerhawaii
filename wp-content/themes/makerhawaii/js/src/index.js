@@ -1,5 +1,8 @@
-require('normalize.css');
-import styles from './styles/styles.css';
-import {default as Map} from './components/map/map.js';
-import {MapboxClient} from 'mapbox';
-import Waypoint from 'waypoints/lib/noframework.waypoints.js';
+import Vue from 'vue';
+import map from './components/map.vue';
+import spaces from './components/spaces.vue';
+
+let v = new Vue({
+  el: 'body',
+  components: {map,spaces}
+});
