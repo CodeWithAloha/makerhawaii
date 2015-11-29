@@ -1,6 +1,7 @@
 <script>
   import Vue from 'vue';
   import {MAKER_STORE} from '../stores/maker_store.js';
+  import space from './space.vue';
 
   export default {
     created() {
@@ -8,6 +9,7 @@
         Vue.set(this.$data, key, val);
       });
     },
+    components: {space},
     data() {
       return {
         makerspaces: [],
@@ -18,37 +20,19 @@
 </script>
 
 <template>
+  <map></map>
   <section class="space__item-container">
     <article
       class="space__item"
-      v-for="space in makerspaces"
-      :class="{'space__item--active': active_space && (space.id === active_space.id)}">
-        <h1 class="space__title">{{space.post_title}}</h1>
+      v-for="space in makerspaces">
 
-        <div class="space__info" v-if="space.membership_info">
-          <h3 class="space__text--bold">Membership Info</h3>
-          <p class="space__text">{{space.membership_info}}</p>
-        </div>
+      <space :space="space" active="active_space && (space.id === active_space.id)"></space>
 
-        <div class="space__info" v-if="space.classes">
-          <h3 class="space__text--bold">Classes</h3>
-          <p class="space__text">{{space.classes}}</p>
-        </div>
-
-        <div class="space__info" v-if="space.website">
-          <h3 class="space__text--bold">Website</h3>
-          <p class="space__text">
-            <a target="_blank"
-               href="{{space.website}}">
-               {{space.website}}
-            </a>
-          </p>
-        </div>
     </article>
   </section>
 </template>
 
-<style>
+<style scoped>
   .space {
     @nest &__item {
       min-height: 100%;
