@@ -1,8 +1,20 @@
 <script>
-  import Waypoint from 'waypoints/lib/noframework.waypoints.js';
+  require('waypoints/lib/noframework.waypoints.js');
+  import {MAKER_STORE} from '../stores/maker_store.js';
 
   export default {
-    props:  ['space', 'active'],
+    props:  ['space'],
+    attached() {
+      new Waypoint({
+        element: this.$el,
+        offset: 'bottom-in-view',
+        handler: (scrolled) => {
+          MAKER_STORE.cursor(['active_space']).update(() => {
+            return this.space;
+          });
+        }
+      });
+    }
   }
 </script>
 
@@ -32,4 +44,10 @@
   </div>
 </template>
 
-<style></style>
+<style>
+  .space {
+    @nest &__text {
+      margin: 0;
+    }
+  }
+</style>

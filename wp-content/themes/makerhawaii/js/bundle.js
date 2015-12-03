@@ -46,30 +46,35 @@
 
 	'use strict';
 
-	var _vue = __webpack_require__(3);
+	var _vue = __webpack_require__(4);
 
 	var _vue2 = _interopRequireDefault(_vue);
 
-	var _map = __webpack_require__(5);
+	var _map = __webpack_require__(6);
 
 	var _map2 = _interopRequireDefault(_map);
 
-	var _spaces = __webpack_require__(114);
+	var _spaces = __webpack_require__(125);
 
 	var _spaces2 = _interopRequireDefault(_spaces);
 
+	var _space = __webpack_require__(129);
+
+	var _space2 = _interopRequireDefault(_space);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var v = new _vue2.default({
+	new _vue2.default({
 	  el: 'body',
-	  components: { map: _map2.default, spaces: _spaces2.default }
+	  components: { map: _map2.default, spaces: _spaces2.default, space: _space2.default }
 	});
 	_vue2.default.config.debug = true;
 
 /***/ },
 /* 1 */,
 /* 2 */,
-/* 3 */
+/* 3 */,
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/*!
@@ -9374,10 +9379,10 @@
 	}
 
 	module.exports = Vue;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports) {
 
 	// shim for using process in browser
@@ -9474,14 +9479,15 @@
 
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(6)
-	module.exports = __webpack_require__(12)
+	__webpack_require__(7)
+	__webpack_require__(13)
+	module.exports = __webpack_require__(15)
 
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(113)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(124)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -9499,16 +9505,16 @@
 	}
 
 /***/ },
-/* 6 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(7);
+	var content = __webpack_require__(8);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(11)(content, {});
+	var update = __webpack_require__(12)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -9525,21 +9531,21 @@
 	}
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(8)();
+	exports = module.exports = __webpack_require__(9)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "/* general typography */\n.leaflet-container {\n  background:#fff;\n  font:12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;\n  color:#404040;\n  color:rgba(0,0,0,0.75);\n  outline:0;\n  overflow:hidden;\n  -ms-touch-action:none;\n  }\n\n.leaflet-container *,\n.leaflet-container *:after,\n.leaflet-container *:before {\n  box-sizing:border-box;\n  }\n\n.leaflet-container h1,\n.leaflet-container h2,\n.leaflet-container h3,\n.leaflet-container h4,\n.leaflet-container h5,\n.leaflet-container h6,\n.leaflet-container p {\n  font-size:15px;\n  line-height:20px;\n  margin:0 0 10px;\n  }\n\n.leaflet-container .marker-description img {\n  margin-bottom: 10px;\n  }\n\n.leaflet-container a {\n  color:#3887BE;\n  font-weight:normal;\n  text-decoration:none;\n  }\n  .leaflet-container a:hover      { color:#63b6e5; }\n  .leaflet-container.dark a       { color:#63b6e5; }\n  .leaflet-container.dark a:hover { color:#8fcaec; }\n\n.leaflet-container.dark .mapbox-button,\n.leaflet-container .mapbox-button {\n  background-color:#3887be;\n  display:inline-block;\n  height:40px;\n  line-height:40px;\n  text-decoration:none;\n  color:#fff;\n  font-size:12px;\n  white-space:nowrap;\n  text-overflow:ellipsis;\n  }\n  .leaflet-container.dark .mapbox-button:hover,\n  .leaflet-container .mapbox-button:hover {\n    color:#fff;\n    background-color:#3bb2d0;\n    }\n\n/* Base Leaflet\n------------------------------------------------------- */\n.leaflet-map-pane,\n.leaflet-tile,\n.leaflet-marker-icon,\n.leaflet-marker-shadow,\n.leaflet-tile-pane,\n.leaflet-tile-container,\n.leaflet-overlay-pane,\n.leaflet-shadow-pane,\n.leaflet-marker-pane,\n.leaflet-popup-pane,\n.leaflet-overlay-pane svg,\n.leaflet-zoom-box,\n.leaflet-image-layer,\n.leaflet-layer {\n  position:absolute;\n  left:0;\n  top:0;\n  }\n\n.leaflet-tile,\n.leaflet-marker-icon,\n.leaflet-marker-shadow {\n  -webkit-user-drag:none;\n  -webkit-user-select:none;\n     -moz-user-select:none;\n          -ms-user-select:none;\n      user-select:none;\n  }\n.leaflet-marker-icon,\n.leaflet-marker-shadow {\n  display: block;\n  }\n\n.leaflet-tile {\n  -webkit-filter:inherit;\n          filter:inherit;\n  visibility:hidden;\n  }\n.leaflet-tile-loaded {\n  visibility:inherit;\n  }\n.leaflet-zoom-box {\n  width:0;\n  height:0;\n  }\n\n.leaflet-tile-pane    { z-index:2; }\n.leaflet-objects-pane { z-index:3; }\n.leaflet-overlay-pane { z-index:4; }\n.leaflet-shadow-pane  { z-index:5; }\n.leaflet-marker-pane  { z-index:6; }\n.leaflet-popup-pane   { z-index:7; }\n\n.leaflet-control {\n  position:relative;\n  z-index:7;\n  pointer-events:auto;\n  float:left;\n  clear:both;\n  }\n  .leaflet-right .leaflet-control   { float:right; }\n  .leaflet-top .leaflet-control     { margin-top:10px; }\n  .leaflet-bottom .leaflet-control  { margin-bottom:10px; }\n  .leaflet-left .leaflet-control    { margin-left:10px; }\n  .leaflet-right .leaflet-control   { margin-right:10px; }\n\n.leaflet-top,\n.leaflet-bottom {\n  position:absolute;\n  z-index:1000;\n  pointer-events:none;\n  }\n  .leaflet-top    { top:0; }\n  .leaflet-right  { right:0; }\n  .leaflet-bottom { bottom:0; }\n  .leaflet-left   { left:0; }\n\n/* zoom and fade animations */\n.leaflet-fade-anim .leaflet-tile,\n.leaflet-fade-anim .leaflet-popup {\n  opacity:0;\n  -webkit-transition:opacity 0.2s linear;\n          transition:opacity 0.2s linear;\n  }\n  .leaflet-fade-anim .leaflet-tile-loaded,\n  .leaflet-fade-anim .leaflet-map-pane .leaflet-popup {\n    opacity:1;\n    }\n\n.leaflet-zoom-anim .leaflet-zoom-animated {\n  -webkit-transition:-webkit-transform 0.25s cubic-bezier(0,0,0.25,1);\n          transition:-webkit-transform 0.25s cubic-bezier(0,0,0.25,1);\n          transition:transform 0.25s cubic-bezier(0,0,0.25,1);\n          transition:        transform 0.25s cubic-bezier(0,0,0.25,1), -webkit-transform 0.25s cubic-bezier(0,0,0.25,1);\n  }\n.leaflet-zoom-anim .leaflet-tile,\n.leaflet-pan-anim .leaflet-tile,\n.leaflet-touching .leaflet-zoom-animated {\n  -webkit-transition:none;\n          transition:none;\n  }\n.leaflet-zoom-anim .leaflet-zoom-hide { visibility: hidden; }\n\n/* cursors */\n.leaflet-container {\n  cursor:-webkit-grab;\n  cursor:   -moz-grab;\n  }\n.leaflet-overlay-pane path,\n.leaflet-marker-icon,\n.leaflet-container.map-clickable,\n.leaflet-container.leaflet-clickable {\n  cursor:pointer;\n  }\n.leaflet-popup-pane,\n.leaflet-control {\n  cursor:auto;\n  }\n.leaflet-dragging,\n.leaflet-dragging .map-clickable,\n.leaflet-dragging .leaflet-clickable,\n.leaflet-dragging .leaflet-container {\n  cursor:move;\n  cursor:-webkit-grabbing;\n  cursor:   -moz-grabbing;\n  }\n\n.leaflet-zoom-box {\n  background:#fff;\n  border:2px dotted #202020;\n  opacity:0.5;\n  }\n\n/* general toolbar styles */\n.leaflet-control-layers,\n.leaflet-bar {\n  background-color:#fff;\n  border:1px solid #999;\n  border-color:rgba(0,0,0,0.4);\n  border-radius:3px;\n  box-shadow:none;\n  }\n.leaflet-bar a,\n.leaflet-bar a:hover {\n  color:#404040;\n  color:rgba(0,0,0,0.75);\n  border-bottom:1px solid #ddd;\n  border-bottom-color:rgba(0,0,0,0.10);\n  }\n  .leaflet-bar a:hover,\n  .leaflet-bar a:active {\n    background-color:#f8f8f8;\n    cursor:pointer;\n    }\n  .leaflet-bar a:hover:first-child {\n    border-radius:3px 3px 0 0;\n    }\n  .leaflet-bar a:hover:last-child {\n    border-bottom:none;\n    border-radius:0 0 3px 3px;\n    }\n  .leaflet-bar a:hover:only-of-type {\n    border-radius:3px;\n    }\n\n.leaflet-bar .leaflet-disabled {\n  cursor:default;\n  opacity:0.75;\n  }\n.leaflet-control-zoom-in,\n.leaflet-control-zoom-out {\n  display:block;\n  content:'';\n  text-indent:-999em;\n  }\n\n.leaflet-control-layers .leaflet-control-layers-list,\n.leaflet-control-layers-expanded .leaflet-control-layers-toggle {\n  display:none;\n  }\n  .leaflet-control-layers-expanded .leaflet-control-layers-list {\n    display:block;\n    position:relative;\n    }\n\n.leaflet-control-layers-expanded {\n  background:#fff;\n  padding:6px 10px 6px 6px;\n  color:#404040;\n  color:rgba(0,0,0,0.75);\n  }\n.leaflet-control-layers-selector {\n  margin-top:2px;\n  position:relative;\n  top:1px;\n  }\n.leaflet-control-layers label {\n  display: block;\n  }\n.leaflet-control-layers-separator {\n  height:0;\n  border-top:1px solid #ddd;\n  border-top-color:rgba(0,0,0,0.10);\n  margin:5px -10px 5px -6px;\n  }\n\n.leaflet-container .leaflet-control-attribution {\n  background-color:rgba(255,255,255,0.5);\n  margin:0;\n  box-shadow:none;\n  }\n  .leaflet-container .leaflet-control-attribution a,\n  .leaflet-container .map-info-container a {\n    color:#404040;\n    }\n    .leaflet-control-attribution a:hover,\n    .map-info-container a:hover {\n      color:inherit;\n      text-decoration:underline;\n      }\n\n.leaflet-control-attribution,\n.leaflet-control-scale-line {\n  padding:0 5px;\n  }\n  .leaflet-left .leaflet-control-scale    { margin-left:5px; }\n  .leaflet-bottom .leaflet-control-scale  { margin-bottom:5px; }\n\n/* Used for smaller map containers & triggered by container size */\n.leaflet-container .leaflet-control-attribution.leaflet-compact-attribution { margin:10px; }\n.leaflet-container .leaflet-control-attribution.leaflet-compact-attribution {\n  background:#fff;\n  border-radius:3px 13px 13px 3px;\n  padding:3px 31px 3px 3px;\n  visibility:hidden;\n  }\n  .leaflet-control-attribution.leaflet-compact-attribution:hover {\n    visibility:visible;\n    }\n\n.leaflet-control-attribution.leaflet-compact-attribution:after {\n  content:'';\n  background-color:#fff;\n  background-color:rgba(255,255,255,0.5);\n  background-position:0 -78px;\n  border-radius:50%;\n  position:absolute;\n  display:inline-block;\n  width:26px;\n  height:26px;\n  vertical-align:middle;\n  bottom:0;\n  z-index:1;\n  visibility:visible;\n  cursor:pointer;\n  }\n  .leaflet-control-attribution.leaflet-compact-attribution:hover:after { background-color:#fff; }\n\n.leaflet-right .leaflet-control-attribution.leaflet-compact-attribution:after { right:0; }\n.leaflet-left .leaflet-control-attribution.leaflet-compact-attribution:after { left:0; }\n\n.leaflet-control-scale-line {\n  background-color:rgba(255,255,255,0.5);\n  border:1px solid #999;\n  border-color:rgba(0,0,0,0.4);\n  border-top:none;\n  padding:2px 5px 1px;\n  white-space:nowrap;\n  overflow:hidden;\n  }\n  .leaflet-control-scale-line:not(:first-child) {\n    border-top:2px solid #ddd;\n    border-top-color:rgba(0,0,0,0.10);\n    border-bottom:none;\n    margin-top:-2px;\n    }\n  .leaflet-control-scale-line:not(:first-child):not(:last-child) {\n    border-bottom:2px solid #777;\n    }\n\n/* popup */\n.leaflet-popup {\n  position:absolute;\n  text-align:center;\n  pointer-events:none;\n  }\n.leaflet-popup-content-wrapper {\n  padding:1px;\n  text-align:left;\n  pointer-events:all;\n  }\n.leaflet-popup-content {\n  padding:10px 10px 15px;\n  margin:0;\n  line-height:inherit;\n  }\n  .leaflet-popup-close-button + .leaflet-popup-content-wrapper .leaflet-popup-content {\n    padding-top:15px;\n    }\n\n.leaflet-popup-tip-container {\n  width:20px;\n  height:20px;\n  margin:0 auto;\n  position:relative;\n  }\n.leaflet-popup-tip {\n  width:0;\n\theight:0;\n  margin:0;\n\tborder-left:10px solid transparent;\n\tborder-right:10px solid transparent;\n\tborder-top:10px solid #fff;\n  box-shadow:none;\n  }\n.leaflet-popup-close-button {\n  text-indent:-999em;\n  position:absolute;\n  top:0;right:0;\n  pointer-events:all;\n  }\n  .leaflet-popup-close-button:hover {\n    background-color:#f8f8f8;\n    }\n\n.leaflet-popup-scrolled {\n  overflow:auto;\n  border-bottom:1px solid #ddd;\n  border-top:1px solid #ddd;\n  }\n\n/* div icon */\n.leaflet-div-icon {\n  background:#fff;\n  border:1px solid #999;\n  border-color:rgba(0,0,0,0.4);\n  }\n.leaflet-editing-icon {\n  border-radius:3px;\n  }\n\n/* Leaflet + Mapbox\n------------------------------------------------------- */\n.leaflet-bar a,\n.mapbox-icon,\n.map-tooltip.closable .close,\n.leaflet-control-layers-toggle,\n.leaflet-popup-close-button,\n.mapbox-button-icon:before {\n  content:'';\n  display:inline-block;\n  width:26px;\n  height:26px;\n  vertical-align:middle;\n  background-repeat:no-repeat;\n  }\n.leaflet-bar a {\n  display:block;\n  }\n\n.leaflet-control-attribution:after,\n.leaflet-control-zoom-in,\n.leaflet-control-zoom-out,\n.leaflet-popup-close-button,\n.leaflet-control-layers-toggle,\n.leaflet-container.dark .map-tooltip .close,\n.map-tooltip .close,\n.mapbox-icon {\n  opacity: .75;\n  background-image:url(" + __webpack_require__(9) + ");\n  background-repeat:no-repeat;\n  background-size:26px 260px;\n  }\n  .leaflet-container.dark .leaflet-control-attribution:after,\n  .mapbox-button-icon:before,\n  .leaflet-container.dark .leaflet-control-zoom-in,\n  .leaflet-container.dark .leaflet-control-zoom-out,\n  .leaflet-container.dark .leaflet-control-layers-toggle,\n  .leaflet-container.dark .mapbox-icon {\n    opacity: 1;\n    background-image:url(" + __webpack_require__(10) + ");\n    background-size:26px 260px;\n    }\n  .leaflet-bar .leaflet-control-zoom-in                 { background-position:0 0; }\n  .leaflet-bar .leaflet-control-zoom-out                { background-position:0 -26px; }\n  .map-tooltip.closable .close,\n  .leaflet-popup-close-button {\n    background-position:-3px -55px;\n    width:20px;\n    height:20px;\n    border-radius:0 3px 0 0;\n    }\n  .mapbox-icon-info                                     { background-position:0 -78px; }\n  .leaflet-control-layers-toggle                        { background-position:0 -104px; }\n  .mapbox-icon.mapbox-icon-share:before, .mapbox-icon.mapbox-icon-share         { background-position:0 -130px; }\n  .mapbox-icon.mapbox-icon-geocoder:before, .mapbox-icon.mapbox-icon-geocoder   { background-position:0 -156px; }\n  .mapbox-icon-facebook:before, .mapbox-icon-facebook   { background-position:0 -182px; }\n  .mapbox-icon-twitter:before, .mapbox-icon-twitter     { background-position:0 -208px; }\n  .mapbox-icon-pinterest:before, .mapbox-icon-pinterest { background-position:0 -234px; }\n\n.leaflet-popup-content-wrapper,\n.map-legends,\n.map-tooltip {\n  background:#fff;\n  border-radius:3px;\n  box-shadow:0 1px 2px rgba(0,0,0,0.10);\n  }\n.map-legends,\n.map-tooltip {\n  max-width:300px;\n  }\n.map-legends .map-legend {\n  padding:10px;\n  }\n.map-tooltip {\n  z-index:999999;\n  padding:10px;\n  min-width:180px;\n  max-height:400px;\n  overflow:auto;\n  opacity:1;\n  -webkit-transition:opacity 150ms;\n          transition:opacity 150ms;\n  }\n\n.map-tooltip .close {\n  text-indent:-999em;\n  overflow:hidden;\n  display:none;\n  }\n  .map-tooltip.closable .close {\n    position:absolute;\n    top:0;right:0;\n    border-radius:3px;\n    }\n    .map-tooltip.closable .close:active  {\n      background-color:#f8f8f8;\n      }\n\n.leaflet-control-interaction {\n  position:absolute;\n  top:10px;\n  right:10px;\n  width:300px;\n  }\n.leaflet-popup-content .marker-title {\n  font-weight:bold;\n  }\n.leaflet-control .mapbox-button {\n  background-color:#fff;\n  border:1px solid #ddd;\n  border-color:rgba(0,0,0,0.10);\n  padding:5px 10px;\n  border-radius:3px;\n  }\n\n/* Share modal\n------------------------------------------------------- */\n.mapbox-modal > div {\n  position:absolute;\n  top:0;\n  left:0;\n  width:100%;\n  height:100%;\n  z-index:-1;\n  overflow-y:auto;\n  }\n  .mapbox-modal.active > div {\n    z-index:99999;\n    -webkit-transition:all .2s, z-index 0 0;\n    transition:all .2s, z-index 0 0;\n    }\n\n.mapbox-modal .mapbox-modal-mask {\n  background:rgba(0,0,0,0.5);\n  opacity:0;\n  }\n  .mapbox-modal.active .mapbox-modal-mask { opacity:1; }\n\n.mapbox-modal .mapbox-modal-content {\n  -webkit-transform:translateY(-100%);\n      -ms-transform:translateY(-100%);\n          transform:translateY(-100%);\n  }\n  .mapbox-modal.active .mapbox-modal-content {\n    -webkit-transform:translateY(0);\n        -ms-transform:translateY(0);\n            transform:translateY(0);\n    }\n\n.mapbox-modal-body {\n  position:relative;\n  background:#fff;\n  padding:20px;\n  z-index:1000;\n  width:50%;\n  margin:20px 0 20px 25%;\n  }\n.mapbox-share-buttons {\n  margin:0 0 20px;\n  }\n.mapbox-share-buttons a {\n  width:33.3333%;\n  border-left:1px solid #fff;\n  text-align:center;\n  border-radius:0;\n  }\n  .mapbox-share-buttons a:last-child  { border-radius:0 3px 3px 0; }\n  .mapbox-share-buttons a:first-child { border:none; border-radius:3px 0 0 3px; }\n\n.mapbox-modal input {\n  width:100%;\n  height:40px;\n  padding:10px;\n  border:1px solid #ddd;\n  border-color:rgba(0,0,0,0.10);\n  color:rgba(0,0,0,0.5);\n  }\n\n/* Info Control\n------------------------------------------------------- */\n.leaflet-control.mapbox-control-info {\n  margin:5px 30px 10px 10px;\n  min-height:26px;\n  }\n  .leaflet-right .leaflet-control.mapbox-control-info {\n    margin:5px 10px 10px 30px;\n    }\n\n.mapbox-info-toggle {\n  background-color:#fff;\n  background-color:rgba(255,255,255,0.5);\n  border-radius:50%;\n  position:absolute;\n  bottom:0;left:0;\n  z-index:1;\n  }\n  .leaflet-right .mapbox-control-info .mapbox-info-toggle  { left:auto; right:0; }\n  .mapbox-info-toggle:hover { background-color:#fff; }\n\n.map-info-container {\n  background:#fff;\n  padding:3px 5px 3px 27px;\n  display:none;\n  position:relative;\n  bottom:0;left:0;\n  border-radius:13px 3px 3px 13px;\n  }\n  .leaflet-right .map-info-container {\n    left:auto;\n    right:0;\n    padding:3px 27px 3px 5px;\n    border-radius:3px 13px 13px 3px;\n    }\n\n.mapbox-control-info.active .map-info-container { display:inline-block; }\n.leaflet-container .mapbox-improve-map { font-weight:bold; }\n\n/* Geocoder\n------------------------------------------------------- */\n.leaflet-control-mapbox-geocoder {\n  position:relative;\n  }\n.leaflet-control-mapbox-geocoder.searching {\n  opacity:0.75;\n  }\n.leaflet-control-mapbox-geocoder .leaflet-control-mapbox-geocoder-wrap {\n  background:#fff;\n  position:absolute;\n  border:1px solid #999;\n  border-color:rgba(0,0,0,0.4);\n  overflow:hidden;\n  left:26px;\n  height:28px;\n  width:0;\n  top:-1px;\n  border-radius:0 3px 3px 0;\n  opacity:0;\n  -webkit-transition:opacity 100ms;\n          transition:opacity 100ms;\n  }\n.leaflet-control-mapbox-geocoder.active .leaflet-control-mapbox-geocoder-wrap {\n  width:180px;\n  opacity:1;\n  }\n.leaflet-bar .leaflet-control-mapbox-geocoder-toggle,\n.leaflet-bar .leaflet-control-mapbox-geocoder-toggle:hover {\n  border-bottom:none;\n  }\n.leaflet-control-mapbox-geocoder-toggle {\n  border-radius:3px;\n  }\n.leaflet-control-mapbox-geocoder.active,\n.leaflet-control-mapbox-geocoder.active .leaflet-control-mapbox-geocoder-toggle {\n  border-top-right-radius:0;\n  border-bottom-right-radius:0;\n  }\n.leaflet-control-mapbox-geocoder .leaflet-control-mapbox-geocoder-form input {\n  background:transparent;\n  border:0;\n  width:180px;\n  padding:0 0 0 10px;\n  height:26px;\n  outline:none;\n  }\n.leaflet-control-mapbox-geocoder-results {\n  width:180px;\n  position:absolute;\n  left:26px;\n  top:25px;\n  border-radius:0 0 3px 3px;\n  }\n  .leaflet-control-mapbox-geocoder.active .leaflet-control-mapbox-geocoder-results {\n    background:#fff;\n    border:1px solid #999;\n    border-color:rgba(0,0,0,0.4);\n    }\n.leaflet-control-mapbox-geocoder-results a,\n.leaflet-control-mapbox-geocoder-results span {\n  padding:0 10px;\n  text-overflow:ellipsis;\n  white-space:nowrap;\n  display:block;\n  width:100%;\n  font-size:12px;\n  line-height:26px;\n  text-align:left;\n  overflow:hidden;\n  }\n  .leaflet-container.dark .leaflet-control .leaflet-control-mapbox-geocoder-results a:hover,\n  .leaflet-control-mapbox-geocoder-results a:hover {\n    background:#f8f8f8;\n    opacity:1;\n    }\n\n.leaflet-right .leaflet-control-mapbox-geocoder-wrap,\n.leaflet-right .leaflet-control-mapbox-geocoder-results {\n  left:auto;\n  right:26px;\n  }\n.leaflet-right .leaflet-control-mapbox-geocoder-wrap {\n  border-radius:3px 0 0 3px;\n  }\n.leaflet-right .leaflet-control-mapbox-geocoder.active,\n.leaflet-right .leaflet-control-mapbox-geocoder.active .leaflet-control-mapbox-geocoder-toggle {\n  border-radius:0 3px 3px 0;\n  }\n\n.leaflet-bottom .leaflet-control-mapbox-geocoder-results {\n  top:auto;\n  bottom:25px;\n  border-radius:3px 3px 0 0;\n  }\n\n/* Mapbox Logo\n------------------------------------------------------- */\n.mapbox-logo-true:before {\n  content:'';\n  display:inline-block;\n  width:61px;\n  height:19px;\n  vertical-align:middle;\n}\n.mapbox-logo-true {\n  background-repeat:no-repeat;\n  background-size:61px 19px;\n  background-image:url('data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOmNjPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSI2NSIgaGVpZ2h0PSIyMCI+PGRlZnMvPjxtZXRhZGF0YT48cmRmOlJERj48Y2M6V29yayByZGY6YWJvdXQ9IiI+PGRjOmZvcm1hdD5pbWFnZS9zdmcreG1sPC9kYzpmb3JtYXQ+PGRjOnR5cGUgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIvPjxkYzp0aXRsZS8+PC9jYzpXb3JrPjwvcmRmOlJERj48L21ldGFkYXRhPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yNjEuODQ4MywtOTguNTAzOTUpIj48ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjE3NDQxODM2LDAsMCwwLjE3NDQxODM2LDIyMC41MjI4MiwyOS4yMjkzNDIpIiBzdHlsZT0ib3BhY2l0eTowLjI1O2ZpbGw6I2ZmZmZmZjtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MTcuMjAwMDIzNjU7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjQ7c3Ryb2tlLW9wYWNpdHk6MTtzdHJva2UtZGFzaGFycmF5Om5vbmUiPjxwYXRoIGQ9Ik0gNS4yOCAxLjUgQyA0LjU0IDEuNTYgMy45IDIuMjUgMy45MSAzIGwgMCAxMS44OCBjIDAuMDIgMC43NyAwLjcyIDEuNDcgMS41IDEuNDcgbCAxLjc1IDAgYyAwLjc4IDAgMS40OCAtMC42OSAxLjUgLTEuNDcgbCAwIC00LjI4IDAuNzIgMS4xOSBjIDAuNTMgMC44NyAyLjAzIDAuODcgMi41NiAwIGwgMC43MiAtMS4xOSAwIDQuMjggYyAwLjAyIDAuNzYgMC43IDEuNDUgMS40NyAxLjQ3IGwgMS43NSAwIGMgMC43OCAwIDEuNDggLTAuNjkgMS41IC0xLjQ3IGwgMCAtMC4xNiBjIDEuMDIgMS4xMiAyLjQ2IDEuODEgNC4wOSAxLjgxIGwgNC4wOSAwIDAgMS40NyBjIC0wIDAuNzggMC42OSAxLjQ4IDEuNDcgMS41IGwgMS43NSAwIGMgMC43OSAtMCAxLjUgLTAuNzEgMS41IC0xLjUgbCAwLjAyIC0xLjQ3IGMgMS43MiAwIDMuMDggLTAuNjQgNC4xNCAtMS42OSBsIDAgMC4xOSBjIDAgMC4zOSAwLjE2IDAuNzkgMC40NCAxLjA2IDAuMjggMC4yOCAwLjY3IDAuNDQgMS4wNiAwLjQ0IGwgMy4zMSAwIGMgMi4wMyAwIDMuODUgLTEuMDYgNC45MSAtMi42OSAxLjA1IDEuNjEgMi44NCAyLjY5IDQuODggMi42OSAxLjAzIDAgMS45OCAtMC4yNyAyLjgxIC0wLjc1IDAuMjggMC4zNSAwLjczIDAuNTcgMS4xOSAwLjU2IGwgMi4xMiAwIGMgMC40OCAwLjAxIDAuOTcgLTAuMjMgMS4yNSAtMC42MiBsIDAuOTEgLTEuMjggMC45MSAxLjI4IGMgMC4yOCAwLjM5IDAuNzQgMC42MyAxLjIyIDAuNjIgbCAyLjE2IDAgQyA2Mi42NyAxNi4zMyA2My40MiAxNC44OSA2Mi44MSAxNCBMIDYwLjIyIDEwLjM4IDYyLjYyIDcgQyA2My4yNiA2LjExIDYyLjUgNC42MiA2MS40MSA0LjYyIGwgLTIuMTYgMCBDIDU4Ljc4IDQuNjIgNTguMzEgNC44NiA1OC4wMyA1LjI1IEwgNTcuMzEgNi4yOCA1Ni41NiA1LjI1IEMgNTYuMjkgNC44NiA1NS44MiA0LjYyIDU1LjM0IDQuNjIgbCAtMi4xNiAwIGMgLTAuNDkgLTAgLTAuOTcgMC4yNSAtMS4yNSAwLjY2IC0wLjg2IC0wLjUxIC0xLjg0IC0wLjgxIC0yLjkxIC0wLjgxIC0yLjAzIDAgLTMuODMgMS4wOCAtNC44OCAyLjY5IEMgNDMuMSA1LjUzIDQxLjI3IDQuNDcgMzkuMTkgNC40NyBMIDM5LjE5IDMgQyAzOS4xOSAyLjYxIDM5LjAzIDIuMjEgMzguNzUgMS45NCAzOC40NyAxLjY2IDM4LjA4IDEuNSAzNy42OSAxLjUgbCAtMS43NSAwIGMgLTAuNzEgMCAtMS41IDAuODMgLTEuNSAxLjUgbCAwIDMuMTYgQyAzMy4zOCA1LjEgMzEuOTYgNC40NyAzMC4zOCA0LjQ3IGwgLTMuMzQgMCBjIC0wLjc3IDAuMDIgLTEuNDcgMC43MiAtMS40NyAxLjUgbCAwIDAuMzEgYyAtMS4wMiAtMS4xMiAtMi40NiAtMS44MSAtNC4wOSAtMS44MSAtMS42MyAwIC0zLjA3IDAuNyAtNC4wOSAxLjgxIEwgMTcuMzggMyBjIC0wIC0wLjc5IC0wLjcxIC0xLjUgLTEuNSAtMS41IEwgMTQuNSAxLjUgQyAxMy41NSAxLjUgMTIuMjggMS44NyAxMS42NiAyLjk0IGwgLTEgMS42OSAtMSAtMS42OSBDIDkuMDMgMS44NyA3Ljc3IDEuNSA2LjgxIDEuNSBsIC0xLjQxIDAgQyA1LjM2IDEuNSA1LjMyIDEuNSA1LjI4IDEuNSB6IG0gMTYuMTkgNy43MiBjIDAuNTMgMCAwLjk0IDAuMzUgMC45NCAxLjI4IGwgMCAxLjI4IC0wLjk0IDAgYyAtMC41MiAwIC0wLjk0IC0wLjM4IC0wLjk0IC0xLjI4IC0wIC0wLjkgMC40MiAtMS4yOCAwLjk0IC0xLjI4IHogbSA4LjgxIDAgYyAwLjgzIDAgMS4xOCAwLjY4IDEuMTkgMS4yOCAwLjAxIDAuOTQgLTAuNjIgMS4yOCAtMS4xOSAxLjI4IHogbSA4LjcyIDAgYyAwLjcyIDAgMS4zNyAwLjYgMS4zNyAxLjI4IDAgMC43NyAtMC41MSAxLjI4IC0xLjM3IDEuMjggeiBtIDEwLjAzIDAgYyAwLjU4IDAgMS4wOSAwLjUgMS4wOSAxLjI4IDAgMC43OCAtMC41MSAxLjI4IC0xLjA5IDEuMjggLTAuNTggMCAtMS4xMiAtMC41IC0xLjEyIC0xLjI4IDAgLTAuNzggMC41NCAtMS4yOCAxLjEyIC0xLjI4IHoiIHRyYW5zZm9ybT0ibWF0cml4KDUuNzMzMzQxNCwwLDAsNS43MzMzNDE0LDIzNi45MzMwOCwzOTcuMTc0OTgpIiBzdHlsZT0iZm9udC1zaXplOm1lZGl1bTtmb250LXN0eWxlOm5vcm1hbDtmb250LXZhcmlhbnQ6bm9ybWFsO2ZvbnQtd2VpZ2h0Om5vcm1hbDtmb250LXN0cmV0Y2g6bm9ybWFsO3RleHQtaW5kZW50OjA7dGV4dC1hbGlnbjpzdGFydDt0ZXh0LWRlY29yYXRpb246bm9uZTtsaW5lLWhlaWdodDpub3JtYWw7bGV0dGVyLXNwYWNpbmc6bm9ybWFsO3dvcmQtc3BhY2luZzpub3JtYWw7dGV4dC10cmFuc2Zvcm06bm9uZTtkaXJlY3Rpb246bHRyO2Jsb2NrLXByb2dyZXNzaW9uOnRiO3dyaXRpbmctbW9kZTpsci10Yjt0ZXh0LWFuY2hvcjpzdGFydDtiYXNlbGluZS1zaGlmdDpiYXNlbGluZTtjb2xvcjojMDAwMDAwO2ZpbGw6IzAwMDAwMDtmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6bm9uemVybztzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MTcuMjAwMDIzNjU7bWFya2VyOm5vbmU7dmlzaWJpbGl0eTp2aXNpYmxlO2Rpc3BsYXk6aW5saW5lO292ZXJmbG93OnZpc2libGU7ZW5hYmxlLWJhY2tncm91bmQ6YWNjdW11bGF0ZTtmb250LWZhbWlseTpTYW5zOy1pbmtzY2FwZS1mb250LXNwZWNpZmljYXRpb246U2FucyIvPjwvZz48ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjE3NDQxODM2LDAsMCwwLjE3NDQxODM2LDIyMC41MjI4MiwyOS4yMjkzNDIpIiBzdHlsZT0iZmlsbDojZmZmZmZmIj48cGF0aCBkPSJtIDUuNDEgMyAwIDEyIDEuNzUgMCAwIC05LjkxIDMuNSA1Ljk0IDMuNDcgLTUuOTQgMCA5LjkxIDEuNzUgMCAwIC0xMiBMIDE0LjUgMyBDIDEzLjggMyAxMy4yNSAzLjE2IDEyLjk0IDMuNjkgTCAxMC42NiA3LjU5IDguMzggMy42OSBDIDguMDcgMy4xNiA3LjUxIDMgNi44MSAzIHogTSAzNiAzIGwgMCAxMi4wMyAzLjI1IDAgYyAyLjQ0IDAgNC4zOCAtMS45MSA0LjM4IC00LjUzIDAgLTIuNjIgLTEuOTMgLTQuNDcgLTQuMzggLTQuNDcgQyAzOC43IDYuMDMgMzguMzIgNiAzNy43NSA2IGwgMCAtMyB6IE0gMjEuNDcgNS45NyBjIC0yLjQ0IDAgLTQuMTkgMS45MSAtNC4xOSA0LjUzIDAgMi42MiAxLjc1IDQuNTMgNC4xOSA0LjUzIGwgNC4xOSAwIDAgLTQuNTMgYyAwIC0yLjYyIC0xLjc1IC00LjUzIC00LjE5IC00LjUzIHogbSAyNy41NiAwIGMgLTIuNDEgMCAtNC4zOCAyLjAzIC00LjM4IDQuNTMgMCAyLjUgMS45NyA0LjUzIDQuMzggNC41MyAyLjQxIDAgNC4zNCAtMi4wMyA0LjM0IC00LjUzIDAgLTIuNSAtMS45NCAtNC41MyAtNC4zNCAtNC41MyB6IG0gLTIyIDAuMDMgMCAxMiAxLjc1IDAgMCAtMi45NyBjIDAuNTcgMCAxLjA0IC0wIDEuNTkgMCAyLjQ0IDAgNC4zNCAtMS45MSA0LjM0IC00LjUzIDAgLTIuNjIgLTEuOSAtNC41IC00LjM0IC00LjUgeiBtIDI2LjE2IDAgMy4wMyA0LjM4IC0zLjE5IDQuNjIgMi4xMiAwIEwgNTcuMzEgMTEuOTEgNTkuNDQgMTUgNjEuNTkgMTUgNTguMzggMTAuMzggNjEuNDEgNiA1OS4yNSA2IDU3LjMxIDguODEgNTUuMzQgNiB6IE0gMjEuNDcgNy43MiBjIDEuNCAwIDIuNDQgMS4xOSAyLjQ0IDIuNzggbCAwIDIuNzggLTIuNDQgMCBjIC0xLjQgMCAtMi40NCAtMS4yMSAtMi40NCAtMi43OCAtMCAtMS41NyAxLjA0IC0yLjc4IDIuNDQgLTIuNzggeiBtIDI3LjU2IDAgYyAxLjQ0IDAgMi41OSAxLjI0IDIuNTkgMi43OCAwIDEuNTQgLTEuMTUgMi43OCAtMi41OSAyLjc4IC0xLjQ0IDAgLTIuNjIgLTEuMjQgLTIuNjIgLTIuNzggMCAtMS41NCAxLjE4IC0yLjc4IDIuNjIgLTIuNzggeiBtIC0yMC4yNSAwLjAzIDEuNTkgMCBjIDEuNTkgMCAyLjU5IDEuMjggMi41OSAyLjc1IDAgMS40NyAtMS4xMyAyLjc4IC0yLjU5IDIuNzggbCAtMS41OSAwIHogbSA4Ljk3IDAgMS41IDAgYyAxLjQ3IDAgMi42MiAxLjI4IDIuNjIgMi43NSAwIDEuNDcgLTEuMDQgMi43OCAtMi42MiAyLjc4IGwgLTEuNSAwIHoiIHRyYW5zZm9ybT0ibWF0cml4KDUuNzMzMzQxNCwwLDAsNS43MzMzNDE0LDIzNi45MzMwOCwzOTcuMTc0OTgpIiBzdHlsZT0iZmlsbDojZmZmZmZmO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO3N0cm9rZTpub25lIi8+PC9nPjwvZz48L3N2Zz4=');\n}\n\n/* Dark Theme\n------------------------------------------------------- */\n.leaflet-container.dark .leaflet-bar {\n  background-color:#404040;\n  border-color:#202020;\n  border-color:rgba(0,0,0,0.75);\n  }\n  .leaflet-container.dark .leaflet-bar a {\n    color:#404040;\n    border-color:rgba(0,0,0,0.5);\n    }\n  .leaflet-container.dark .leaflet-bar a:active,\n  .leaflet-container.dark .leaflet-bar a:hover {\n    background-color:#505050;\n    }\n\n.leaflet-container.dark .leaflet-control-attribution:after,\n.leaflet-container.dark .mapbox-info-toggle,\n.leaflet-container.dark .map-info-container,\n.leaflet-container.dark .leaflet-control-attribution {\n  background-color:rgba(0,0,0,0.5);\n  color:#f8f8f8;\n  }\n  .leaflet-container.dark .leaflet-control-attribution a,\n  .leaflet-container.dark .leaflet-control-attribution a:hover,\n  .leaflet-container.dark .map-info-container a,\n  .leaflet-container.dark .map-info-container a:hover {\n    color:#fff;\n    }\n\n.leaflet-container.dark .leaflet-control-attribution:hover:after {\n  background-color:#000;\n  }\n.leaflet-container.dark .leaflet-control-layers-list span {\n  color:#f8f8f8;\n  }\n.leaflet-container.dark .leaflet-control-layers-separator {\n  border-top-color:rgba(255,255,255,0.10);\n  }\n.leaflet-container.dark .leaflet-bar a.leaflet-disabled,\n.leaflet-container.dark .leaflet-control .mapbox-button.disabled {\n  background-color:#252525;\n  color:#404040;\n  }\n.leaflet-container.dark .leaflet-control-mapbox-geocoder > div {\n  border-color:#202020;\n  border-color:rgba(0,0,0,0.75);\n  }\n  .leaflet-container.dark .leaflet-control .leaflet-control-mapbox-geocoder-results a {\n    border-color:#ddd #202020;\n    border-color:rgba(0,0,0,0.10) rgba(0,0,0,0.75);\n    }\n  .leaflet-container.dark .leaflet-control .leaflet-control-mapbox-geocoder-results span {\n    border-color:#202020;\n    border-color:rgba(0,0,0,0.75);\n    }\n\n/* Larger Screens\n------------------------------------------------------- */\n@media only screen and (max-width:800px) {\n.mapbox-modal-body {\n  width:83.3333%;\n  margin-left:8.3333%;\n  }\n}\n\n/* Smaller Screens\n------------------------------------------------------- */\n@media only screen and (max-width:640px) {\n.mapbox-modal-body {\n  width:100%;\n  height:100%;\n  margin:0;\n  }\n}\n\n/* Print\n------------------------------------------------------- */\n@media print { .mapbox-improve-map { display:none; } }\n\n/* Browser Fixes\n------------------------------------------------------- */\n/* VML support for IE8 */\n.leaflet-vml-shape { width:1px; height:1px; }\n.lvml { behavior:url(#default#VML); display:inline-block; position:absolute; }\n/* Map is broken in FF if you have max-width: 100% on tiles */\n.leaflet-container img.leaflet-tile { max-width:none !important; }\n/* Markers are broken in FF/IE if you have max-width: 100% on marker images */\n.leaflet-container img.leaflet-marker-icon { max-width:none; }\n/* Stupid Android 2 doesn't understand \"max-width: none\" properly */\n.leaflet-container img.leaflet-image-layer { max-width:15000px !important; }\n/* workaround for https://bugzilla.mozilla.org/show_bug.cgi?id=888319 */\n.leaflet-overlay-pane svg { -moz-user-select:none; }\n/* Older IEs don't support the translateY property for display animation */\n.leaflet-oldie .mapbox-modal .mapbox-modal-content        { display:none; }\n.leaflet-oldie .mapbox-modal.active .mapbox-modal-content { display:block; }\n.map-tooltip { width:280px\\8; /* < IE9 */ }\n\n/* < IE8 */\n.leaflet-oldie .leaflet-control-zoom-in,\n.leaflet-oldie .leaflet-control-zoom-out,\n.leaflet-oldie .leaflet-popup-close-button,\n.leaflet-oldie .leaflet-control-layers-toggle,\n.leaflet-oldie .leaflet-container.dark .map-tooltip .close,\n.leaflet-oldie .map-tooltip .close,\n.leaflet-oldie .mapbox-icon {\n  background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAEECAYAAAA24SSRAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAXnSURBVHic7ZxfiFVFGMB/33pRUQsKto002DY3McJ6yBYkESQxpYTypaB66KEXYRWLYOlhr9RTRGWRUkk9RyEU+Y9ClECJVTKlPybWBilqkYuWrqBOD/NdPV7PmTPn3NPtat/AcO6ZP9/vfN/Mmfl2Zs6Kc452hK62UAxkIANdEURkVERGC9crOjKIiANwzkmRep1lOjWXa2ijaU7jaGWgKsL110a1EnV+LQMqbLqyobO6t4EMZCADGchABrqmQUlPNSWOVgaqIpi7ZSADGchABjKQga49kIjURaQem14apGE4KVR/D0fXds5FRaAOOL1e+h1dP7ZgE6wQxDnXvs7QWaZLE1wUVmRNdY1zrp6wRF0kfqHYnHwDGchABjJQIETNRyIyFVgBzAPmavIIsAt4xzn3d66QiNl1PnCYy05JczwMzG9pKlfIhQCkES/kwUKQqRma9GpM02xqGXdrBdCXZm2NzaFP66SGUGeYl5E+WqJO0HRHSG+PXtJN54AjVbhbjQcbBSjiakH4hR0p+hChOiHQrhKg7Drt6t7//Qtb9RAU5XtXMaiak28gAxnIQO0Gicg0EXlMRDaIyFGNGzRtWhQpMA/1A6uAL4BzZM9H57TMKqC/8HyUPFhZJLiMI4sh0/UDK4FtwHig3LiWWal1UkPsDDsFWAgsBZZo8hZgM7DdOXcmV0igjQ4Ba4HFwORAuclaZi1wqNU2OgNsVw22aNoS1XAhMCXx4OkubOBJZwKDwFbgLNm97qyWGQRmtuoFWRsV0ujabCPzVA1kIAMZqBNAIjIgImPNRxUzK+SsmtRJn4Pqmj8AjCXzsmTlaTSck/8zcDRX/QiNMp8S6Ab2a5nvG5plyioDaoLs1/sBYKwyUBokkTdQJeiVZgi6UR+UVQI0QWHdoXKFvKDYz7RiynXctk7LPlmeRmsKyAqWNQfSQAYykIGuS5CI1ERkSET2ishpvQ6JSLE93ByfoQbsRHeNgfe4vOO8E6iF6hdxToZU6OqGUIWv1vShqkB7VYNaU3pN0/fGgvLa6C5gk3PufJO5zwObgDuraqM8jbZWpdEnwG3AYKOX6XVQ07+sSqNQr3P4QxS9LXeGBGxIzTiGXwR8QSHRsCj7ZjxAbxFYaVAKbMe/BkrAduRpZJ6qgQxkoP8DKDRY1sk/s5W6YFhoUG3nFnZeOIJfxLgXWB7zBFmmyzPT44my9zXSC098OZCTwCQttzOZVzVoX1a5LHmdtYyWDM29yjknItKF3xSelFWvKo1mhCClQLo1sC95T8T/ebr+xrqOABVZT82tY56qgQxkIAN1CkhEulsGiUi3iCzKyJsjIpuBYyLyo4isFpHXReTuTFLAr1sOnAeeT8nbzNW+3rfAM2UcyAcSQj4FngR68Ot0F1NA24CuMqBu4PMUgYdS0hzwYqlFJ+AeNV3s30aLSoEUtjEScoHE3nkZ0Ay1fR7o3ZCcGNAEYHcO5A/g5pZACpsMPEf6UexTwCN5MvI6w2zgaeBt4HQK5BsC57ubY+jPll/wHzn1Ayc07QD+u6MR4GPn3LlA/SuCOZAGMpCBDFRhiF50EpFl+PP49wOzgIPAHmCLc+6zXAERE18P+b7DRqAnJCfvfF0P/mTgLZr0l97vB27CL3HO0rwTwBzn3PHCGiU0uQisA6bhzT0T/T4ZeAr4s6FZmal8WcI0LwETgdfwHzY1XKz3teyjibLLioLWa8UDeG/oZbxD+QHwdULwg1r+K71fXxQ0ohXfAgS/Mvyh5i1MgNZp2qt6P5ImL/QezdbrSeAG4EbVJJkH8LteJ+p1FikhBPpNr3Odc6fUNHdo2oJEucbX8Y2zDQeLgr7T62IReRb4AX9mGGC6Xo8Bu0VkOvCQpu1JlRZoo6Vc/WL2ad4C4A28CWvAR5TtdU0dwqH/ewHvHi8HbgUexh+euDRCFH6PVOh0/FKzw3um4M8zpA1DxwkMQzFjXR9+d/9N1WI8BZI71kU56Aq8HXgC+Ak/5o3gX+rUNmmO5nsbqP2gfwCyvJzPNoKXiAAAAABJRU5ErkJggg==');\n}\n.leaflet-oldie .mapbox-button-icon:before,\n.leaflet-oldie .leaflet-container.dark .leaflet-control-zoom-in,\n.leaflet-oldie .leaflet-container.dark .leaflet-control-zoom-out,\n.leaflet-oldie .leaflet-container.dark .leaflet-control-layers-toggle,\n.leaflet-oldie .leaflet-container.dark .mapbox-icon {\n  background-image:url('data:image/png;base64,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');\n}\n\n.leaflet-oldie .mapbox-logo-true {\n  background-image: none;\n}\n", ""]);
+	exports.push([module.id, "/* general typography */\n.leaflet-container {\n  background:#fff;\n  font:12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;\n  color:#404040;\n  color:rgba(0,0,0,0.75);\n  outline:0;\n  overflow:hidden;\n  -ms-touch-action:none;\n  }\n\n.leaflet-container *,\n.leaflet-container *:after,\n.leaflet-container *:before {\n  box-sizing:border-box;\n  }\n\n.leaflet-container h1,\n.leaflet-container h2,\n.leaflet-container h3,\n.leaflet-container h4,\n.leaflet-container h5,\n.leaflet-container h6,\n.leaflet-container p {\n  font-size:15px;\n  line-height:20px;\n  margin:0 0 10px;\n  }\n\n.leaflet-container .marker-description img {\n  margin-bottom: 10px;\n  }\n\n.leaflet-container a {\n  color:#3887BE;\n  font-weight:normal;\n  text-decoration:none;\n  }\n  .leaflet-container a:hover      { color:#63b6e5; }\n  .leaflet-container.dark a       { color:#63b6e5; }\n  .leaflet-container.dark a:hover { color:#8fcaec; }\n\n.leaflet-container.dark .mapbox-button,\n.leaflet-container .mapbox-button {\n  background-color:#3887be;\n  display:inline-block;\n  height:40px;\n  line-height:40px;\n  text-decoration:none;\n  color:#fff;\n  font-size:12px;\n  white-space:nowrap;\n  text-overflow:ellipsis;\n  }\n  .leaflet-container.dark .mapbox-button:hover,\n  .leaflet-container .mapbox-button:hover {\n    color:#fff;\n    background-color:#3bb2d0;\n    }\n\n/* Base Leaflet\n------------------------------------------------------- */\n.leaflet-map-pane,\n.leaflet-tile,\n.leaflet-marker-icon,\n.leaflet-marker-shadow,\n.leaflet-tile-pane,\n.leaflet-tile-container,\n.leaflet-overlay-pane,\n.leaflet-shadow-pane,\n.leaflet-marker-pane,\n.leaflet-popup-pane,\n.leaflet-overlay-pane svg,\n.leaflet-zoom-box,\n.leaflet-image-layer,\n.leaflet-layer {\n  position:absolute;\n  left:0;\n  top:0;\n  }\n\n.leaflet-tile,\n.leaflet-marker-icon,\n.leaflet-marker-shadow {\n  -webkit-user-drag:none;\n  -webkit-user-select:none;\n     -moz-user-select:none;\n          -ms-user-select:none;\n      user-select:none;\n  }\n.leaflet-marker-icon,\n.leaflet-marker-shadow {\n  display: block;\n  }\n\n.leaflet-tile {\n  -webkit-filter:inherit;\n          filter:inherit;\n  visibility:hidden;\n  }\n.leaflet-tile-loaded {\n  visibility:inherit;\n  }\n.leaflet-zoom-box {\n  width:0;\n  height:0;\n  }\n\n.leaflet-tile-pane    { z-index:2; }\n.leaflet-objects-pane { z-index:3; }\n.leaflet-overlay-pane { z-index:4; }\n.leaflet-shadow-pane  { z-index:5; }\n.leaflet-marker-pane  { z-index:6; }\n.leaflet-popup-pane   { z-index:7; }\n\n.leaflet-control {\n  position:relative;\n  z-index:7;\n  pointer-events:auto;\n  float:left;\n  clear:both;\n  }\n  .leaflet-right .leaflet-control   { float:right; }\n  .leaflet-top .leaflet-control     { margin-top:10px; }\n  .leaflet-bottom .leaflet-control  { margin-bottom:10px; }\n  .leaflet-left .leaflet-control    { margin-left:10px; }\n  .leaflet-right .leaflet-control   { margin-right:10px; }\n\n.leaflet-top,\n.leaflet-bottom {\n  position:absolute;\n  z-index:1000;\n  pointer-events:none;\n  }\n  .leaflet-top    { top:0; }\n  .leaflet-right  { right:0; }\n  .leaflet-bottom { bottom:0; }\n  .leaflet-left   { left:0; }\n\n/* zoom and fade animations */\n.leaflet-fade-anim .leaflet-tile,\n.leaflet-fade-anim .leaflet-popup {\n  opacity:0;\n  -webkit-transition:opacity 0.2s linear;\n          transition:opacity 0.2s linear;\n  }\n  .leaflet-fade-anim .leaflet-tile-loaded,\n  .leaflet-fade-anim .leaflet-map-pane .leaflet-popup {\n    opacity:1;\n    }\n\n.leaflet-zoom-anim .leaflet-zoom-animated {\n  -webkit-transition:-webkit-transform 0.25s cubic-bezier(0,0,0.25,1);\n          transition:-webkit-transform 0.25s cubic-bezier(0,0,0.25,1);\n          transition:transform 0.25s cubic-bezier(0,0,0.25,1);\n          transition:        transform 0.25s cubic-bezier(0,0,0.25,1), -webkit-transform 0.25s cubic-bezier(0,0,0.25,1);\n  }\n.leaflet-zoom-anim .leaflet-tile,\n.leaflet-pan-anim .leaflet-tile,\n.leaflet-touching .leaflet-zoom-animated {\n  -webkit-transition:none;\n          transition:none;\n  }\n.leaflet-zoom-anim .leaflet-zoom-hide { visibility: hidden; }\n\n/* cursors */\n.leaflet-container {\n  cursor:-webkit-grab;\n  cursor:   -moz-grab;\n  }\n.leaflet-overlay-pane path,\n.leaflet-marker-icon,\n.leaflet-container.map-clickable,\n.leaflet-container.leaflet-clickable {\n  cursor:pointer;\n  }\n.leaflet-popup-pane,\n.leaflet-control {\n  cursor:auto;\n  }\n.leaflet-dragging,\n.leaflet-dragging .map-clickable,\n.leaflet-dragging .leaflet-clickable,\n.leaflet-dragging .leaflet-container {\n  cursor:move;\n  cursor:-webkit-grabbing;\n  cursor:   -moz-grabbing;\n  }\n\n.leaflet-zoom-box {\n  background:#fff;\n  border:2px dotted #202020;\n  opacity:0.5;\n  }\n\n/* general toolbar styles */\n.leaflet-control-layers,\n.leaflet-bar {\n  background-color:#fff;\n  border:1px solid #999;\n  border-color:rgba(0,0,0,0.4);\n  border-radius:3px;\n  box-shadow:none;\n  }\n.leaflet-bar a,\n.leaflet-bar a:hover {\n  color:#404040;\n  color:rgba(0,0,0,0.75);\n  border-bottom:1px solid #ddd;\n  border-bottom-color:rgba(0,0,0,0.10);\n  }\n  .leaflet-bar a:hover,\n  .leaflet-bar a:active {\n    background-color:#f8f8f8;\n    cursor:pointer;\n    }\n  .leaflet-bar a:hover:first-child {\n    border-radius:3px 3px 0 0;\n    }\n  .leaflet-bar a:hover:last-child {\n    border-bottom:none;\n    border-radius:0 0 3px 3px;\n    }\n  .leaflet-bar a:hover:only-of-type {\n    border-radius:3px;\n    }\n\n.leaflet-bar .leaflet-disabled {\n  cursor:default;\n  opacity:0.75;\n  }\n.leaflet-control-zoom-in,\n.leaflet-control-zoom-out {\n  display:block;\n  content:'';\n  text-indent:-999em;\n  }\n\n.leaflet-control-layers .leaflet-control-layers-list,\n.leaflet-control-layers-expanded .leaflet-control-layers-toggle {\n  display:none;\n  }\n  .leaflet-control-layers-expanded .leaflet-control-layers-list {\n    display:block;\n    position:relative;\n    }\n\n.leaflet-control-layers-expanded {\n  background:#fff;\n  padding:6px 10px 6px 6px;\n  color:#404040;\n  color:rgba(0,0,0,0.75);\n  }\n.leaflet-control-layers-selector {\n  margin-top:2px;\n  position:relative;\n  top:1px;\n  }\n.leaflet-control-layers label {\n  display: block;\n  }\n.leaflet-control-layers-separator {\n  height:0;\n  border-top:1px solid #ddd;\n  border-top-color:rgba(0,0,0,0.10);\n  margin:5px -10px 5px -6px;\n  }\n\n.leaflet-container .leaflet-control-attribution {\n  background-color:rgba(255,255,255,0.5);\n  margin:0;\n  box-shadow:none;\n  }\n  .leaflet-container .leaflet-control-attribution a,\n  .leaflet-container .map-info-container a {\n    color:#404040;\n    }\n    .leaflet-control-attribution a:hover,\n    .map-info-container a:hover {\n      color:inherit;\n      text-decoration:underline;\n      }\n\n.leaflet-control-attribution,\n.leaflet-control-scale-line {\n  padding:0 5px;\n  }\n  .leaflet-left .leaflet-control-scale    { margin-left:5px; }\n  .leaflet-bottom .leaflet-control-scale  { margin-bottom:5px; }\n\n/* Used for smaller map containers & triggered by container size */\n.leaflet-container .leaflet-control-attribution.leaflet-compact-attribution { margin:10px; }\n.leaflet-container .leaflet-control-attribution.leaflet-compact-attribution {\n  background:#fff;\n  border-radius:3px 13px 13px 3px;\n  padding:3px 31px 3px 3px;\n  visibility:hidden;\n  }\n  .leaflet-control-attribution.leaflet-compact-attribution:hover {\n    visibility:visible;\n    }\n\n.leaflet-control-attribution.leaflet-compact-attribution:after {\n  content:'';\n  background-color:#fff;\n  background-color:rgba(255,255,255,0.5);\n  background-position:0 -78px;\n  border-radius:50%;\n  position:absolute;\n  display:inline-block;\n  width:26px;\n  height:26px;\n  vertical-align:middle;\n  bottom:0;\n  z-index:1;\n  visibility:visible;\n  cursor:pointer;\n  }\n  .leaflet-control-attribution.leaflet-compact-attribution:hover:after { background-color:#fff; }\n\n.leaflet-right .leaflet-control-attribution.leaflet-compact-attribution:after { right:0; }\n.leaflet-left .leaflet-control-attribution.leaflet-compact-attribution:after { left:0; }\n\n.leaflet-control-scale-line {\n  background-color:rgba(255,255,255,0.5);\n  border:1px solid #999;\n  border-color:rgba(0,0,0,0.4);\n  border-top:none;\n  padding:2px 5px 1px;\n  white-space:nowrap;\n  overflow:hidden;\n  }\n  .leaflet-control-scale-line:not(:first-child) {\n    border-top:2px solid #ddd;\n    border-top-color:rgba(0,0,0,0.10);\n    border-bottom:none;\n    margin-top:-2px;\n    }\n  .leaflet-control-scale-line:not(:first-child):not(:last-child) {\n    border-bottom:2px solid #777;\n    }\n\n/* popup */\n.leaflet-popup {\n  position:absolute;\n  text-align:center;\n  pointer-events:none;\n  }\n.leaflet-popup-content-wrapper {\n  padding:1px;\n  text-align:left;\n  pointer-events:all;\n  }\n.leaflet-popup-content {\n  padding:10px 10px 15px;\n  margin:0;\n  line-height:inherit;\n  }\n  .leaflet-popup-close-button + .leaflet-popup-content-wrapper .leaflet-popup-content {\n    padding-top:15px;\n    }\n\n.leaflet-popup-tip-container {\n  width:20px;\n  height:20px;\n  margin:0 auto;\n  position:relative;\n  }\n.leaflet-popup-tip {\n  width:0;\n\theight:0;\n  margin:0;\n\tborder-left:10px solid transparent;\n\tborder-right:10px solid transparent;\n\tborder-top:10px solid #fff;\n  box-shadow:none;\n  }\n.leaflet-popup-close-button {\n  text-indent:-999em;\n  position:absolute;\n  top:0;right:0;\n  pointer-events:all;\n  }\n  .leaflet-popup-close-button:hover {\n    background-color:#f8f8f8;\n    }\n\n.leaflet-popup-scrolled {\n  overflow:auto;\n  border-bottom:1px solid #ddd;\n  border-top:1px solid #ddd;\n  }\n\n/* div icon */\n.leaflet-div-icon {\n  background:#fff;\n  border:1px solid #999;\n  border-color:rgba(0,0,0,0.4);\n  }\n.leaflet-editing-icon {\n  border-radius:3px;\n  }\n\n/* Leaflet + Mapbox\n------------------------------------------------------- */\n.leaflet-bar a,\n.mapbox-icon,\n.map-tooltip.closable .close,\n.leaflet-control-layers-toggle,\n.leaflet-popup-close-button,\n.mapbox-button-icon:before {\n  content:'';\n  display:inline-block;\n  width:26px;\n  height:26px;\n  vertical-align:middle;\n  background-repeat:no-repeat;\n  }\n.leaflet-bar a {\n  display:block;\n  }\n\n.leaflet-control-attribution:after,\n.leaflet-control-zoom-in,\n.leaflet-control-zoom-out,\n.leaflet-popup-close-button,\n.leaflet-control-layers-toggle,\n.leaflet-container.dark .map-tooltip .close,\n.map-tooltip .close,\n.mapbox-icon {\n  opacity: .75;\n  background-image:url(" + __webpack_require__(10) + ");\n  background-repeat:no-repeat;\n  background-size:26px 260px;\n  }\n  .leaflet-container.dark .leaflet-control-attribution:after,\n  .mapbox-button-icon:before,\n  .leaflet-container.dark .leaflet-control-zoom-in,\n  .leaflet-container.dark .leaflet-control-zoom-out,\n  .leaflet-container.dark .leaflet-control-layers-toggle,\n  .leaflet-container.dark .mapbox-icon {\n    opacity: 1;\n    background-image:url(" + __webpack_require__(11) + ");\n    background-size:26px 260px;\n    }\n  .leaflet-bar .leaflet-control-zoom-in                 { background-position:0 0; }\n  .leaflet-bar .leaflet-control-zoom-out                { background-position:0 -26px; }\n  .map-tooltip.closable .close,\n  .leaflet-popup-close-button {\n    background-position:-3px -55px;\n    width:20px;\n    height:20px;\n    border-radius:0 3px 0 0;\n    }\n  .mapbox-icon-info                                     { background-position:0 -78px; }\n  .leaflet-control-layers-toggle                        { background-position:0 -104px; }\n  .mapbox-icon.mapbox-icon-share:before, .mapbox-icon.mapbox-icon-share         { background-position:0 -130px; }\n  .mapbox-icon.mapbox-icon-geocoder:before, .mapbox-icon.mapbox-icon-geocoder   { background-position:0 -156px; }\n  .mapbox-icon-facebook:before, .mapbox-icon-facebook   { background-position:0 -182px; }\n  .mapbox-icon-twitter:before, .mapbox-icon-twitter     { background-position:0 -208px; }\n  .mapbox-icon-pinterest:before, .mapbox-icon-pinterest { background-position:0 -234px; }\n\n.leaflet-popup-content-wrapper,\n.map-legends,\n.map-tooltip {\n  background:#fff;\n  border-radius:3px;\n  box-shadow:0 1px 2px rgba(0,0,0,0.10);\n  }\n.map-legends,\n.map-tooltip {\n  max-width:300px;\n  }\n.map-legends .map-legend {\n  padding:10px;\n  }\n.map-tooltip {\n  z-index:999999;\n  padding:10px;\n  min-width:180px;\n  max-height:400px;\n  overflow:auto;\n  opacity:1;\n  -webkit-transition:opacity 150ms;\n          transition:opacity 150ms;\n  }\n\n.map-tooltip .close {\n  text-indent:-999em;\n  overflow:hidden;\n  display:none;\n  }\n  .map-tooltip.closable .close {\n    position:absolute;\n    top:0;right:0;\n    border-radius:3px;\n    }\n    .map-tooltip.closable .close:active  {\n      background-color:#f8f8f8;\n      }\n\n.leaflet-control-interaction {\n  position:absolute;\n  top:10px;\n  right:10px;\n  width:300px;\n  }\n.leaflet-popup-content .marker-title {\n  font-weight:bold;\n  }\n.leaflet-control .mapbox-button {\n  background-color:#fff;\n  border:1px solid #ddd;\n  border-color:rgba(0,0,0,0.10);\n  padding:5px 10px;\n  border-radius:3px;\n  }\n\n/* Share modal\n------------------------------------------------------- */\n.mapbox-modal > div {\n  position:absolute;\n  top:0;\n  left:0;\n  width:100%;\n  height:100%;\n  z-index:-1;\n  overflow-y:auto;\n  }\n  .mapbox-modal.active > div {\n    z-index:99999;\n    -webkit-transition:all .2s, z-index 0 0;\n    transition:all .2s, z-index 0 0;\n    }\n\n.mapbox-modal .mapbox-modal-mask {\n  background:rgba(0,0,0,0.5);\n  opacity:0;\n  }\n  .mapbox-modal.active .mapbox-modal-mask { opacity:1; }\n\n.mapbox-modal .mapbox-modal-content {\n  -webkit-transform:translateY(-100%);\n      -ms-transform:translateY(-100%);\n          transform:translateY(-100%);\n  }\n  .mapbox-modal.active .mapbox-modal-content {\n    -webkit-transform:translateY(0);\n        -ms-transform:translateY(0);\n            transform:translateY(0);\n    }\n\n.mapbox-modal-body {\n  position:relative;\n  background:#fff;\n  padding:20px;\n  z-index:1000;\n  width:50%;\n  margin:20px 0 20px 25%;\n  }\n.mapbox-share-buttons {\n  margin:0 0 20px;\n  }\n.mapbox-share-buttons a {\n  width:33.3333%;\n  border-left:1px solid #fff;\n  text-align:center;\n  border-radius:0;\n  }\n  .mapbox-share-buttons a:last-child  { border-radius:0 3px 3px 0; }\n  .mapbox-share-buttons a:first-child { border:none; border-radius:3px 0 0 3px; }\n\n.mapbox-modal input {\n  width:100%;\n  height:40px;\n  padding:10px;\n  border:1px solid #ddd;\n  border-color:rgba(0,0,0,0.10);\n  color:rgba(0,0,0,0.5);\n  }\n\n/* Info Control\n------------------------------------------------------- */\n.leaflet-control.mapbox-control-info {\n  margin:5px 30px 10px 10px;\n  min-height:26px;\n  }\n  .leaflet-right .leaflet-control.mapbox-control-info {\n    margin:5px 10px 10px 30px;\n    }\n\n.mapbox-info-toggle {\n  background-color:#fff;\n  background-color:rgba(255,255,255,0.5);\n  border-radius:50%;\n  position:absolute;\n  bottom:0;left:0;\n  z-index:1;\n  }\n  .leaflet-right .mapbox-control-info .mapbox-info-toggle  { left:auto; right:0; }\n  .mapbox-info-toggle:hover { background-color:#fff; }\n\n.map-info-container {\n  background:#fff;\n  padding:3px 5px 3px 27px;\n  display:none;\n  position:relative;\n  bottom:0;left:0;\n  border-radius:13px 3px 3px 13px;\n  }\n  .leaflet-right .map-info-container {\n    left:auto;\n    right:0;\n    padding:3px 27px 3px 5px;\n    border-radius:3px 13px 13px 3px;\n    }\n\n.mapbox-control-info.active .map-info-container { display:inline-block; }\n.leaflet-container .mapbox-improve-map { font-weight:bold; }\n\n/* Geocoder\n------------------------------------------------------- */\n.leaflet-control-mapbox-geocoder {\n  position:relative;\n  }\n.leaflet-control-mapbox-geocoder.searching {\n  opacity:0.75;\n  }\n.leaflet-control-mapbox-geocoder .leaflet-control-mapbox-geocoder-wrap {\n  background:#fff;\n  position:absolute;\n  border:1px solid #999;\n  border-color:rgba(0,0,0,0.4);\n  overflow:hidden;\n  left:26px;\n  height:28px;\n  width:0;\n  top:-1px;\n  border-radius:0 3px 3px 0;\n  opacity:0;\n  -webkit-transition:opacity 100ms;\n          transition:opacity 100ms;\n  }\n.leaflet-control-mapbox-geocoder.active .leaflet-control-mapbox-geocoder-wrap {\n  width:180px;\n  opacity:1;\n  }\n.leaflet-bar .leaflet-control-mapbox-geocoder-toggle,\n.leaflet-bar .leaflet-control-mapbox-geocoder-toggle:hover {\n  border-bottom:none;\n  }\n.leaflet-control-mapbox-geocoder-toggle {\n  border-radius:3px;\n  }\n.leaflet-control-mapbox-geocoder.active,\n.leaflet-control-mapbox-geocoder.active .leaflet-control-mapbox-geocoder-toggle {\n  border-top-right-radius:0;\n  border-bottom-right-radius:0;\n  }\n.leaflet-control-mapbox-geocoder .leaflet-control-mapbox-geocoder-form input {\n  background:transparent;\n  border:0;\n  width:180px;\n  padding:0 0 0 10px;\n  height:26px;\n  outline:none;\n  }\n.leaflet-control-mapbox-geocoder-results {\n  width:180px;\n  position:absolute;\n  left:26px;\n  top:25px;\n  border-radius:0 0 3px 3px;\n  }\n  .leaflet-control-mapbox-geocoder.active .leaflet-control-mapbox-geocoder-results {\n    background:#fff;\n    border:1px solid #999;\n    border-color:rgba(0,0,0,0.4);\n    }\n.leaflet-control-mapbox-geocoder-results a,\n.leaflet-control-mapbox-geocoder-results span {\n  padding:0 10px;\n  text-overflow:ellipsis;\n  white-space:nowrap;\n  display:block;\n  width:100%;\n  font-size:12px;\n  line-height:26px;\n  text-align:left;\n  overflow:hidden;\n  }\n  .leaflet-container.dark .leaflet-control .leaflet-control-mapbox-geocoder-results a:hover,\n  .leaflet-control-mapbox-geocoder-results a:hover {\n    background:#f8f8f8;\n    opacity:1;\n    }\n\n.leaflet-right .leaflet-control-mapbox-geocoder-wrap,\n.leaflet-right .leaflet-control-mapbox-geocoder-results {\n  left:auto;\n  right:26px;\n  }\n.leaflet-right .leaflet-control-mapbox-geocoder-wrap {\n  border-radius:3px 0 0 3px;\n  }\n.leaflet-right .leaflet-control-mapbox-geocoder.active,\n.leaflet-right .leaflet-control-mapbox-geocoder.active .leaflet-control-mapbox-geocoder-toggle {\n  border-radius:0 3px 3px 0;\n  }\n\n.leaflet-bottom .leaflet-control-mapbox-geocoder-results {\n  top:auto;\n  bottom:25px;\n  border-radius:3px 3px 0 0;\n  }\n\n/* Mapbox Logo\n------------------------------------------------------- */\n.mapbox-logo-true:before {\n  content:'';\n  display:inline-block;\n  width:61px;\n  height:19px;\n  vertical-align:middle;\n}\n.mapbox-logo-true {\n  background-repeat:no-repeat;\n  background-size:61px 19px;\n  background-image:url('data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOmNjPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSI2NSIgaGVpZ2h0PSIyMCI+PGRlZnMvPjxtZXRhZGF0YT48cmRmOlJERj48Y2M6V29yayByZGY6YWJvdXQ9IiI+PGRjOmZvcm1hdD5pbWFnZS9zdmcreG1sPC9kYzpmb3JtYXQ+PGRjOnR5cGUgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIvPjxkYzp0aXRsZS8+PC9jYzpXb3JrPjwvcmRmOlJERj48L21ldGFkYXRhPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yNjEuODQ4MywtOTguNTAzOTUpIj48ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjE3NDQxODM2LDAsMCwwLjE3NDQxODM2LDIyMC41MjI4MiwyOS4yMjkzNDIpIiBzdHlsZT0ib3BhY2l0eTowLjI1O2ZpbGw6I2ZmZmZmZjtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MTcuMjAwMDIzNjU7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjQ7c3Ryb2tlLW9wYWNpdHk6MTtzdHJva2UtZGFzaGFycmF5Om5vbmUiPjxwYXRoIGQ9Ik0gNS4yOCAxLjUgQyA0LjU0IDEuNTYgMy45IDIuMjUgMy45MSAzIGwgMCAxMS44OCBjIDAuMDIgMC43NyAwLjcyIDEuNDcgMS41IDEuNDcgbCAxLjc1IDAgYyAwLjc4IDAgMS40OCAtMC42OSAxLjUgLTEuNDcgbCAwIC00LjI4IDAuNzIgMS4xOSBjIDAuNTMgMC44NyAyLjAzIDAuODcgMi41NiAwIGwgMC43MiAtMS4xOSAwIDQuMjggYyAwLjAyIDAuNzYgMC43IDEuNDUgMS40NyAxLjQ3IGwgMS43NSAwIGMgMC43OCAwIDEuNDggLTAuNjkgMS41IC0xLjQ3IGwgMCAtMC4xNiBjIDEuMDIgMS4xMiAyLjQ2IDEuODEgNC4wOSAxLjgxIGwgNC4wOSAwIDAgMS40NyBjIC0wIDAuNzggMC42OSAxLjQ4IDEuNDcgMS41IGwgMS43NSAwIGMgMC43OSAtMCAxLjUgLTAuNzEgMS41IC0xLjUgbCAwLjAyIC0xLjQ3IGMgMS43MiAwIDMuMDggLTAuNjQgNC4xNCAtMS42OSBsIDAgMC4xOSBjIDAgMC4zOSAwLjE2IDAuNzkgMC40NCAxLjA2IDAuMjggMC4yOCAwLjY3IDAuNDQgMS4wNiAwLjQ0IGwgMy4zMSAwIGMgMi4wMyAwIDMuODUgLTEuMDYgNC45MSAtMi42OSAxLjA1IDEuNjEgMi44NCAyLjY5IDQuODggMi42OSAxLjAzIDAgMS45OCAtMC4yNyAyLjgxIC0wLjc1IDAuMjggMC4zNSAwLjczIDAuNTcgMS4xOSAwLjU2IGwgMi4xMiAwIGMgMC40OCAwLjAxIDAuOTcgLTAuMjMgMS4yNSAtMC42MiBsIDAuOTEgLTEuMjggMC45MSAxLjI4IGMgMC4yOCAwLjM5IDAuNzQgMC42MyAxLjIyIDAuNjIgbCAyLjE2IDAgQyA2Mi42NyAxNi4zMyA2My40MiAxNC44OSA2Mi44MSAxNCBMIDYwLjIyIDEwLjM4IDYyLjYyIDcgQyA2My4yNiA2LjExIDYyLjUgNC42MiA2MS40MSA0LjYyIGwgLTIuMTYgMCBDIDU4Ljc4IDQuNjIgNTguMzEgNC44NiA1OC4wMyA1LjI1IEwgNTcuMzEgNi4yOCA1Ni41NiA1LjI1IEMgNTYuMjkgNC44NiA1NS44MiA0LjYyIDU1LjM0IDQuNjIgbCAtMi4xNiAwIGMgLTAuNDkgLTAgLTAuOTcgMC4yNSAtMS4yNSAwLjY2IC0wLjg2IC0wLjUxIC0xLjg0IC0wLjgxIC0yLjkxIC0wLjgxIC0yLjAzIDAgLTMuODMgMS4wOCAtNC44OCAyLjY5IEMgNDMuMSA1LjUzIDQxLjI3IDQuNDcgMzkuMTkgNC40NyBMIDM5LjE5IDMgQyAzOS4xOSAyLjYxIDM5LjAzIDIuMjEgMzguNzUgMS45NCAzOC40NyAxLjY2IDM4LjA4IDEuNSAzNy42OSAxLjUgbCAtMS43NSAwIGMgLTAuNzEgMCAtMS41IDAuODMgLTEuNSAxLjUgbCAwIDMuMTYgQyAzMy4zOCA1LjEgMzEuOTYgNC40NyAzMC4zOCA0LjQ3IGwgLTMuMzQgMCBjIC0wLjc3IDAuMDIgLTEuNDcgMC43MiAtMS40NyAxLjUgbCAwIDAuMzEgYyAtMS4wMiAtMS4xMiAtMi40NiAtMS44MSAtNC4wOSAtMS44MSAtMS42MyAwIC0zLjA3IDAuNyAtNC4wOSAxLjgxIEwgMTcuMzggMyBjIC0wIC0wLjc5IC0wLjcxIC0xLjUgLTEuNSAtMS41IEwgMTQuNSAxLjUgQyAxMy41NSAxLjUgMTIuMjggMS44NyAxMS42NiAyLjk0IGwgLTEgMS42OSAtMSAtMS42OSBDIDkuMDMgMS44NyA3Ljc3IDEuNSA2LjgxIDEuNSBsIC0xLjQxIDAgQyA1LjM2IDEuNSA1LjMyIDEuNSA1LjI4IDEuNSB6IG0gMTYuMTkgNy43MiBjIDAuNTMgMCAwLjk0IDAuMzUgMC45NCAxLjI4IGwgMCAxLjI4IC0wLjk0IDAgYyAtMC41MiAwIC0wLjk0IC0wLjM4IC0wLjk0IC0xLjI4IC0wIC0wLjkgMC40MiAtMS4yOCAwLjk0IC0xLjI4IHogbSA4LjgxIDAgYyAwLjgzIDAgMS4xOCAwLjY4IDEuMTkgMS4yOCAwLjAxIDAuOTQgLTAuNjIgMS4yOCAtMS4xOSAxLjI4IHogbSA4LjcyIDAgYyAwLjcyIDAgMS4zNyAwLjYgMS4zNyAxLjI4IDAgMC43NyAtMC41MSAxLjI4IC0xLjM3IDEuMjggeiBtIDEwLjAzIDAgYyAwLjU4IDAgMS4wOSAwLjUgMS4wOSAxLjI4IDAgMC43OCAtMC41MSAxLjI4IC0xLjA5IDEuMjggLTAuNTggMCAtMS4xMiAtMC41IC0xLjEyIC0xLjI4IDAgLTAuNzggMC41NCAtMS4yOCAxLjEyIC0xLjI4IHoiIHRyYW5zZm9ybT0ibWF0cml4KDUuNzMzMzQxNCwwLDAsNS43MzMzNDE0LDIzNi45MzMwOCwzOTcuMTc0OTgpIiBzdHlsZT0iZm9udC1zaXplOm1lZGl1bTtmb250LXN0eWxlOm5vcm1hbDtmb250LXZhcmlhbnQ6bm9ybWFsO2ZvbnQtd2VpZ2h0Om5vcm1hbDtmb250LXN0cmV0Y2g6bm9ybWFsO3RleHQtaW5kZW50OjA7dGV4dC1hbGlnbjpzdGFydDt0ZXh0LWRlY29yYXRpb246bm9uZTtsaW5lLWhlaWdodDpub3JtYWw7bGV0dGVyLXNwYWNpbmc6bm9ybWFsO3dvcmQtc3BhY2luZzpub3JtYWw7dGV4dC10cmFuc2Zvcm06bm9uZTtkaXJlY3Rpb246bHRyO2Jsb2NrLXByb2dyZXNzaW9uOnRiO3dyaXRpbmctbW9kZTpsci10Yjt0ZXh0LWFuY2hvcjpzdGFydDtiYXNlbGluZS1zaGlmdDpiYXNlbGluZTtjb2xvcjojMDAwMDAwO2ZpbGw6IzAwMDAwMDtmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6bm9uemVybztzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MTcuMjAwMDIzNjU7bWFya2VyOm5vbmU7dmlzaWJpbGl0eTp2aXNpYmxlO2Rpc3BsYXk6aW5saW5lO292ZXJmbG93OnZpc2libGU7ZW5hYmxlLWJhY2tncm91bmQ6YWNjdW11bGF0ZTtmb250LWZhbWlseTpTYW5zOy1pbmtzY2FwZS1mb250LXNwZWNpZmljYXRpb246U2FucyIvPjwvZz48ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjE3NDQxODM2LDAsMCwwLjE3NDQxODM2LDIyMC41MjI4MiwyOS4yMjkzNDIpIiBzdHlsZT0iZmlsbDojZmZmZmZmIj48cGF0aCBkPSJtIDUuNDEgMyAwIDEyIDEuNzUgMCAwIC05LjkxIDMuNSA1Ljk0IDMuNDcgLTUuOTQgMCA5LjkxIDEuNzUgMCAwIC0xMiBMIDE0LjUgMyBDIDEzLjggMyAxMy4yNSAzLjE2IDEyLjk0IDMuNjkgTCAxMC42NiA3LjU5IDguMzggMy42OSBDIDguMDcgMy4xNiA3LjUxIDMgNi44MSAzIHogTSAzNiAzIGwgMCAxMi4wMyAzLjI1IDAgYyAyLjQ0IDAgNC4zOCAtMS45MSA0LjM4IC00LjUzIDAgLTIuNjIgLTEuOTMgLTQuNDcgLTQuMzggLTQuNDcgQyAzOC43IDYuMDMgMzguMzIgNiAzNy43NSA2IGwgMCAtMyB6IE0gMjEuNDcgNS45NyBjIC0yLjQ0IDAgLTQuMTkgMS45MSAtNC4xOSA0LjUzIDAgMi42MiAxLjc1IDQuNTMgNC4xOSA0LjUzIGwgNC4xOSAwIDAgLTQuNTMgYyAwIC0yLjYyIC0xLjc1IC00LjUzIC00LjE5IC00LjUzIHogbSAyNy41NiAwIGMgLTIuNDEgMCAtNC4zOCAyLjAzIC00LjM4IDQuNTMgMCAyLjUgMS45NyA0LjUzIDQuMzggNC41MyAyLjQxIDAgNC4zNCAtMi4wMyA0LjM0IC00LjUzIDAgLTIuNSAtMS45NCAtNC41MyAtNC4zNCAtNC41MyB6IG0gLTIyIDAuMDMgMCAxMiAxLjc1IDAgMCAtMi45NyBjIDAuNTcgMCAxLjA0IC0wIDEuNTkgMCAyLjQ0IDAgNC4zNCAtMS45MSA0LjM0IC00LjUzIDAgLTIuNjIgLTEuOSAtNC41IC00LjM0IC00LjUgeiBtIDI2LjE2IDAgMy4wMyA0LjM4IC0zLjE5IDQuNjIgMi4xMiAwIEwgNTcuMzEgMTEuOTEgNTkuNDQgMTUgNjEuNTkgMTUgNTguMzggMTAuMzggNjEuNDEgNiA1OS4yNSA2IDU3LjMxIDguODEgNTUuMzQgNiB6IE0gMjEuNDcgNy43MiBjIDEuNCAwIDIuNDQgMS4xOSAyLjQ0IDIuNzggbCAwIDIuNzggLTIuNDQgMCBjIC0xLjQgMCAtMi40NCAtMS4yMSAtMi40NCAtMi43OCAtMCAtMS41NyAxLjA0IC0yLjc4IDIuNDQgLTIuNzggeiBtIDI3LjU2IDAgYyAxLjQ0IDAgMi41OSAxLjI0IDIuNTkgMi43OCAwIDEuNTQgLTEuMTUgMi43OCAtMi41OSAyLjc4IC0xLjQ0IDAgLTIuNjIgLTEuMjQgLTIuNjIgLTIuNzggMCAtMS41NCAxLjE4IC0yLjc4IDIuNjIgLTIuNzggeiBtIC0yMC4yNSAwLjAzIDEuNTkgMCBjIDEuNTkgMCAyLjU5IDEuMjggMi41OSAyLjc1IDAgMS40NyAtMS4xMyAyLjc4IC0yLjU5IDIuNzggbCAtMS41OSAwIHogbSA4Ljk3IDAgMS41IDAgYyAxLjQ3IDAgMi42MiAxLjI4IDIuNjIgMi43NSAwIDEuNDcgLTEuMDQgMi43OCAtMi42MiAyLjc4IGwgLTEuNSAwIHoiIHRyYW5zZm9ybT0ibWF0cml4KDUuNzMzMzQxNCwwLDAsNS43MzMzNDE0LDIzNi45MzMwOCwzOTcuMTc0OTgpIiBzdHlsZT0iZmlsbDojZmZmZmZmO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO3N0cm9rZTpub25lIi8+PC9nPjwvZz48L3N2Zz4=');\n}\n\n/* Dark Theme\n------------------------------------------------------- */\n.leaflet-container.dark .leaflet-bar {\n  background-color:#404040;\n  border-color:#202020;\n  border-color:rgba(0,0,0,0.75);\n  }\n  .leaflet-container.dark .leaflet-bar a {\n    color:#404040;\n    border-color:rgba(0,0,0,0.5);\n    }\n  .leaflet-container.dark .leaflet-bar a:active,\n  .leaflet-container.dark .leaflet-bar a:hover {\n    background-color:#505050;\n    }\n\n.leaflet-container.dark .leaflet-control-attribution:after,\n.leaflet-container.dark .mapbox-info-toggle,\n.leaflet-container.dark .map-info-container,\n.leaflet-container.dark .leaflet-control-attribution {\n  background-color:rgba(0,0,0,0.5);\n  color:#f8f8f8;\n  }\n  .leaflet-container.dark .leaflet-control-attribution a,\n  .leaflet-container.dark .leaflet-control-attribution a:hover,\n  .leaflet-container.dark .map-info-container a,\n  .leaflet-container.dark .map-info-container a:hover {\n    color:#fff;\n    }\n\n.leaflet-container.dark .leaflet-control-attribution:hover:after {\n  background-color:#000;\n  }\n.leaflet-container.dark .leaflet-control-layers-list span {\n  color:#f8f8f8;\n  }\n.leaflet-container.dark .leaflet-control-layers-separator {\n  border-top-color:rgba(255,255,255,0.10);\n  }\n.leaflet-container.dark .leaflet-bar a.leaflet-disabled,\n.leaflet-container.dark .leaflet-control .mapbox-button.disabled {\n  background-color:#252525;\n  color:#404040;\n  }\n.leaflet-container.dark .leaflet-control-mapbox-geocoder > div {\n  border-color:#202020;\n  border-color:rgba(0,0,0,0.75);\n  }\n  .leaflet-container.dark .leaflet-control .leaflet-control-mapbox-geocoder-results a {\n    border-color:#ddd #202020;\n    border-color:rgba(0,0,0,0.10) rgba(0,0,0,0.75);\n    }\n  .leaflet-container.dark .leaflet-control .leaflet-control-mapbox-geocoder-results span {\n    border-color:#202020;\n    border-color:rgba(0,0,0,0.75);\n    }\n\n/* Larger Screens\n------------------------------------------------------- */\n@media only screen and (max-width:800px) {\n.mapbox-modal-body {\n  width:83.3333%;\n  margin-left:8.3333%;\n  }\n}\n\n/* Smaller Screens\n------------------------------------------------------- */\n@media only screen and (max-width:640px) {\n.mapbox-modal-body {\n  width:100%;\n  height:100%;\n  margin:0;\n  }\n}\n\n/* Print\n------------------------------------------------------- */\n@media print { .mapbox-improve-map { display:none; } }\n\n/* Browser Fixes\n------------------------------------------------------- */\n/* VML support for IE8 */\n.leaflet-vml-shape { width:1px; height:1px; }\n.lvml { behavior:url(#default#VML); display:inline-block; position:absolute; }\n/* Map is broken in FF if you have max-width: 100% on tiles */\n.leaflet-container img.leaflet-tile { max-width:none !important; }\n/* Markers are broken in FF/IE if you have max-width: 100% on marker images */\n.leaflet-container img.leaflet-marker-icon { max-width:none; }\n/* Stupid Android 2 doesn't understand \"max-width: none\" properly */\n.leaflet-container img.leaflet-image-layer { max-width:15000px !important; }\n/* workaround for https://bugzilla.mozilla.org/show_bug.cgi?id=888319 */\n.leaflet-overlay-pane svg { -moz-user-select:none; }\n/* Older IEs don't support the translateY property for display animation */\n.leaflet-oldie .mapbox-modal .mapbox-modal-content        { display:none; }\n.leaflet-oldie .mapbox-modal.active .mapbox-modal-content { display:block; }\n.map-tooltip { width:280px\\8; /* < IE9 */ }\n\n/* < IE8 */\n.leaflet-oldie .leaflet-control-zoom-in,\n.leaflet-oldie .leaflet-control-zoom-out,\n.leaflet-oldie .leaflet-popup-close-button,\n.leaflet-oldie .leaflet-control-layers-toggle,\n.leaflet-oldie .leaflet-container.dark .map-tooltip .close,\n.leaflet-oldie .map-tooltip .close,\n.leaflet-oldie .mapbox-icon {\n  background-image:url('data:image/png;base64,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');\n}\n.leaflet-oldie .mapbox-button-icon:before,\n.leaflet-oldie .leaflet-container.dark .leaflet-control-zoom-in,\n.leaflet-oldie .leaflet-container.dark .leaflet-control-zoom-out,\n.leaflet-oldie .leaflet-container.dark .leaflet-control-layers-toggle,\n.leaflet-oldie .leaflet-container.dark .mapbox-icon {\n  background-image:url('data:image/png;base64,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');\n}\n\n.leaflet-oldie .mapbox-logo-true {\n  background-image: none;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 8 */
+/* 9 */
 /***/ function(module, exports) {
 
 	/*
@@ -9595,19 +9601,19 @@
 
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAIICAMAAAAWgT0mAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABgUExURQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPpP6I0AAAAfdFJOUwDYoAgNNvSA4/u3mcTrUb5VQCByjBcoRwJMrs9nfF29SYbmAAAFH0lEQVR42u2c55qrIBCGY8HeYkliC/d/l0cRlRjFgbO7z5b5fiV5fAUGhHEYcrmgUKhfpIDSQBmig/44FNAXBeAyRH0epFU97Nz/fzRQKBQKhUKhvrnv/0t9WBQKhUKhUKhvLdfd/yxlKHX3Pp9B85XCRzClwCwXKzH8ckVmolQZTrmXz4d0qqdjCB2T63Su1jDSGrBajwYKhUKhUEoibmo4jpG6BIwkxhqfMhIQkkevYa0oP2eu8TaAFl9PGZ++yT+h8pjuKJbXcG3P/XK5r+2S2u01FLh+k9nQOIIMSZ8K7XipHqXkzGHb07EPkh5DKaRJ2+odN8qhR4agzsdCxjFkgAyxgVKQyTeQC+rcDUQ+dhjpDVitR0PvIdR63PUmFr0pTG+y1JyWUSgUCgXW46FKVM8mjptnpeBg9xFfpfyoh8zmdhJ6r0uNFya2jLgVqb+3fPppcTuEqEQfC+VF4OwBTlBI11CrfjdEbQEsuNpDaoFdy5/ZevanyvtuTax7acis5wTdps15x6xzZnKjvPICrWtpwPvJabo87xoH+wn76Rv3EwqFQqG+SnakmJm4pWSXua+RrJWCMRtKAr3HKZ9qEGMyHwaJ3xdGAWKM/4xUoInJmDWg0MwwGwKhlRkpGCQyAwWC7itztrm9QmPjOXO2jS5Uz4543U7HuHiBfb+oQ7Lffhqk9HKnDbmqew3HFOZIoFAo1N8Q6RvPa3qVrTHbnBcLExyOIEK0xAMWZo9MWFdVHY4UrKyhbh7fgbwOvAmq3HD7ZdfyKt/8XdQPdVu/DTXsAVBDab1+qyltANDQDCFGXg0N1IFineq1OoYIP8vk2841NIYR1MMhno5ftD4ahoo3NT6EcRsS7pJp5RR/f0rZtXS13FFM80WhUChQkEA6x2olMn7dbvj7pW2fXJNQDSpY5kKmBHG/UgnybQ2I+TjPVs0QzKs0FK1nir/9BmjjDitDlk5JNx2o/tP99Fsg9xgCT7EChG4sCoVC/VjZJLudpsVaL4FNqxz3dOPnxXqaknyyOhIoq53PUTi0k5RUUoEq10WnzLJjKKXUu88Framxvp9aspLGtaxaQn3L+R1Zilw93ThIHtxH5pJmyVlzYoPTNqYASbOKM2Ls5vhK+yqgu5mC8mBsv/9GIw/72t4u1J0EEfeO/fhn2dW5+d6q06C5G72V5Z/mMpL3vGpApDjbUi0oy7J5aZUDTLTMhGbFoIj04yoeZfLOyyGu2Yp180vIvsYtFMzgmNC80aorm9aJjQCWm4pCoVCor9CDlNO51JJAj05ZhbhAFaA5PdmeUwAcnHU18sLMPZfFBJXjt2FHKtKVLaAsfpC6XZfnzjk7SG0xG/j9aOfqnpHRcDk7Zu4d27Bgdx33wztvWakn16w47NOYt7pa/nvUsPnZ6viol5mDPKY3NOPivhrOlJ1DL3k9MpZPcY9np5el7JbHvjzbdh/s/Lywvfrp+012tt6YQtcPZ3Impz4b8IcvOfLuTJ7xjZ9VT+cz7Lbs/wLiqQ3VdFvLmb1/IoMifmePxdevS6Q9k53IN/kwG6xlz066ObvrqcyXj8f6jbdt5iY9PJnJp0P77a1mzm4zF9TJ/2Sg5e9YrJtIS33zMY/iw2G0ZGvT6eQSGXvLnsZhcTwLeetrDHdF8+nlSPJoXBJ/fo2xfaMgpJj9benkUsx1SVSmlpIP0lDpFWV8jb4trYMGVAdT26sdYZPlYMNC+FMI4LTM3vN6M4qVFgAU6iv0D5QnfMaZoP9/AAAAAElFTkSuQmCC"
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAIICAMAAAAWgT0mAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABgUExURQAAAP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////3wlHLoAAAAfdFJOUwDYoAgNNvSA4/u3mcTrUb5VQCByjBcoRwJMrs9nfF29SYbmAAAFH0lEQVR42u2c55qrIBCGY8HeYkliC/d/l0cRlRjFgbO7z5b5fiV5fAUGhHEYcrmgUKhfpIDSQBmig/44FNAXBeAyRH0epFU97Nz/fzRQKBQKhUKhvrnv/0t9WBQKhUKhUKhvLdfd/yxlKHX3Pp9B85XCRzClwCwXKzH8ckVmolQZTrmXz4d0qqdjCB2T63Su1jDSGrBajwYKhUKhUEoibmo4jpG6BIwkxhqfMhIQkkevYa0oP2eu8TaAFl9PGZ++yT+h8pjuKJbXcG3P/XK5r+2S2u01FLh+k9nQOIIMSZ8K7XipHqXkzGHb07EPkh5DKaRJ2+odN8qhR4agzsdCxjFkgAyxgVKQyTeQC+rcDUQ+dhjpDVitR0PvIdR63PUmFr0pTG+y1JyWUSgUCgXW46FKVM8mjptnpeBg9xFfpfyoh8zmdhJ6r0uNFya2jLgVqb+3fPppcTuEqEQfC+VF4OwBTlBI11CrfjdEbQEsuNpDaoFdy5/ZevanyvtuTax7acis5wTdps15x6xzZnKjvPICrWtpwPvJabo87xoH+wn76Rv3EwqFQqG+SnakmJm4pWSXua+RrJWCMRtKAr3HKZ9qEGMyHwaJ3xdGAWKM/4xUoInJmDWg0MwwGwKhlRkpGCQyAwWC7itztrm9QmPjOXO2jS5Uz4543U7HuHiBfb+oQ7Lffhqk9HKnDbmqew3HFOZIoFAo1N8Q6RvPa3qVrTHbnBcLExyOIEK0xAMWZo9MWFdVHY4UrKyhbh7fgbwOvAmq3HD7ZdfyKt/8XdQPdVu/DTXsAVBDab1+qyltANDQDCFGXg0N1IFineq1OoYIP8vk2841NIYR1MMhno5ftD4ahoo3NT6EcRsS7pJp5RR/f0rZtXS13FFM80WhUChQkEA6x2olMn7dbvj7pW2fXJNQDSpY5kKmBHG/UgnybQ2I+TjPVs0QzKs0FK1nir/9BmjjDitDlk5JNx2o/tP99Fsg9xgCT7EChG4sCoVC/VjZJLudpsVaL4FNqxz3dOPnxXqaknyyOhIoq53PUTi0k5RUUoEq10WnzLJjKKXUu88Framxvp9aspLGtaxaQn3L+R1Zilw93ThIHtxH5pJmyVlzYoPTNqYASbOKM2Ls5vhK+yqgu5mC8mBsv/9GIw/72t4u1J0EEfeO/fhn2dW5+d6q06C5G72V5Z/mMpL3vGpApDjbUi0oy7J5aZUDTLTMhGbFoIj04yoeZfLOyyGu2Yp180vIvsYtFMzgmNC80aorm9aJjQCWm4pCoVCor9CDlNO51JJAj05ZhbhAFaA5PdmeUwAcnHU18sLMPZfFBJXjt2FHKtKVLaAsfpC6XZfnzjk7SG0xG/j9aOfqnpHRcDk7Zu4d27Bgdx33wztvWakn16w47NOYt7pa/nvUsPnZ6viol5mDPKY3NOPivhrOlJ1DL3k9MpZPcY9np5el7JbHvjzbdh/s/Lywvfrp+012tt6YQtcPZ3Impz4b8IcvOfLuTJ7xjZ9VT+cz7Lbs/wLiqQ3VdFvLmb1/IoMifmePxdevS6Q9k53IN/kwG6xlz066ObvrqcyXj8f6jbdt5iY9PJnJp0P77a1mzm4zF9TJ/2Sg5e9YrJtIS33zMY/iw2G0ZGvT6eQSGXvLnsZhcTwLeetrDHdF8+nlSPJoXBJ/fo2xfaMgpJj9benkUsx1SVSmlpIP0lDpFWV8jb4trYMGVAdT26sdYZPlYMNC+FMI4LTM3vN6M4qVFgAU6iv0D5QnfMaZoP9/AAAAAElFTkSuQmCC"
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -9861,7 +9867,47 @@
 
 
 /***/ },
-/* 12 */
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(14);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(12)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-6613c1da&file=map.vue!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./map.vue", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-6613c1da&file=map.vue!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./map.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(9)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".map {\n  }\n.map__container {\n    position: fixed;\n    top: 56px;\n    left: 0;\n    right: 0\n}", ""]);
+
+	// exports
+
+
+/***/ },
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9870,27 +9916,45 @@
 	  value: true
 	});
 
-	var _mapbox = __webpack_require__(13);
+	var _defineProperty2 = __webpack_require__(136);
+
+	var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+	var _assign = __webpack_require__(140);
+
+	var _assign2 = _interopRequireDefault(_assign);
+
+	var _mapbox = __webpack_require__(16);
 
 	var _mapbox2 = _interopRequireDefault(_mapbox);
 
-	var _mapbox3 = __webpack_require__(82);
+	var _mapbox3 = __webpack_require__(85);
 
-	var _mapbox4 = __webpack_require__(83);
+	var _mapbox4 = __webpack_require__(86);
 
 	var _mapbox5 = _interopRequireDefault(_mapbox4);
 
-	var _maker_store = __webpack_require__(128);
+	var _maker_store = __webpack_require__(116);
+
+	var _vue = __webpack_require__(4);
+
+	var _vue2 = _interopRequireDefault(_vue);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = {
+	  data: {
+	    markers: {}
+	  },
+	  created: function created() {
+	    this.markers = {};
+	  },
 	  attached: function attached() {
 	    var _this = this;
 
 	    this.client = new _mapbox2.default(_mapbox3.MAPBOX_API_KEY);
 	    L.mapbox.accessToken = _mapbox3.MAPBOX_API_KEY;
-	    this.map = L.mapbox.map(this.$el.querySelector('.map'), 'russellvea2.nl7ij7em');
+	    this.map = L.mapbox.map(this.$el, 'russellvea2.nl7ij7em');
 	    this.map.setZoom(5);
 	    _maker_store.MAKER_STORE.on('add', function (val, key) {
 	      if (key[0] === 'makerspaces') {
@@ -9899,29 +9963,38 @@
 	          var lat = _space$address.lat;
 	          var lng = _space$address.lng;
 
-	          new L.marker([lat, lng]).addTo(_this.map);
+	          var marker = new L.marker([lat, lng]);
+	          marker.addTo(_this.map);
+	          (0, _assign2.default)(_this.markers, (0, _defineProperty3.default)({}, space.ID, marker));
 	        });
+	      }
+	    });
+	    _maker_store.MAKER_STORE.on('change', function (val, old, key) {
+	      if (val.ID) {
+	        var marker = _this.markers[val.ID];
+	        _this.map.panTo(marker._latlng);
+	        _this.map.setZoom(10);
 	      }
 	    });
 	  }
 	};
 
 /***/ },
-/* 13 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var makeClient = __webpack_require__(14);
-	var xtend = __webpack_require__(69);
-	var MapboxGeocoder = __webpack_require__(70);
-	var MapboxSurface = __webpack_require__(71);
-	var MapboxDirections = __webpack_require__(74);
-	var MapboxUploads = __webpack_require__(75);
-	var MapboxMatching = __webpack_require__(76);
-	var MapboxDatasets = __webpack_require__(78);
-	var MapboxDistance = __webpack_require__(80);
-	var MapboxTilestats = __webpack_require__(81);
+	var makeClient = __webpack_require__(17);
+	var xtend = __webpack_require__(72);
+	var MapboxGeocoder = __webpack_require__(73);
+	var MapboxSurface = __webpack_require__(74);
+	var MapboxDirections = __webpack_require__(77);
+	var MapboxUploads = __webpack_require__(78);
+	var MapboxMatching = __webpack_require__(79);
+	var MapboxDatasets = __webpack_require__(81);
+	var MapboxDistance = __webpack_require__(83);
+	var MapboxTilestats = __webpack_require__(84);
 
 	/**
 	 * The JavaScript API to Mapbox services
@@ -9960,15 +10033,15 @@
 
 
 /***/ },
-/* 14 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var assert = __webpack_require__(15);
-	var constants = __webpack_require__(19);
-	var client = __webpack_require__(20);
-	var getUser = __webpack_require__(67);
+	var assert = __webpack_require__(18);
+	var constants = __webpack_require__(22);
+	var client = __webpack_require__(23);
+	var getUser = __webpack_require__(70);
 
 	/**
 	 * Services all have the same constructor pattern: you initialize them
@@ -10022,7 +10095,7 @@
 
 
 /***/ },
-/* 15 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// http://wiki.commonjs.org/wiki/Unit_Testing/1.0
@@ -10052,7 +10125,7 @@
 	// when used in node, this will actually load the util module we depend on
 	// versus loading the builtin util module as happens otherwise
 	// this is a bug in node module loading as far as I am concerned
-	var util = __webpack_require__(16);
+	var util = __webpack_require__(19);
 
 	var pSlice = Array.prototype.slice;
 	var hasOwn = Object.prototype.hasOwnProperty;
@@ -10387,7 +10460,7 @@
 
 
 /***/ },
-/* 16 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global, process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -10915,7 +10988,7 @@
 	}
 	exports.isPrimitive = isPrimitive;
 
-	exports.isBuffer = __webpack_require__(17);
+	exports.isBuffer = __webpack_require__(20);
 
 	function objectToString(o) {
 	  return Object.prototype.toString.call(o);
@@ -10959,7 +11032,7 @@
 	 *     prototype.
 	 * @param {function} superCtor Constructor function to inherit prototype from.
 	 */
-	exports.inherits = __webpack_require__(18);
+	exports.inherits = __webpack_require__(21);
 
 	exports._extend = function(origin, add) {
 	  // Don't do anything if add isn't an object
@@ -10977,10 +11050,10 @@
 	  return Object.prototype.hasOwnProperty.call(obj, prop);
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(4)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(5)))
 
 /***/ },
-/* 17 */
+/* 20 */
 /***/ function(module, exports) {
 
 	module.exports = function isBuffer(arg) {
@@ -10991,7 +11064,7 @@
 	}
 
 /***/ },
-/* 18 */
+/* 21 */
 /***/ function(module, exports) {
 
 	if (typeof Object.create === 'function') {
@@ -11020,7 +11093,7 @@
 
 
 /***/ },
-/* 19 */
+/* 22 */
 /***/ function(module, exports) {
 
 	// We keep all of the constants that declare endpoints in one
@@ -11047,30 +11120,30 @@
 
 
 /***/ },
-/* 20 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var rest = __webpack_require__(21);
-	var callbackify = __webpack_require__(49);
+	var rest = __webpack_require__(24);
+	var callbackify = __webpack_require__(52);
 
 	// rest.js client with MIME support
 	module.exports = function(config) {
 	  return rest
-	    .wrap(__webpack_require__(51))
-	    .wrap(__webpack_require__(52), { prefix: config.endpoint })
-	    .wrap(__webpack_require__(53), { mime: 'application/json' })
-	    .wrap(__webpack_require__(66), {
+	    .wrap(__webpack_require__(54))
+	    .wrap(__webpack_require__(55), { prefix: config.endpoint })
+	    .wrap(__webpack_require__(56), { mime: 'application/json' })
+	    .wrap(__webpack_require__(69), {
 	      params: { access_token: config.accessToken }
 	    })
-	    .wrap(__webpack_require__(57))
+	    .wrap(__webpack_require__(60))
 	    .wrap(callbackify);
 	};
 
 
 /***/ },
-/* 21 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -11085,8 +11158,8 @@
 
 		!(__WEBPACK_AMD_DEFINE_RESULT__ = function (require) {
 
-			var rest = __webpack_require__(22),
-			    browser = __webpack_require__(25);
+			var rest = __webpack_require__(25),
+			    browser = __webpack_require__(28);
 
 			rest.setPlatformDefaultClient(browser);
 
@@ -11095,13 +11168,13 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24)
+		__webpack_require__(27)
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 22 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -11176,7 +11249,7 @@
 
 			var client, target, platformDefault;
 
-			client = __webpack_require__(23);
+			client = __webpack_require__(26);
 
 			/**
 			 * Make a request with the default client
@@ -11225,13 +11298,13 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24)
+		__webpack_require__(27)
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 23 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -11295,20 +11368,20 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24)
+		__webpack_require__(27)
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 24 */
+/* 27 */
 /***/ function(module, exports) {
 
 	module.exports = function() { throw new Error("define cannot be used indirect"); };
 
 
 /***/ },
-/* 25 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -11325,11 +11398,11 @@
 
 			var when, UrlBuilder, normalizeHeaderName, responsePromise, client, headerSplitRE;
 
-			when = __webpack_require__(26);
-			UrlBuilder = __webpack_require__(45);
-			normalizeHeaderName = __webpack_require__(47);
-			responsePromise = __webpack_require__(48);
-			client = __webpack_require__(23);
+			when = __webpack_require__(29);
+			UrlBuilder = __webpack_require__(48);
+			normalizeHeaderName = __webpack_require__(50);
+			responsePromise = __webpack_require__(51);
+			client = __webpack_require__(26);
 
 			// according to the spec, the line break is '\r\n', but doesn't hold true in practice
 			headerSplitRE = /[\r|\n]+/;
@@ -11481,14 +11554,14 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24),
+		__webpack_require__(27),
 		typeof window !== 'undefined' ? window : void 0
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 26 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/** @license MIT License (c) copyright 2010-2014 original author or authors */
@@ -11502,24 +11575,24 @@
 	(function(define) { 'use strict';
 	!(__WEBPACK_AMD_DEFINE_RESULT__ = function (require) {
 
-		var timed = __webpack_require__(27);
-		var array = __webpack_require__(31);
-		var flow = __webpack_require__(34);
-		var fold = __webpack_require__(35);
-		var inspect = __webpack_require__(36);
-		var generate = __webpack_require__(37);
-		var progress = __webpack_require__(38);
-		var withThis = __webpack_require__(39);
-		var unhandledRejection = __webpack_require__(40);
-		var TimeoutError = __webpack_require__(30);
+		var timed = __webpack_require__(30);
+		var array = __webpack_require__(34);
+		var flow = __webpack_require__(37);
+		var fold = __webpack_require__(38);
+		var inspect = __webpack_require__(39);
+		var generate = __webpack_require__(40);
+		var progress = __webpack_require__(41);
+		var withThis = __webpack_require__(42);
+		var unhandledRejection = __webpack_require__(43);
+		var TimeoutError = __webpack_require__(33);
 
 		var Promise = [array, flow, fold, generate, progress,
 			inspect, withThis, timed, unhandledRejection]
 			.reduce(function(Promise, feature) {
 				return feature(Promise);
-			}, __webpack_require__(42));
+			}, __webpack_require__(45));
 
-		var apply = __webpack_require__(33)(Promise);
+		var apply = __webpack_require__(36)(Promise);
 
 		// Public API
 
@@ -11718,11 +11791,11 @@
 
 		return when;
 	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	})(__webpack_require__(24));
+	})(__webpack_require__(27));
 
 
 /***/ },
-/* 27 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/** @license MIT License (c) copyright 2010-2014 original author or authors */
@@ -11732,8 +11805,8 @@
 	(function(define) { 'use strict';
 	!(__WEBPACK_AMD_DEFINE_RESULT__ = function(require) {
 
-		var env = __webpack_require__(28);
-		var TimeoutError = __webpack_require__(30);
+		var env = __webpack_require__(31);
+		var TimeoutError = __webpack_require__(33);
 
 		function setTimeout(f, ms, x, y) {
 			return env.setTimer(function() {
@@ -11802,14 +11875,14 @@
 		};
 
 	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	}(__webpack_require__(24)));
+	}(__webpack_require__(27)));
 
 
 /***/ },
-/* 28 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_RESULT__;var require;/* WEBPACK VAR INJECTION */(function(process) {/** @license MIT License (c) copyright 2010-2014 original author or authors */
+	var require;var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(process) {/** @license MIT License (c) copyright 2010-2014 original author or authors */
 	/** @author Brian Cavalier */
 	/** @author John Hann */
 
@@ -11840,7 +11913,7 @@
 
 		} else if (!capturedSetTimeout) { // vert.x
 			var vertxRequire = require;
-			var vertx = __webpack_require__(29);
+			var vertx = __webpack_require__(32);
 			setTimer = function (f, ms) { return vertx.setTimer(ms, f); };
 			clearTimer = vertx.cancelTimer;
 			asap = vertx.runOnLoop || vertx.runOnContext;
@@ -11881,18 +11954,18 @@
 			};
 		}
 	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	}(__webpack_require__(24)));
+	}(__webpack_require__(27)));
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 29 */
+/* 32 */
 /***/ function(module, exports) {
 
 	/* (ignored) */
 
 /***/ },
-/* 30 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/** @license MIT License (c) copyright 2010-2014 original author or authors */
@@ -11921,10 +11994,10 @@
 
 		return TimeoutError;
 	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	}(__webpack_require__(24)));
+	}(__webpack_require__(27)));
 
 /***/ },
-/* 31 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/** @license MIT License (c) copyright 2010-2014 original author or authors */
@@ -11934,8 +12007,8 @@
 	(function(define) { 'use strict';
 	!(__WEBPACK_AMD_DEFINE_RESULT__ = function(require) {
 
-		var state = __webpack_require__(32);
-		var applier = __webpack_require__(33);
+		var state = __webpack_require__(35);
+		var applier = __webpack_require__(36);
 
 		return function array(Promise) {
 
@@ -12215,11 +12288,11 @@
 		};
 
 	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	}(__webpack_require__(24)));
+	}(__webpack_require__(27)));
 
 
 /***/ },
-/* 32 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/** @license MIT License (c) copyright 2010-2014 original author or authors */
@@ -12256,11 +12329,11 @@
 		}
 
 	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	}(__webpack_require__(24)));
+	}(__webpack_require__(27)));
 
 
 /***/ },
-/* 33 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/** @license MIT License (c) copyright 2010-2014 original author or authors */
@@ -12315,13 +12388,13 @@
 		}
 
 	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	}(__webpack_require__(24)));
+	}(__webpack_require__(27)));
 
 
 
 
 /***/ },
-/* 34 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/** @license MIT License (c) copyright 2010-2014 original author or authors */
@@ -12483,11 +12556,11 @@
 		}
 
 	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	}(__webpack_require__(24)));
+	}(__webpack_require__(27)));
 
 
 /***/ },
-/* 35 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/** @license MIT License (c) copyright 2010-2014 original author or authors */
@@ -12516,11 +12589,11 @@
 		};
 
 	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	}(__webpack_require__(24)));
+	}(__webpack_require__(27)));
 
 
 /***/ },
-/* 36 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/** @license MIT License (c) copyright 2010-2014 original author or authors */
@@ -12530,7 +12603,7 @@
 	(function(define) { 'use strict';
 	!(__WEBPACK_AMD_DEFINE_RESULT__ = function(require) {
 
-		var inspect = __webpack_require__(32).inspect;
+		var inspect = __webpack_require__(35).inspect;
 
 		return function inspection(Promise) {
 
@@ -12542,11 +12615,11 @@
 		};
 
 	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	}(__webpack_require__(24)));
+	}(__webpack_require__(27)));
 
 
 /***/ },
-/* 37 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/** @license MIT License (c) copyright 2010-2014 original author or authors */
@@ -12613,11 +12686,11 @@
 		};
 
 	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	}(__webpack_require__(24)));
+	}(__webpack_require__(27)));
 
 
 /***/ },
-/* 38 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/** @license MIT License (c) copyright 2010-2014 original author or authors */
@@ -12643,11 +12716,11 @@
 		};
 
 	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	}(__webpack_require__(24)));
+	}(__webpack_require__(27)));
 
 
 /***/ },
-/* 39 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/** @license MIT License (c) copyright 2010-2014 original author or authors */
@@ -12686,12 +12759,12 @@
 		};
 
 	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	}(__webpack_require__(24)));
+	}(__webpack_require__(27)));
 
 
 
 /***/ },
-/* 40 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/** @license MIT License (c) copyright 2010-2014 original author or authors */
@@ -12701,8 +12774,8 @@
 	(function(define) { 'use strict';
 	!(__WEBPACK_AMD_DEFINE_RESULT__ = function(require) {
 
-		var setTimer = __webpack_require__(28).setTimer;
-		var format = __webpack_require__(41);
+		var setTimer = __webpack_require__(31).setTimer;
+		var format = __webpack_require__(44);
 
 		return function unhandledRejection(Promise) {
 
@@ -12779,11 +12852,11 @@
 		function noop() {}
 
 	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	}(__webpack_require__(24)));
+	}(__webpack_require__(27)));
 
 
 /***/ },
-/* 41 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/** @license MIT License (c) copyright 2010-2014 original author or authors */
@@ -12841,11 +12914,11 @@
 		}
 
 	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	}(__webpack_require__(24)));
+	}(__webpack_require__(27)));
 
 
 /***/ },
-/* 42 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/** @license MIT License (c) copyright 2010-2014 original author or authors */
@@ -12855,20 +12928,20 @@
 	(function(define) { 'use strict';
 	!(__WEBPACK_AMD_DEFINE_RESULT__ = function (require) {
 
-		var makePromise = __webpack_require__(43);
-		var Scheduler = __webpack_require__(44);
-		var async = __webpack_require__(28).asap;
+		var makePromise = __webpack_require__(46);
+		var Scheduler = __webpack_require__(47);
+		var async = __webpack_require__(31).asap;
 
 		return makePromise({
 			scheduler: new Scheduler(async)
 		});
 
 	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	})(__webpack_require__(24));
+	})(__webpack_require__(27));
 
 
 /***/ },
-/* 43 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(process) {/** @license MIT License (c) copyright 2010-2014 original author or authors */
@@ -13797,12 +13870,12 @@
 			return Promise;
 		};
 	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	}(__webpack_require__(24)));
+	}(__webpack_require__(27)));
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 44 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/** @license MIT License (c) copyright 2010-2014 original author or authors */
@@ -13884,11 +13957,11 @@
 		return Scheduler;
 
 	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	}(__webpack_require__(24)));
+	}(__webpack_require__(27)));
 
 
 /***/ },
-/* 45 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -13907,7 +13980,7 @@
 
 			var mixin, origin, urlRE, absoluteUrlRE, fullyQualifiedUrlRE;
 
-			mixin = __webpack_require__(46);
+			mixin = __webpack_require__(49);
 
 			urlRE = /([a-z][a-z0-9\+\-\.]*:)\/\/([^@]+@)?(([^:\/]+)(:([0-9]+))?)?(\/[^?#]*)?(\?[^#]*)?(#\S*)?/i;
 			absoluteUrlRE = /^([a-z][a-z0-9\-\+\.]*:\/\/|\/)/i;
@@ -14116,14 +14189,14 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24),
+		__webpack_require__(27),
 		typeof window !== 'undefined' ? window.location : void 0
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 46 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -14171,13 +14244,13 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24)
+		__webpack_require__(27)
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 47 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -14215,13 +14288,13 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24)
+		__webpack_require__(27)
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 48 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -14236,8 +14309,8 @@
 
 		!(__WEBPACK_AMD_DEFINE_RESULT__ = function (require) {
 
-			var when = __webpack_require__(26),
-				normalizeHeaderName = __webpack_require__(47);
+			var when = __webpack_require__(29),
+				normalizeHeaderName = __webpack_require__(50);
 
 			function property(promise, name) {
 				return promise.then(
@@ -14361,18 +14434,18 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24)
+		__webpack_require__(27)
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 49 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var interceptor = __webpack_require__(50);
+	var interceptor = __webpack_require__(53);
 
 	var callbackify = interceptor({
 	  success: function (response) {
@@ -14403,7 +14476,7 @@
 
 
 /***/ },
-/* 50 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -14420,11 +14493,11 @@
 
 			var defaultClient, mixin, responsePromise, client, when;
 
-			defaultClient = __webpack_require__(22);
-			mixin = __webpack_require__(46);
-			responsePromise = __webpack_require__(48);
-			client = __webpack_require__(23);
-			when = __webpack_require__(26);
+			defaultClient = __webpack_require__(25);
+			mixin = __webpack_require__(49);
+			responsePromise = __webpack_require__(51);
+			client = __webpack_require__(26);
+			when = __webpack_require__(29);
 
 			/**
 			 * Interceptors have the ability to intercept the request and/org response
@@ -14568,13 +14641,13 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24)
+		__webpack_require__(27)
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 51 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -14591,8 +14664,8 @@
 
 			var interceptor, when;
 
-			interceptor = __webpack_require__(50);
-			when = __webpack_require__(26);
+			interceptor = __webpack_require__(53);
+			when = __webpack_require__(29);
 
 			/**
 			 * Rejects the response promise based on the status code.
@@ -14621,13 +14694,13 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24)
+		__webpack_require__(27)
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 52 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -14644,8 +14717,8 @@
 
 			var interceptor, UrlBuilder;
 
-			interceptor = __webpack_require__(50);
-			UrlBuilder = __webpack_require__(45);
+			interceptor = __webpack_require__(53);
+			UrlBuilder = __webpack_require__(48);
 
 			function startsWith(str, prefix) {
 				return str.indexOf(prefix) === 0;
@@ -14686,13 +14759,13 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24)
+		__webpack_require__(27)
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 53 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -14709,10 +14782,10 @@
 
 			var interceptor, mime, registry, noopConverter, when;
 
-			interceptor = __webpack_require__(50);
-			mime = __webpack_require__(54);
-			registry = __webpack_require__(55);
-			when = __webpack_require__(26);
+			interceptor = __webpack_require__(53);
+			mime = __webpack_require__(57);
+			registry = __webpack_require__(58);
+			when = __webpack_require__(29);
 
 			noopConverter = {
 				read: function (obj) { return obj; },
@@ -14802,13 +14875,13 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24)
+		__webpack_require__(27)
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 54 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -14861,13 +14934,13 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24)
+		__webpack_require__(27)
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 55 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -14884,8 +14957,8 @@
 
 			var mime, when, registry;
 
-			mime = __webpack_require__(54);
-			when = __webpack_require__(26);
+			mime = __webpack_require__(57);
+			when = __webpack_require__(29);
 
 			function Registry(mimes) {
 
@@ -14969,11 +15042,11 @@
 			registry = new Registry({});
 
 			// include provided serializers
-			registry.register('application/hal', __webpack_require__(56));
-			registry.register('application/json', __webpack_require__(62));
-			registry.register('application/x-www-form-urlencoded', __webpack_require__(63));
-			registry.register('multipart/form-data', __webpack_require__(64));
-			registry.register('text/plain', __webpack_require__(65));
+			registry.register('application/hal', __webpack_require__(59));
+			registry.register('application/json', __webpack_require__(65));
+			registry.register('application/x-www-form-urlencoded', __webpack_require__(66));
+			registry.register('multipart/form-data', __webpack_require__(67));
+			registry.register('text/plain', __webpack_require__(68));
 
 			registry.register('+json', registry.delegate('application/json'));
 
@@ -14982,13 +15055,13 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24)
+		__webpack_require__(27)
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 56 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -15005,12 +15078,12 @@
 
 			var pathPrefix, template, find, lazyPromise, responsePromise, when;
 
-			pathPrefix = __webpack_require__(52);
-			template = __webpack_require__(57);
-			find = __webpack_require__(60);
-			lazyPromise = __webpack_require__(61);
-			responsePromise = __webpack_require__(48);
-			when = __webpack_require__(26);
+			pathPrefix = __webpack_require__(55);
+			template = __webpack_require__(60);
+			find = __webpack_require__(63);
+			lazyPromise = __webpack_require__(64);
+			responsePromise = __webpack_require__(51);
+			when = __webpack_require__(29);
 
 			function defineProperty(obj, name, value) {
 				Object.defineProperty(obj, name, {
@@ -15127,13 +15200,13 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24)
+		__webpack_require__(27)
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 57 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -15150,9 +15223,9 @@
 
 			var interceptor, uriTemplate, mixin;
 
-			interceptor = __webpack_require__(50);
-			uriTemplate = __webpack_require__(58);
-			mixin = __webpack_require__(46);
+			interceptor = __webpack_require__(53);
+			uriTemplate = __webpack_require__(61);
+			mixin = __webpack_require__(49);
 
 			/**
 			 * Applies request params to the path as a URI Template
@@ -15187,13 +15260,13 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24)
+		__webpack_require__(27)
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 58 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -15212,7 +15285,7 @@
 
 			var uriEncoder, operations, prefixRE;
 
-			uriEncoder = __webpack_require__(59);
+			uriEncoder = __webpack_require__(62);
 
 			prefixRE = /^([^:]*):([0-9]+)$/;
 			operations = {
@@ -15365,13 +15438,13 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24)
+		__webpack_require__(27)
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 59 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -15550,13 +15623,13 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24)
+		__webpack_require__(27)
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 60 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -15597,13 +15670,13 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24)
+		__webpack_require__(27)
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 61 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -15620,7 +15693,7 @@
 
 			var when;
 
-			when = __webpack_require__(26);
+			when = __webpack_require__(29);
 
 			/**
 			 * Create a promise whose work is started only when a handler is registered.
@@ -15658,13 +15731,13 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24)
+		__webpack_require__(27)
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 62 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -15711,13 +15784,13 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24)
+		__webpack_require__(27)
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 63 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -15807,13 +15880,13 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24)
+		__webpack_require__(27)
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 64 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -15886,13 +15959,13 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24)
+		__webpack_require__(27)
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 65 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -15921,13 +15994,13 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24)
+		__webpack_require__(27)
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 66 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -15944,8 +16017,8 @@
 
 			var interceptor, mixinUtil, defaulter;
 
-			interceptor = __webpack_require__(50);
-			mixinUtil = __webpack_require__(46);
+			interceptor = __webpack_require__(53);
+			mixinUtil = __webpack_require__(49);
 
 			defaulter = (function () {
 
@@ -16006,18 +16079,18 @@
 		}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 	}(
-		__webpack_require__(24)
+		__webpack_require__(27)
 		// Boilerplate for AMD and Node
 	));
 
 
 /***/ },
-/* 67 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
-	var atob = __webpack_require__(68);
+	var atob = __webpack_require__(71);
 
 	/**
 	 * Access tokens actually are data, and using them we can derive
@@ -16053,10 +16126,10 @@
 
 	module.exports = getUser;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ },
-/* 68 */
+/* 71 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -16067,7 +16140,7 @@
 
 
 /***/ },
-/* 69 */
+/* 72 */
 /***/ function(module, exports) {
 
 	module.exports = extend
@@ -16088,14 +16161,14 @@
 
 
 /***/ },
-/* 70 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var assert = __webpack_require__(15),
-	  makeService = __webpack_require__(14),
-	  constants = __webpack_require__(19);
+	var assert = __webpack_require__(18),
+	  makeService = __webpack_require__(17),
+	  constants = __webpack_require__(22);
 
 	var MapboxGeocoder = makeService('MapboxGeocoder');
 
@@ -16247,15 +16320,15 @@
 
 
 /***/ },
-/* 71 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var assert = __webpack_require__(15),
-	  formatPoints = __webpack_require__(72),
-	  makeService = __webpack_require__(14),
-	  constants = __webpack_require__(19);
+	var assert = __webpack_require__(18),
+	  formatPoints = __webpack_require__(75),
+	  makeService = __webpack_require__(17),
+	  constants = __webpack_require__(22);
 
 	var MapboxSurface = makeService('MapboxSurface');
 
@@ -16349,12 +16422,12 @@
 
 
 /***/ },
-/* 72 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var assertLocation = __webpack_require__(73);
+	var assertLocation = __webpack_require__(76);
 
 	/**
 	 * Format waypionts in a way that's friendly to the directions and surface
@@ -16377,12 +16450,12 @@
 
 
 /***/ },
-/* 73 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var assert = __webpack_require__(15);
+	var assert = __webpack_require__(18);
 
 	/**
 	 * Given an object that should be a location, ensure that it has
@@ -16406,15 +16479,15 @@
 
 
 /***/ },
-/* 74 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var assert = __webpack_require__(15),
-	  formatPoints = __webpack_require__(72),
-	  makeService = __webpack_require__(14),
-	  constants = __webpack_require__(19);
+	var assert = __webpack_require__(18),
+	  formatPoints = __webpack_require__(75),
+	  makeService = __webpack_require__(17),
+	  constants = __webpack_require__(22);
 
 	var MapboxDirections = makeService('MapboxDirections');
 
@@ -16536,14 +16609,14 @@
 
 
 /***/ },
-/* 75 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var assert = __webpack_require__(15),
-	  makeService = __webpack_require__(14),
-	  constants = __webpack_require__(19);
+	var assert = __webpack_require__(18),
+	  makeService = __webpack_require__(17),
+	  constants = __webpack_require__(22);
 
 	var Uploads = module.exports = makeService('MapboxUploads');
 
@@ -16761,15 +16834,15 @@
 
 
 /***/ },
-/* 76 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var assert = __webpack_require__(15),
-	  geojsonhint = __webpack_require__(77),
-	  makeService = __webpack_require__(14),
-	  constants = __webpack_require__(19);
+	var assert = __webpack_require__(18),
+	  geojsonhint = __webpack_require__(80),
+	  makeService = __webpack_require__(17),
+	  constants = __webpack_require__(22);
 
 	var MapboxMatching = makeService('MapboxMatching');
 
@@ -16881,7 +16954,7 @@
 
 
 /***/ },
-/* 77 */
+/* 80 */
 /***/ function(module, exports) {
 
 	/**
@@ -17187,16 +17260,16 @@
 
 
 /***/ },
-/* 78 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var assert = __webpack_require__(15),
-	  geojsonhint = __webpack_require__(77),
-	  hat = __webpack_require__(79),
-	  makeService = __webpack_require__(14),
-	  constants = __webpack_require__(19);
+	var assert = __webpack_require__(18),
+	  geojsonhint = __webpack_require__(80),
+	  hat = __webpack_require__(82),
+	  makeService = __webpack_require__(17),
+	  constants = __webpack_require__(22);
 
 	var Datasets = module.exports = makeService('MapboxDatasets');
 
@@ -17726,7 +17799,7 @@
 
 
 /***/ },
-/* 79 */
+/* 82 */
 /***/ function(module, exports) {
 
 	var hat = module.exports = function (bits, base) {
@@ -17794,14 +17867,14 @@
 
 
 /***/ },
-/* 80 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var assert = __webpack_require__(15),
-	  makeService = __webpack_require__(14),
-	  constants = __webpack_require__(19);
+	var assert = __webpack_require__(18),
+	  makeService = __webpack_require__(17),
+	  constants = __webpack_require__(22);
 
 	var MapboxDistance = makeService('MapboxDistance');
 
@@ -17892,14 +17965,14 @@
 
 
 /***/ },
-/* 81 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var assert = __webpack_require__(15),
-	  makeService = __webpack_require__(14),
-	  constants = __webpack_require__(19);
+	var assert = __webpack_require__(18),
+	  makeService = __webpack_require__(17),
+	  constants = __webpack_require__(22);
 
 	var Tilestats = module.exports = makeService('MapboxTilestats');
 
@@ -18143,7 +18216,7 @@
 
 
 /***/ },
-/* 82 */
+/* 85 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -18154,27 +18227,27 @@
 	var MAPBOX_API_KEY = exports.MAPBOX_API_KEY = 'pk.eyJ1IjoicnVzc2VsbHZlYTIiLCJhIjoiY2lmZzVrNWJkOWV2cnNlbTdza2thcGozNSJ9.zw6CcZLxP6lq0x-xfwp6uA';
 
 /***/ },
-/* 83 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var leaflet = __webpack_require__(84);
+	var leaflet = __webpack_require__(87);
 
-	__webpack_require__(86);
+	__webpack_require__(89);
 
 	module.exports = leaflet;
 
 
 /***/ },
-/* 84 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = window.L = __webpack_require__(85);
+	module.exports = window.L = __webpack_require__(88);
 
 
 /***/ },
-/* 85 */
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -27347,26 +27420,26 @@
 	}(window, document));
 
 /***/ },
-/* 86 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var geocoderControl = __webpack_require__(87),
-	    gridControl = __webpack_require__(97),
-	    featureLayer = __webpack_require__(101),
-	    legendControl = __webpack_require__(104),
-	    shareControl = __webpack_require__(105),
-	    tileLayer = __webpack_require__(107),
-	    infoControl = __webpack_require__(108),
-	    map = __webpack_require__(109),
-	    gridLayer = __webpack_require__(110);
+	var geocoderControl = __webpack_require__(90),
+	    gridControl = __webpack_require__(100),
+	    featureLayer = __webpack_require__(104),
+	    legendControl = __webpack_require__(107),
+	    shareControl = __webpack_require__(108),
+	    tileLayer = __webpack_require__(110),
+	    infoControl = __webpack_require__(111),
+	    map = __webpack_require__(112),
+	    gridLayer = __webpack_require__(113);
 
 	L.mapbox = module.exports = {
-	    VERSION: __webpack_require__(93).version,
-	    geocoder: __webpack_require__(88),
-	    marker: __webpack_require__(102),
-	    simplestyle: __webpack_require__(103),
+	    VERSION: __webpack_require__(96).version,
+	    geocoder: __webpack_require__(91),
+	    marker: __webpack_require__(105),
+	    simplestyle: __webpack_require__(106),
 	    tileLayer: tileLayer.tileLayer,
 	    TileLayer: tileLayer.TileLayer,
 	    infoControl: infoControl.infoControl,
@@ -27385,10 +27458,10 @@
 	    FeatureLayer: featureLayer.FeatureLayer,
 	    map: map.map,
 	    Map: map.Map,
-	    config: __webpack_require__(92),
-	    sanitize: __webpack_require__(99),
-	    template: __webpack_require__(98).to_html,
-	    feedback: __webpack_require__(94)
+	    config: __webpack_require__(95),
+	    sanitize: __webpack_require__(102),
+	    template: __webpack_require__(101).to_html,
+	    feedback: __webpack_require__(97)
 	};
 
 
@@ -27400,17 +27473,17 @@
 	    ((document.location.protocol === 'https:' ||
 	    document.location.protocol === 'http:') ? '' : 'https:') +
 	    '//api.tiles.mapbox.com/mapbox.js/' + 'v' +
-	    __webpack_require__(93).version + '/images';
+	    __webpack_require__(96).version + '/images';
 
 
 /***/ },
-/* 87 */
+/* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var geocoder = __webpack_require__(88),
-	    util = __webpack_require__(90);
+	var geocoder = __webpack_require__(91),
+	    util = __webpack_require__(93);
 
 	var GeocoderControl = L.Control.extend({
 	    includes: L.Mixin.Events,
@@ -27610,16 +27683,16 @@
 
 
 /***/ },
-/* 88 */
+/* 91 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var isArray = __webpack_require__(89),
-	    util = __webpack_require__(90),
-	    format_url = __webpack_require__(91),
-	    feedback = __webpack_require__(94),
-	    request = __webpack_require__(95);
+	var isArray = __webpack_require__(92),
+	    util = __webpack_require__(93),
+	    format_url = __webpack_require__(94),
+	    feedback = __webpack_require__(97),
+	    request = __webpack_require__(98);
 
 	// Low-level geocoding interface - wraps specific API calls and their
 	// return values.
@@ -27744,7 +27817,7 @@
 
 
 /***/ },
-/* 89 */
+/* 92 */
 /***/ function(module, exports) {
 
 	module.exports = Array.isArray || function (arr) {
@@ -27753,7 +27826,7 @@
 
 
 /***/ },
-/* 90 */
+/* 93 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -27804,13 +27877,13 @@
 
 
 /***/ },
-/* 91 */
+/* 94 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var config = __webpack_require__(92),
-	    version = __webpack_require__(93).version;
+	var config = __webpack_require__(95),
+	    version = __webpack_require__(96).version;
 
 	module.exports = function(path, accessToken) {
 	    accessToken = accessToken || L.mapbox.accessToken;
@@ -27853,7 +27926,7 @@
 
 
 /***/ },
-/* 92 */
+/* 95 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -27867,7 +27940,7 @@
 
 
 /***/ },
-/* 93 */
+/* 96 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -28124,7 +28197,7 @@
 	};
 
 /***/ },
-/* 94 */
+/* 97 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -28142,14 +28215,14 @@
 
 
 /***/ },
-/* 95 */
+/* 98 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var corslite = __webpack_require__(96),
-	    strict = __webpack_require__(90).strict,
-	    config = __webpack_require__(92);
+	var corslite = __webpack_require__(99),
+	    strict = __webpack_require__(93).strict,
+	    config = __webpack_require__(95);
 
 	var protocol = /^(https?:)?(?=\/\/(.|api)\.tiles\.mapbox\.com\/)/;
 
@@ -28180,7 +28253,7 @@
 
 
 /***/ },
-/* 96 */
+/* 99 */
 /***/ function(module, exports, __webpack_require__) {
 
 	function corslite(url, callback, cors) {
@@ -28279,20 +28352,20 @@
 
 
 /***/ },
-/* 97 */
+/* 100 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var util = __webpack_require__(90),
-	    Mustache = __webpack_require__(98);
+	var util = __webpack_require__(93),
+	    Mustache = __webpack_require__(101);
 
 	var GridControl = L.Control.extend({
 
 	    options: {
 	        pinnable: true,
 	        follow: false,
-	        sanitizer: __webpack_require__(99),
+	        sanitizer: __webpack_require__(102),
 	        touchTeaser: true,
 	        location: true
 	    },
@@ -28483,7 +28556,7 @@
 
 
 /***/ },
-/* 98 */
+/* 101 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -29040,10 +29113,10 @@
 
 
 /***/ },
-/* 99 */
+/* 102 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var html_sanitize = __webpack_require__(100);
+	var html_sanitize = __webpack_require__(103);
 
 	module.exports = function(_) {
 	    if (!_) return '';
@@ -29064,7 +29137,7 @@
 
 
 /***/ },
-/* 100 */
+/* 103 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
@@ -31517,16 +31590,16 @@
 
 
 /***/ },
-/* 101 */
+/* 104 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var util = __webpack_require__(90),
-	    format_url = __webpack_require__(91),
-	    request = __webpack_require__(95),
-	    marker = __webpack_require__(102),
-	    simplestyle = __webpack_require__(103);
+	var util = __webpack_require__(93),
+	    format_url = __webpack_require__(94),
+	    request = __webpack_require__(98),
+	    marker = __webpack_require__(105),
+	    simplestyle = __webpack_require__(106);
 
 	// # featureLayer
 	//
@@ -31535,7 +31608,7 @@
 	var FeatureLayer = L.FeatureGroup.extend({
 	    options: {
 	        filter: function() { return true; },
-	        sanitizer: __webpack_require__(99),
+	        sanitizer: __webpack_require__(102),
 	        style: simplestyle.style,
 	        popupOptions: { closeButton: false }
 	    },
@@ -31650,14 +31723,14 @@
 
 
 /***/ },
-/* 102 */
+/* 105 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var format_url = __webpack_require__(91),
-	    util = __webpack_require__(90),
-	    sanitize = __webpack_require__(99);
+	var format_url = __webpack_require__(94),
+	    util = __webpack_require__(93),
+	    sanitize = __webpack_require__(102);
 
 	// mapbox-related markers functionality
 	// provide an icon from mapbox's simple-style spec and hosted markers
@@ -31721,7 +31794,7 @@
 
 
 /***/ },
-/* 103 */
+/* 106 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -31772,7 +31845,7 @@
 
 
 /***/ },
-/* 104 */
+/* 107 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31781,7 +31854,7 @@
 
 	    options: {
 	        position: 'bottomright',
-	        sanitizer: __webpack_require__(99)
+	        sanitizer: __webpack_require__(102)
 	    },
 
 	    initialize: function(options) {
@@ -31845,15 +31918,15 @@
 
 
 /***/ },
-/* 105 */
+/* 108 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var format_url = __webpack_require__(91);
+	var format_url = __webpack_require__(94);
 
 	var ShareControl = L.Control.extend({
-	    includes: [__webpack_require__(106)],
+	    includes: [__webpack_require__(109)],
 
 	    options: {
 	        position: 'topleft',
@@ -31952,14 +32025,14 @@
 
 
 /***/ },
-/* 106 */
+/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var request = __webpack_require__(95),
-	    format_url = __webpack_require__(91),
-	    util = __webpack_require__(90);
+	var request = __webpack_require__(98),
+	    format_url = __webpack_require__(94),
+	    util = __webpack_require__(93);
 
 	module.exports = {
 	    _loadTileJSON: function(_) {
@@ -31982,19 +32055,19 @@
 
 
 /***/ },
-/* 107 */
+/* 110 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var util = __webpack_require__(90);
+	var util = __webpack_require__(93);
 	var formatPattern = /\.((?:png|jpg)\d*)(?=$|\?)/;
 
 	var TileLayer = L.TileLayer.extend({
-	    includes: [__webpack_require__(106)],
+	    includes: [__webpack_require__(109)],
 
 	    options: {
-	        sanitizer: __webpack_require__(99)
+	        sanitizer: __webpack_require__(102)
 	    },
 
 	    // http://mapbox.com/developers/api/#image_quality
@@ -32086,7 +32159,7 @@
 
 
 /***/ },
-/* 108 */
+/* 111 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32094,7 +32167,7 @@
 	var InfoControl = L.Control.extend({
 	    options: {
 	        position: 'bottomright',
-	        sanitizer: __webpack_require__(99)
+	        sanitizer: __webpack_require__(102)
 	    },
 
 	    initialize: function(options) {
@@ -32207,20 +32280,20 @@
 
 
 /***/ },
-/* 109 */
+/* 112 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var tileLayer = __webpack_require__(107).tileLayer,
-	    featureLayer = __webpack_require__(101).featureLayer,
-	    gridLayer = __webpack_require__(110).gridLayer,
-	    gridControl = __webpack_require__(97).gridControl,
-	    infoControl = __webpack_require__(108).infoControl,
-	    shareControl = __webpack_require__(105).shareControl,
-	    legendControl = __webpack_require__(104).legendControl,
-	    mapboxLogoControl = __webpack_require__(112).mapboxLogoControl,
-	    feedback = __webpack_require__(94);
+	var tileLayer = __webpack_require__(110).tileLayer,
+	    featureLayer = __webpack_require__(104).featureLayer,
+	    gridLayer = __webpack_require__(113).gridLayer,
+	    gridControl = __webpack_require__(100).gridControl,
+	    infoControl = __webpack_require__(111).infoControl,
+	    shareControl = __webpack_require__(108).shareControl,
+	    legendControl = __webpack_require__(107).legendControl,
+	    mapboxLogoControl = __webpack_require__(115).mapboxLogoControl,
+	    feedback = __webpack_require__(97);
 
 	function withAccessToken(options, accessToken) {
 	    if (!accessToken || options.accessToken)
@@ -32229,7 +32302,7 @@
 	}
 
 	var LMap = L.Map.extend({
-	    includes: [__webpack_require__(106)],
+	    includes: [__webpack_require__(109)],
 
 	    options: {
 	        tileLayer: {},
@@ -32239,7 +32312,7 @@
 	        gridControl: {},
 	        infoControl: false,
 	        shareControl: false,
-	        sanitizer: __webpack_require__(99)
+	        sanitizer: __webpack_require__(102)
 	    },
 
 	    _tilejson: {},
@@ -32447,18 +32520,18 @@
 
 
 /***/ },
-/* 110 */
+/* 113 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var util = __webpack_require__(90),
-	    request = __webpack_require__(95),
-	    grid = __webpack_require__(111);
+	var util = __webpack_require__(93),
+	    request = __webpack_require__(98),
+	    grid = __webpack_require__(114);
 
 	// forked from danzel/L.UTFGrid
 	var GridLayer = L.Class.extend({
-	    includes: [L.Mixin.Events, __webpack_require__(106)],
+	    includes: [L.Mixin.Events, __webpack_require__(109)],
 
 	    options: {
 	        template: function() { return ''; }
@@ -32676,7 +32749,7 @@
 
 
 /***/ },
-/* 111 */
+/* 114 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -32698,7 +32771,7 @@
 
 
 /***/ },
-/* 112 */
+/* 115 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -32736,78 +32809,7 @@
 
 
 /***/ },
-/* 113 */
-/***/ function(module, exports) {
-
-	module.exports = "<div class=\"map__container\">\n    <div class=\"map\"></div>\n  </div>";
-
-/***/ },
-/* 114 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(115)
-	module.exports = __webpack_require__(117)
-
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(120)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel-loader?presets[]=es2015&plugins[]=transform-runtime!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./spaces.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel-loader?presets[]=es2015&plugins[]=transform-runtime!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./spaces.vue","-!vue-html-loader!./../../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./spaces.vue"], function () {
-	var newOptions = require("-!babel-loader?presets[]=es2015&plugins[]=transform-runtime!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./spaces.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./spaces.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 115 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(116);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(11)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-01ac8ac2&file=spaces.vue!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./spaces.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-01ac8ac2&file=spaces.vue!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./spaces.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
 /* 116 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(8)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".space[_v-01ac8ac2][_v-01ac8ac2][_v-01ac8ac2] {\n  }\n.space__item[_v-01ac8ac2][_v-01ac8ac2][_v-01ac8ac2] {\n    min-height: 100%\n}\n.space__item--active[_v-01ac8ac2][_v-01ac8ac2][_v-01ac8ac2] {\n    background: #AAA\n}\n.space__item-container[_v-01ac8ac2][_v-01ac8ac2][_v-01ac8ac2] {\n    height: calc(100vh - 260px);\n    overflow: scroll;\n    padding: 0 10px\n}\n.space-text[_v-01ac8ac2][_v-01ac8ac2][_v-01ac8ac2] {\n    margin: 0\n}\n.space-text--bold[_v-01ac8ac2][_v-01ac8ac2][_v-01ac8ac2] {\n    font-weight: 600;\n    margin-bottom: 4px\n}", ""]);
-
-	// exports
-
-
-/***/ },
-/* 117 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32815,45 +32817,32 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	exports.MAKER_STORE = undefined;
 
-	var _vue = __webpack_require__(3);
+	var _immstruct = __webpack_require__(117);
 
-	var _vue2 = _interopRequireDefault(_vue);
+	var MAKER_STORE = exports.MAKER_STORE = new _immstruct.Structure({ makerspaces: [] });
 
-	var _maker_store = __webpack_require__(128);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = {
-	  created: function created() {
-	    var _this = this;
-
-	    _maker_store.MAKER_STORE.on('add', function (val, key) {
-	      _vue2.default.set(_this.$data, key, val);
-	    });
-	  },
-	  data: function data() {
-	    return {
-	      makerspaces: [],
-	      active_space: null
-	    };
-	  }
+	//initialize makerspaces
+	var req = new XMLHttpRequest();
+	req.open('GET', '/makerspaces', true);
+	req.send();
+	req.onload = function () {
+	  var spaces = JSON.parse(req.responseText);
+	  MAKER_STORE.cursor(['makerspaces']).update(function () {
+	    return spaces;
+	  });
+	  MAKER_STORE.cursor(['active_space']).update(function () {
+	    return spaces[0];
+	  });
 	};
 
 /***/ },
-/* 118 */,
-/* 119 */,
-/* 120 */
-/***/ function(module, exports) {
-
-	module.exports = "<section class=\"space__item-container\">\n    <article\n      class=\"space__item\"\n      v-for=\"space in makerspaces\"\n      :class=\"{'space__item--active': active_space && (space.id === active_space.id)}\">\n        <h1 class=\"space__title\">{{space.post_title}}</h1>\n\n        <div class=\"space__info\" v-if=\"space.membership_info\">\n          <h3 class=\"space__text--bold\">Membership Info</h3>\n          <p class=\"space__text\">{{space.membership_info}}</p>\n        </div>\n\n        <div class=\"space__info\" v-if=\"space.classes\">\n          <h3 class=\"space__text--bold\">Classes</h3>\n          <p class=\"space__text\">{{space.classes}}</p>\n        </div>\n\n        <div class=\"space__info\" v-if=\"space.website\">\n          <h3 class=\"space__text--bold\">Website</h3>\n          <p class=\"space__text\">\n            <a target=\"_blank\"\n               href=\"{{space.website}}\">\n               {{space.website}}\n            </a>\n          </p>\n        </div>\n    </article>\n  </section>";
-
-/***/ },
-/* 121 */
+/* 117 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var Structure = __webpack_require__(122);
+	var Structure = __webpack_require__(118);
 
 	/**
 	 * Creates a new instance of Immstruct, having it's own list
@@ -33078,15 +33067,15 @@
 
 
 /***/ },
-/* 122 */
+/* 118 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var Immutable = __webpack_require__(123);
-	var Cursor = __webpack_require__(124);
-	var EventEmitter = __webpack_require__(125);
-	var utils = __webpack_require__(126);
+	var Immutable = __webpack_require__(119);
+	var Cursor = __webpack_require__(120);
+	var EventEmitter = __webpack_require__(121);
+	var utils = __webpack_require__(122);
 
 	var LISTENER_SENTINEL = {};
 
@@ -33816,7 +33805,7 @@
 
 
 /***/ },
-/* 123 */
+/* 119 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38781,7 +38770,7 @@
 	}));
 
 /***/ },
-/* 124 */
+/* 120 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38801,7 +38790,7 @@
 	 * If you wish to use it in the browser, please check out Browserify or WebPack!
 	 */
 
-	var Immutable = __webpack_require__(123);
+	var Immutable = __webpack_require__(119);
 	var Iterable = Immutable.Iterable;
 	var Iterator = Iterable.Iterator;
 	var Seq = Immutable.Seq;
@@ -39130,7 +39119,7 @@
 
 
 /***/ },
-/* 125 */
+/* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39398,7 +39387,7 @@
 
 
 /***/ },
-/* 126 */
+/* 122 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {'use strict';
@@ -39428,10 +39417,10 @@
 	  };
 	}());
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(127)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(123)(module)))
 
 /***/ },
-/* 127 */
+/* 123 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -39447,6 +39436,77 @@
 
 
 /***/ },
+/* 124 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"map\"></div>";
+
+/***/ },
+/* 125 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(126)
+	module.exports = __webpack_require__(128)
+
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(135)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel-loader?presets[]=es2015&plugins[]=transform-runtime!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./spaces.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel-loader?presets[]=es2015&plugins[]=transform-runtime!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./spaces.vue","-!vue-html-loader!./../../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./spaces.vue"], function () {
+	var newOptions = require("-!babel-loader?presets[]=es2015&plugins[]=transform-runtime!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./spaces.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./spaces.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 126 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(127);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(12)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-01ac8ac2&file=spaces.vue!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./spaces.vue", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-01ac8ac2&file=spaces.vue!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./spaces.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 127 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(9)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".space {\n\n  }\n.space__item {\n    min-height: 100%\n}\n.space__item--active {\n    background: #AAA\n}\n.space__item-container {\n    padding: 0 10px;\n    margin-top: 256px\n}", ""]);
+
+	// exports
+
+
+/***/ },
 /* 128 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -39455,24 +39515,1170 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.MAKER_STORE = undefined;
 
-	var _immstruct = __webpack_require__(121);
+	var _vue = __webpack_require__(4);
 
-	var MAKER_STORE = exports.MAKER_STORE = new _immstruct.Structure({ makerspaces: [] });
+	var _vue2 = _interopRequireDefault(_vue);
 
-	//initialize makerspaces
-	var req = new XMLHttpRequest();
-	req.open('GET', '/makerspaces', true);
-	req.send();
-	req.onload = function () {
-	  var spaces = JSON.parse(req.responseText);
-	  MAKER_STORE.cursor(['makerspaces']).update(function () {
-	    return spaces;
-	  });
-	  MAKER_STORE.cursor(['active_space']).update(function () {
-	    return spaces[0];
-	  });
+	var _maker_store = __webpack_require__(116);
+
+	var _space = __webpack_require__(129);
+
+	var _space2 = _interopRequireDefault(_space);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = {
+	  created: function created() {
+	    var _this = this;
+
+	    _maker_store.MAKER_STORE.on('add', function (val, key) {
+	      _vue2.default.set(_this.$data, key, val);
+	    });
+	    _maker_store.MAKER_STORE.on('change', function (val, old, key) {
+	      _vue2.default.set(_this.$data, key, val);
+	    });
+	  },
+
+	  components: { space: _space2.default },
+	  data: function data() {
+	    return {
+	      makerspaces: [],
+	      active_space: null
+	    };
+	  }
+	};
+
+/***/ },
+/* 129 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(130)
+	module.exports = __webpack_require__(132)
+
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(134)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel-loader?presets[]=es2015&plugins[]=transform-runtime!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./space.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel-loader?presets[]=es2015&plugins[]=transform-runtime!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./space.vue","-!vue-html-loader!./../../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./space.vue"], function () {
+	var newOptions = require("-!babel-loader?presets[]=es2015&plugins[]=transform-runtime!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./space.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./space.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 130 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(131);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(12)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-004a71f8&file=space.vue!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./space.vue", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-004a71f8&file=space.vue!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./space.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 131 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(9)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".space {\n  }\n.space__text {\n    margin: 0\n}", ""]);
+
+	// exports
+
+
+/***/ },
+/* 132 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _maker_store = __webpack_require__(116);
+
+	__webpack_require__(133);
+	exports.default = {
+	  props: ['space'],
+	  attached: function attached() {
+	    var _this = this;
+
+	    new Waypoint({
+	      element: this.$el,
+	      offset: 'bottom-in-view',
+	      handler: function handler(scrolled) {
+	        _maker_store.MAKER_STORE.cursor(['active_space']).update(function () {
+	          return _this.space;
+	        });
+	      }
+	    });
+	  }
+	};
+
+/***/ },
+/* 133 */
+/***/ function(module, exports) {
+
+	/*!
+	Waypoints - 4.0.0
+	Copyright © 2011-2015 Caleb Troughton
+	Licensed under the MIT license.
+	https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
+	*/
+	(function() {
+	  'use strict'
+
+	  var keyCounter = 0
+	  var allWaypoints = {}
+
+	  /* http://imakewebthings.com/waypoints/api/waypoint */
+	  function Waypoint(options) {
+	    if (!options) {
+	      throw new Error('No options passed to Waypoint constructor')
+	    }
+	    if (!options.element) {
+	      throw new Error('No element option passed to Waypoint constructor')
+	    }
+	    if (!options.handler) {
+	      throw new Error('No handler option passed to Waypoint constructor')
+	    }
+
+	    this.key = 'waypoint-' + keyCounter
+	    this.options = Waypoint.Adapter.extend({}, Waypoint.defaults, options)
+	    this.element = this.options.element
+	    this.adapter = new Waypoint.Adapter(this.element)
+	    this.callback = options.handler
+	    this.axis = this.options.horizontal ? 'horizontal' : 'vertical'
+	    this.enabled = this.options.enabled
+	    this.triggerPoint = null
+	    this.group = Waypoint.Group.findOrCreate({
+	      name: this.options.group,
+	      axis: this.axis
+	    })
+	    this.context = Waypoint.Context.findOrCreateByElement(this.options.context)
+
+	    if (Waypoint.offsetAliases[this.options.offset]) {
+	      this.options.offset = Waypoint.offsetAliases[this.options.offset]
+	    }
+	    this.group.add(this)
+	    this.context.add(this)
+	    allWaypoints[this.key] = this
+	    keyCounter += 1
+	  }
+
+	  /* Private */
+	  Waypoint.prototype.queueTrigger = function(direction) {
+	    this.group.queueTrigger(this, direction)
+	  }
+
+	  /* Private */
+	  Waypoint.prototype.trigger = function(args) {
+	    if (!this.enabled) {
+	      return
+	    }
+	    if (this.callback) {
+	      this.callback.apply(this, args)
+	    }
+	  }
+
+	  /* Public */
+	  /* http://imakewebthings.com/waypoints/api/destroy */
+	  Waypoint.prototype.destroy = function() {
+	    this.context.remove(this)
+	    this.group.remove(this)
+	    delete allWaypoints[this.key]
+	  }
+
+	  /* Public */
+	  /* http://imakewebthings.com/waypoints/api/disable */
+	  Waypoint.prototype.disable = function() {
+	    this.enabled = false
+	    return this
+	  }
+
+	  /* Public */
+	  /* http://imakewebthings.com/waypoints/api/enable */
+	  Waypoint.prototype.enable = function() {
+	    this.context.refresh()
+	    this.enabled = true
+	    return this
+	  }
+
+	  /* Public */
+	  /* http://imakewebthings.com/waypoints/api/next */
+	  Waypoint.prototype.next = function() {
+	    return this.group.next(this)
+	  }
+
+	  /* Public */
+	  /* http://imakewebthings.com/waypoints/api/previous */
+	  Waypoint.prototype.previous = function() {
+	    return this.group.previous(this)
+	  }
+
+	  /* Private */
+	  Waypoint.invokeAll = function(method) {
+	    var allWaypointsArray = []
+	    for (var waypointKey in allWaypoints) {
+	      allWaypointsArray.push(allWaypoints[waypointKey])
+	    }
+	    for (var i = 0, end = allWaypointsArray.length; i < end; i++) {
+	      allWaypointsArray[i][method]()
+	    }
+	  }
+
+	  /* Public */
+	  /* http://imakewebthings.com/waypoints/api/destroy-all */
+	  Waypoint.destroyAll = function() {
+	    Waypoint.invokeAll('destroy')
+	  }
+
+	  /* Public */
+	  /* http://imakewebthings.com/waypoints/api/disable-all */
+	  Waypoint.disableAll = function() {
+	    Waypoint.invokeAll('disable')
+	  }
+
+	  /* Public */
+	  /* http://imakewebthings.com/waypoints/api/enable-all */
+	  Waypoint.enableAll = function() {
+	    Waypoint.invokeAll('enable')
+	  }
+
+	  /* Public */
+	  /* http://imakewebthings.com/waypoints/api/refresh-all */
+	  Waypoint.refreshAll = function() {
+	    Waypoint.Context.refreshAll()
+	  }
+
+	  /* Public */
+	  /* http://imakewebthings.com/waypoints/api/viewport-height */
+	  Waypoint.viewportHeight = function() {
+	    return window.innerHeight || document.documentElement.clientHeight
+	  }
+
+	  /* Public */
+	  /* http://imakewebthings.com/waypoints/api/viewport-width */
+	  Waypoint.viewportWidth = function() {
+	    return document.documentElement.clientWidth
+	  }
+
+	  Waypoint.adapters = []
+
+	  Waypoint.defaults = {
+	    context: window,
+	    continuous: true,
+	    enabled: true,
+	    group: 'default',
+	    horizontal: false,
+	    offset: 0
+	  }
+
+	  Waypoint.offsetAliases = {
+	    'bottom-in-view': function() {
+	      return this.context.innerHeight() - this.adapter.outerHeight()
+	    },
+	    'right-in-view': function() {
+	      return this.context.innerWidth() - this.adapter.outerWidth()
+	    }
+	  }
+
+	  window.Waypoint = Waypoint
+	}())
+	;(function() {
+	  'use strict'
+
+	  function requestAnimationFrameShim(callback) {
+	    window.setTimeout(callback, 1000 / 60)
+	  }
+
+	  var keyCounter = 0
+	  var contexts = {}
+	  var Waypoint = window.Waypoint
+	  var oldWindowLoad = window.onload
+
+	  /* http://imakewebthings.com/waypoints/api/context */
+	  function Context(element) {
+	    this.element = element
+	    this.Adapter = Waypoint.Adapter
+	    this.adapter = new this.Adapter(element)
+	    this.key = 'waypoint-context-' + keyCounter
+	    this.didScroll = false
+	    this.didResize = false
+	    this.oldScroll = {
+	      x: this.adapter.scrollLeft(),
+	      y: this.adapter.scrollTop()
+	    }
+	    this.waypoints = {
+	      vertical: {},
+	      horizontal: {}
+	    }
+
+	    element.waypointContextKey = this.key
+	    contexts[element.waypointContextKey] = this
+	    keyCounter += 1
+
+	    this.createThrottledScrollHandler()
+	    this.createThrottledResizeHandler()
+	  }
+
+	  /* Private */
+	  Context.prototype.add = function(waypoint) {
+	    var axis = waypoint.options.horizontal ? 'horizontal' : 'vertical'
+	    this.waypoints[axis][waypoint.key] = waypoint
+	    this.refresh()
+	  }
+
+	  /* Private */
+	  Context.prototype.checkEmpty = function() {
+	    var horizontalEmpty = this.Adapter.isEmptyObject(this.waypoints.horizontal)
+	    var verticalEmpty = this.Adapter.isEmptyObject(this.waypoints.vertical)
+	    if (horizontalEmpty && verticalEmpty) {
+	      this.adapter.off('.waypoints')
+	      delete contexts[this.key]
+	    }
+	  }
+
+	  /* Private */
+	  Context.prototype.createThrottledResizeHandler = function() {
+	    var self = this
+
+	    function resizeHandler() {
+	      self.handleResize()
+	      self.didResize = false
+	    }
+
+	    this.adapter.on('resize.waypoints', function() {
+	      if (!self.didResize) {
+	        self.didResize = true
+	        Waypoint.requestAnimationFrame(resizeHandler)
+	      }
+	    })
+	  }
+
+	  /* Private */
+	  Context.prototype.createThrottledScrollHandler = function() {
+	    var self = this
+	    function scrollHandler() {
+	      self.handleScroll()
+	      self.didScroll = false
+	    }
+
+	    this.adapter.on('scroll.waypoints', function() {
+	      if (!self.didScroll || Waypoint.isTouch) {
+	        self.didScroll = true
+	        Waypoint.requestAnimationFrame(scrollHandler)
+	      }
+	    })
+	  }
+
+	  /* Private */
+	  Context.prototype.handleResize = function() {
+	    Waypoint.Context.refreshAll()
+	  }
+
+	  /* Private */
+	  Context.prototype.handleScroll = function() {
+	    var triggeredGroups = {}
+	    var axes = {
+	      horizontal: {
+	        newScroll: this.adapter.scrollLeft(),
+	        oldScroll: this.oldScroll.x,
+	        forward: 'right',
+	        backward: 'left'
+	      },
+	      vertical: {
+	        newScroll: this.adapter.scrollTop(),
+	        oldScroll: this.oldScroll.y,
+	        forward: 'down',
+	        backward: 'up'
+	      }
+	    }
+
+	    for (var axisKey in axes) {
+	      var axis = axes[axisKey]
+	      var isForward = axis.newScroll > axis.oldScroll
+	      var direction = isForward ? axis.forward : axis.backward
+
+	      for (var waypointKey in this.waypoints[axisKey]) {
+	        var waypoint = this.waypoints[axisKey][waypointKey]
+	        var wasBeforeTriggerPoint = axis.oldScroll < waypoint.triggerPoint
+	        var nowAfterTriggerPoint = axis.newScroll >= waypoint.triggerPoint
+	        var crossedForward = wasBeforeTriggerPoint && nowAfterTriggerPoint
+	        var crossedBackward = !wasBeforeTriggerPoint && !nowAfterTriggerPoint
+	        if (crossedForward || crossedBackward) {
+	          waypoint.queueTrigger(direction)
+	          triggeredGroups[waypoint.group.id] = waypoint.group
+	        }
+	      }
+	    }
+
+	    for (var groupKey in triggeredGroups) {
+	      triggeredGroups[groupKey].flushTriggers()
+	    }
+
+	    this.oldScroll = {
+	      x: axes.horizontal.newScroll,
+	      y: axes.vertical.newScroll
+	    }
+	  }
+
+	  /* Private */
+	  Context.prototype.innerHeight = function() {
+	    /*eslint-disable eqeqeq */
+	    if (this.element == this.element.window) {
+	      return Waypoint.viewportHeight()
+	    }
+	    /*eslint-enable eqeqeq */
+	    return this.adapter.innerHeight()
+	  }
+
+	  /* Private */
+	  Context.prototype.remove = function(waypoint) {
+	    delete this.waypoints[waypoint.axis][waypoint.key]
+	    this.checkEmpty()
+	  }
+
+	  /* Private */
+	  Context.prototype.innerWidth = function() {
+	    /*eslint-disable eqeqeq */
+	    if (this.element == this.element.window) {
+	      return Waypoint.viewportWidth()
+	    }
+	    /*eslint-enable eqeqeq */
+	    return this.adapter.innerWidth()
+	  }
+
+	  /* Public */
+	  /* http://imakewebthings.com/waypoints/api/context-destroy */
+	  Context.prototype.destroy = function() {
+	    var allWaypoints = []
+	    for (var axis in this.waypoints) {
+	      for (var waypointKey in this.waypoints[axis]) {
+	        allWaypoints.push(this.waypoints[axis][waypointKey])
+	      }
+	    }
+	    for (var i = 0, end = allWaypoints.length; i < end; i++) {
+	      allWaypoints[i].destroy()
+	    }
+	  }
+
+	  /* Public */
+	  /* http://imakewebthings.com/waypoints/api/context-refresh */
+	  Context.prototype.refresh = function() {
+	    /*eslint-disable eqeqeq */
+	    var isWindow = this.element == this.element.window
+	    /*eslint-enable eqeqeq */
+	    var contextOffset = isWindow ? undefined : this.adapter.offset()
+	    var triggeredGroups = {}
+	    var axes
+
+	    this.handleScroll()
+	    axes = {
+	      horizontal: {
+	        contextOffset: isWindow ? 0 : contextOffset.left,
+	        contextScroll: isWindow ? 0 : this.oldScroll.x,
+	        contextDimension: this.innerWidth(),
+	        oldScroll: this.oldScroll.x,
+	        forward: 'right',
+	        backward: 'left',
+	        offsetProp: 'left'
+	      },
+	      vertical: {
+	        contextOffset: isWindow ? 0 : contextOffset.top,
+	        contextScroll: isWindow ? 0 : this.oldScroll.y,
+	        contextDimension: this.innerHeight(),
+	        oldScroll: this.oldScroll.y,
+	        forward: 'down',
+	        backward: 'up',
+	        offsetProp: 'top'
+	      }
+	    }
+
+	    for (var axisKey in axes) {
+	      var axis = axes[axisKey]
+	      for (var waypointKey in this.waypoints[axisKey]) {
+	        var waypoint = this.waypoints[axisKey][waypointKey]
+	        var adjustment = waypoint.options.offset
+	        var oldTriggerPoint = waypoint.triggerPoint
+	        var elementOffset = 0
+	        var freshWaypoint = oldTriggerPoint == null
+	        var contextModifier, wasBeforeScroll, nowAfterScroll
+	        var triggeredBackward, triggeredForward
+
+	        if (waypoint.element !== waypoint.element.window) {
+	          elementOffset = waypoint.adapter.offset()[axis.offsetProp]
+	        }
+
+	        if (typeof adjustment === 'function') {
+	          adjustment = adjustment.apply(waypoint)
+	        }
+	        else if (typeof adjustment === 'string') {
+	          adjustment = parseFloat(adjustment)
+	          if (waypoint.options.offset.indexOf('%') > - 1) {
+	            adjustment = Math.ceil(axis.contextDimension * adjustment / 100)
+	          }
+	        }
+
+	        contextModifier = axis.contextScroll - axis.contextOffset
+	        waypoint.triggerPoint = elementOffset + contextModifier - adjustment
+	        wasBeforeScroll = oldTriggerPoint < axis.oldScroll
+	        nowAfterScroll = waypoint.triggerPoint >= axis.oldScroll
+	        triggeredBackward = wasBeforeScroll && nowAfterScroll
+	        triggeredForward = !wasBeforeScroll && !nowAfterScroll
+
+	        if (!freshWaypoint && triggeredBackward) {
+	          waypoint.queueTrigger(axis.backward)
+	          triggeredGroups[waypoint.group.id] = waypoint.group
+	        }
+	        else if (!freshWaypoint && triggeredForward) {
+	          waypoint.queueTrigger(axis.forward)
+	          triggeredGroups[waypoint.group.id] = waypoint.group
+	        }
+	        else if (freshWaypoint && axis.oldScroll >= waypoint.triggerPoint) {
+	          waypoint.queueTrigger(axis.forward)
+	          triggeredGroups[waypoint.group.id] = waypoint.group
+	        }
+	      }
+	    }
+
+	    Waypoint.requestAnimationFrame(function() {
+	      for (var groupKey in triggeredGroups) {
+	        triggeredGroups[groupKey].flushTriggers()
+	      }
+	    })
+
+	    return this
+	  }
+
+	  /* Private */
+	  Context.findOrCreateByElement = function(element) {
+	    return Context.findByElement(element) || new Context(element)
+	  }
+
+	  /* Private */
+	  Context.refreshAll = function() {
+	    for (var contextId in contexts) {
+	      contexts[contextId].refresh()
+	    }
+	  }
+
+	  /* Public */
+	  /* http://imakewebthings.com/waypoints/api/context-find-by-element */
+	  Context.findByElement = function(element) {
+	    return contexts[element.waypointContextKey]
+	  }
+
+	  window.onload = function() {
+	    if (oldWindowLoad) {
+	      oldWindowLoad()
+	    }
+	    Context.refreshAll()
+	  }
+
+	  Waypoint.requestAnimationFrame = function(callback) {
+	    var requestFn = window.requestAnimationFrame ||
+	      window.mozRequestAnimationFrame ||
+	      window.webkitRequestAnimationFrame ||
+	      requestAnimationFrameShim
+	    requestFn.call(window, callback)
+	  }
+	  Waypoint.Context = Context
+	}())
+	;(function() {
+	  'use strict'
+
+	  function byTriggerPoint(a, b) {
+	    return a.triggerPoint - b.triggerPoint
+	  }
+
+	  function byReverseTriggerPoint(a, b) {
+	    return b.triggerPoint - a.triggerPoint
+	  }
+
+	  var groups = {
+	    vertical: {},
+	    horizontal: {}
+	  }
+	  var Waypoint = window.Waypoint
+
+	  /* http://imakewebthings.com/waypoints/api/group */
+	  function Group(options) {
+	    this.name = options.name
+	    this.axis = options.axis
+	    this.id = this.name + '-' + this.axis
+	    this.waypoints = []
+	    this.clearTriggerQueues()
+	    groups[this.axis][this.name] = this
+	  }
+
+	  /* Private */
+	  Group.prototype.add = function(waypoint) {
+	    this.waypoints.push(waypoint)
+	  }
+
+	  /* Private */
+	  Group.prototype.clearTriggerQueues = function() {
+	    this.triggerQueues = {
+	      up: [],
+	      down: [],
+	      left: [],
+	      right: []
+	    }
+	  }
+
+	  /* Private */
+	  Group.prototype.flushTriggers = function() {
+	    for (var direction in this.triggerQueues) {
+	      var waypoints = this.triggerQueues[direction]
+	      var reverse = direction === 'up' || direction === 'left'
+	      waypoints.sort(reverse ? byReverseTriggerPoint : byTriggerPoint)
+	      for (var i = 0, end = waypoints.length; i < end; i += 1) {
+	        var waypoint = waypoints[i]
+	        if (waypoint.options.continuous || i === waypoints.length - 1) {
+	          waypoint.trigger([direction])
+	        }
+	      }
+	    }
+	    this.clearTriggerQueues()
+	  }
+
+	  /* Private */
+	  Group.prototype.next = function(waypoint) {
+	    this.waypoints.sort(byTriggerPoint)
+	    var index = Waypoint.Adapter.inArray(waypoint, this.waypoints)
+	    var isLast = index === this.waypoints.length - 1
+	    return isLast ? null : this.waypoints[index + 1]
+	  }
+
+	  /* Private */
+	  Group.prototype.previous = function(waypoint) {
+	    this.waypoints.sort(byTriggerPoint)
+	    var index = Waypoint.Adapter.inArray(waypoint, this.waypoints)
+	    return index ? this.waypoints[index - 1] : null
+	  }
+
+	  /* Private */
+	  Group.prototype.queueTrigger = function(waypoint, direction) {
+	    this.triggerQueues[direction].push(waypoint)
+	  }
+
+	  /* Private */
+	  Group.prototype.remove = function(waypoint) {
+	    var index = Waypoint.Adapter.inArray(waypoint, this.waypoints)
+	    if (index > -1) {
+	      this.waypoints.splice(index, 1)
+	    }
+	  }
+
+	  /* Public */
+	  /* http://imakewebthings.com/waypoints/api/first */
+	  Group.prototype.first = function() {
+	    return this.waypoints[0]
+	  }
+
+	  /* Public */
+	  /* http://imakewebthings.com/waypoints/api/last */
+	  Group.prototype.last = function() {
+	    return this.waypoints[this.waypoints.length - 1]
+	  }
+
+	  /* Private */
+	  Group.findOrCreate = function(options) {
+	    return groups[options.axis][options.name] || new Group(options)
+	  }
+
+	  Waypoint.Group = Group
+	}())
+	;(function() {
+	  'use strict'
+
+	  var Waypoint = window.Waypoint
+
+	  function isWindow(element) {
+	    return element === element.window
+	  }
+
+	  function getWindow(element) {
+	    if (isWindow(element)) {
+	      return element
+	    }
+	    return element.defaultView
+	  }
+
+	  function NoFrameworkAdapter(element) {
+	    this.element = element
+	    this.handlers = {}
+	  }
+
+	  NoFrameworkAdapter.prototype.innerHeight = function() {
+	    var isWin = isWindow(this.element)
+	    return isWin ? this.element.innerHeight : this.element.clientHeight
+	  }
+
+	  NoFrameworkAdapter.prototype.innerWidth = function() {
+	    var isWin = isWindow(this.element)
+	    return isWin ? this.element.innerWidth : this.element.clientWidth
+	  }
+
+	  NoFrameworkAdapter.prototype.off = function(event, handler) {
+	    function removeListeners(element, listeners, handler) {
+	      for (var i = 0, end = listeners.length - 1; i < end; i++) {
+	        var listener = listeners[i]
+	        if (!handler || handler === listener) {
+	          element.removeEventListener(listener)
+	        }
+	      }
+	    }
+
+	    var eventParts = event.split('.')
+	    var eventType = eventParts[0]
+	    var namespace = eventParts[1]
+	    var element = this.element
+
+	    if (namespace && this.handlers[namespace] && eventType) {
+	      removeListeners(element, this.handlers[namespace][eventType], handler)
+	      this.handlers[namespace][eventType] = []
+	    }
+	    else if (eventType) {
+	      for (var ns in this.handlers) {
+	        removeListeners(element, this.handlers[ns][eventType] || [], handler)
+	        this.handlers[ns][eventType] = []
+	      }
+	    }
+	    else if (namespace && this.handlers[namespace]) {
+	      for (var type in this.handlers[namespace]) {
+	        removeListeners(element, this.handlers[namespace][type], handler)
+	      }
+	      this.handlers[namespace] = {}
+	    }
+	  }
+
+	  /* Adapted from jQuery 1.x offset() */
+	  NoFrameworkAdapter.prototype.offset = function() {
+	    if (!this.element.ownerDocument) {
+	      return null
+	    }
+
+	    var documentElement = this.element.ownerDocument.documentElement
+	    var win = getWindow(this.element.ownerDocument)
+	    var rect = {
+	      top: 0,
+	      left: 0
+	    }
+
+	    if (this.element.getBoundingClientRect) {
+	      rect = this.element.getBoundingClientRect()
+	    }
+
+	    return {
+	      top: rect.top + win.pageYOffset - documentElement.clientTop,
+	      left: rect.left + win.pageXOffset - documentElement.clientLeft
+	    }
+	  }
+
+	  NoFrameworkAdapter.prototype.on = function(event, handler) {
+	    var eventParts = event.split('.')
+	    var eventType = eventParts[0]
+	    var namespace = eventParts[1] || '__default'
+	    var nsHandlers = this.handlers[namespace] = this.handlers[namespace] || {}
+	    var nsTypeList = nsHandlers[eventType] = nsHandlers[eventType] || []
+
+	    nsTypeList.push(handler)
+	    this.element.addEventListener(eventType, handler)
+	  }
+
+	  NoFrameworkAdapter.prototype.outerHeight = function(includeMargin) {
+	    var height = this.innerHeight()
+	    var computedStyle
+
+	    if (includeMargin && !isWindow(this.element)) {
+	      computedStyle = window.getComputedStyle(this.element)
+	      height += parseInt(computedStyle.marginTop, 10)
+	      height += parseInt(computedStyle.marginBottom, 10)
+	    }
+
+	    return height
+	  }
+
+	  NoFrameworkAdapter.prototype.outerWidth = function(includeMargin) {
+	    var width = this.innerWidth()
+	    var computedStyle
+
+	    if (includeMargin && !isWindow(this.element)) {
+	      computedStyle = window.getComputedStyle(this.element)
+	      width += parseInt(computedStyle.marginLeft, 10)
+	      width += parseInt(computedStyle.marginRight, 10)
+	    }
+
+	    return width
+	  }
+
+	  NoFrameworkAdapter.prototype.scrollLeft = function() {
+	    var win = getWindow(this.element)
+	    return win ? win.pageXOffset : this.element.scrollLeft
+	  }
+
+	  NoFrameworkAdapter.prototype.scrollTop = function() {
+	    var win = getWindow(this.element)
+	    return win ? win.pageYOffset : this.element.scrollTop
+	  }
+
+	  NoFrameworkAdapter.extend = function() {
+	    var args = Array.prototype.slice.call(arguments)
+
+	    function merge(target, obj) {
+	      if (typeof target === 'object' && typeof obj === 'object') {
+	        for (var key in obj) {
+	          if (obj.hasOwnProperty(key)) {
+	            target[key] = obj[key]
+	          }
+	        }
+	      }
+
+	      return target
+	    }
+
+	    for (var i = 1, end = args.length; i < end; i++) {
+	      merge(args[0], args[i])
+	    }
+	    return args[0]
+	  }
+
+	  NoFrameworkAdapter.inArray = function(element, array, i) {
+	    return array == null ? -1 : array.indexOf(element, i)
+	  }
+
+	  NoFrameworkAdapter.isEmptyObject = function(obj) {
+	    /* eslint no-unused-vars: 0 */
+	    for (var name in obj) {
+	      return false
+	    }
+	    return true
+	  }
+
+	  Waypoint.adapters.push({
+	    name: 'noframework',
+	    Adapter: NoFrameworkAdapter
+	  })
+	  Waypoint.Adapter = NoFrameworkAdapter
+	}())
+	;
+
+/***/ },
+/* 134 */
+/***/ function(module, exports) {
+
+	module.exports = "<div>\n    <h1 class=\"space__title\">{{space.post_title}}</h1>\n\n    <div class=\"space__info\" v-if=\"space.membership_info\">\n      <h3 class=\"space__text--bold\">Membership Info</h3>\n      <p class=\"space__text\">{{space.membership_info}}</p>\n    </div>\n\n    <div class=\"space__info\" v-if=\"space.classes\">\n      <h3 class=\"space__text--bold\">Classes</h3>\n      <p class=\"space__text\">{{space.classes}}</p>\n    </div>\n\n    <div class=\"space__info\" v-if=\"space.website\">\n      <h3 class=\"space__text--bold\">Website</h3>\n      <p class=\"space__text\">\n        <a target=\"_blank\"\n           href=\"{{space.website}}\">\n           {{space.website}}\n        </a>\n      </p>\n    </div>\n  </div>";
+
+/***/ },
+/* 135 */
+/***/ function(module, exports) {
+
+	module.exports = "<map></map>\n  <section class=\"space__item-container\">\n    <space\n      v-for=\"space in makerspaces\"\n      class=\"space__item\"\n      :space=\"space\"\n      :class=\"{'space__item--active': active_space && active_space.ID == space.ID}\"\n    >\n    </space>\n  </section>";
+
+/***/ },
+/* 136 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _defineProperty = __webpack_require__(137);
+
+	var _defineProperty2 = _interopRequireDefault(_defineProperty);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function (obj, key, value) {
+	  if (key in obj) {
+	    (0, _defineProperty2.default)(obj, key, {
+	      value: value,
+	      enumerable: true,
+	      configurable: true,
+	      writable: true
+	    });
+	  } else {
+	    obj[key] = value;
+	  }
+
+	  return obj;
+	};
+
+	exports.__esModule = true;
+
+/***/ },
+/* 137 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(138), __esModule: true };
+
+/***/ },
+/* 138 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = __webpack_require__(139);
+	module.exports = function defineProperty(it, key, desc){
+	  return $.setDesc(it, key, desc);
+	};
+
+/***/ },
+/* 139 */
+/***/ function(module, exports) {
+
+	var $Object = Object;
+	module.exports = {
+	  create:     $Object.create,
+	  getProto:   $Object.getPrototypeOf,
+	  isEnum:     {}.propertyIsEnumerable,
+	  getDesc:    $Object.getOwnPropertyDescriptor,
+	  setDesc:    $Object.defineProperty,
+	  setDescs:   $Object.defineProperties,
+	  getKeys:    $Object.keys,
+	  getNames:   $Object.getOwnPropertyNames,
+	  getSymbols: $Object.getOwnPropertySymbols,
+	  each:       [].forEach
+	};
+
+/***/ },
+/* 140 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(141), __esModule: true };
+
+/***/ },
+/* 141 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(142);
+	module.exports = __webpack_require__(145).Object.assign;
+
+/***/ },
+/* 142 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.3.1 Object.assign(target, source)
+	var $export = __webpack_require__(143);
+
+	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(148)});
+
+/***/ },
+/* 143 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var global    = __webpack_require__(144)
+	  , core      = __webpack_require__(145)
+	  , ctx       = __webpack_require__(146)
+	  , PROTOTYPE = 'prototype';
+
+	var $export = function(type, name, source){
+	  var IS_FORCED = type & $export.F
+	    , IS_GLOBAL = type & $export.G
+	    , IS_STATIC = type & $export.S
+	    , IS_PROTO  = type & $export.P
+	    , IS_BIND   = type & $export.B
+	    , IS_WRAP   = type & $export.W
+	    , exports   = IS_GLOBAL ? core : core[name] || (core[name] = {})
+	    , target    = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE]
+	    , key, own, out;
+	  if(IS_GLOBAL)source = name;
+	  for(key in source){
+	    // contains in native
+	    own = !IS_FORCED && target && key in target;
+	    if(own && key in exports)continue;
+	    // export native or passed
+	    out = own ? target[key] : source[key];
+	    // prevent global pollution for namespaces
+	    exports[key] = IS_GLOBAL && typeof target[key] != 'function' ? source[key]
+	    // bind timers to global for call from export context
+	    : IS_BIND && own ? ctx(out, global)
+	    // wrap global constructors for prevent change them in library
+	    : IS_WRAP && target[key] == out ? (function(C){
+	      var F = function(param){
+	        return this instanceof C ? new C(param) : C(param);
+	      };
+	      F[PROTOTYPE] = C[PROTOTYPE];
+	      return F;
+	    // make static versions for prototype methods
+	    })(out) : IS_PROTO && typeof out == 'function' ? ctx(Function.call, out) : out;
+	    if(IS_PROTO)(exports[PROTOTYPE] || (exports[PROTOTYPE] = {}))[key] = out;
+	  }
+	};
+	// type bitmap
+	$export.F = 1;  // forced
+	$export.G = 2;  // global
+	$export.S = 4;  // static
+	$export.P = 8;  // proto
+	$export.B = 16; // bind
+	$export.W = 32; // wrap
+	module.exports = $export;
+
+/***/ },
+/* 144 */
+/***/ function(module, exports) {
+
+	// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
+	var global = module.exports = typeof window != 'undefined' && window.Math == Math
+	  ? window : typeof self != 'undefined' && self.Math == Math ? self : Function('return this')();
+	if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
+
+/***/ },
+/* 145 */
+/***/ function(module, exports) {
+
+	var core = module.exports = {version: '1.2.6'};
+	if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
+
+/***/ },
+/* 146 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// optional / simple context binding
+	var aFunction = __webpack_require__(147);
+	module.exports = function(fn, that, length){
+	  aFunction(fn);
+	  if(that === undefined)return fn;
+	  switch(length){
+	    case 1: return function(a){
+	      return fn.call(that, a);
+	    };
+	    case 2: return function(a, b){
+	      return fn.call(that, a, b);
+	    };
+	    case 3: return function(a, b, c){
+	      return fn.call(that, a, b, c);
+	    };
+	  }
+	  return function(/* ...args */){
+	    return fn.apply(that, arguments);
+	  };
+	};
+
+/***/ },
+/* 147 */
+/***/ function(module, exports) {
+
+	module.exports = function(it){
+	  if(typeof it != 'function')throw TypeError(it + ' is not a function!');
+	  return it;
+	};
+
+/***/ },
+/* 148 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.2.1 Object.assign(target, source, ...)
+	var $        = __webpack_require__(139)
+	  , toObject = __webpack_require__(149)
+	  , IObject  = __webpack_require__(151);
+
+	// should work with symbols and should have deterministic property order (V8 bug)
+	module.exports = __webpack_require__(153)(function(){
+	  var a = Object.assign
+	    , A = {}
+	    , B = {}
+	    , S = Symbol()
+	    , K = 'abcdefghijklmnopqrst';
+	  A[S] = 7;
+	  K.split('').forEach(function(k){ B[k] = k; });
+	  return a({}, A)[S] != 7 || Object.keys(a({}, B)).join('') != K;
+	}) ? function assign(target, source){ // eslint-disable-line no-unused-vars
+	  var T     = toObject(target)
+	    , $$    = arguments
+	    , $$len = $$.length
+	    , index = 1
+	    , getKeys    = $.getKeys
+	    , getSymbols = $.getSymbols
+	    , isEnum     = $.isEnum;
+	  while($$len > index){
+	    var S      = IObject($$[index++])
+	      , keys   = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S)
+	      , length = keys.length
+	      , j      = 0
+	      , key;
+	    while(length > j)if(isEnum.call(S, key = keys[j++]))T[key] = S[key];
+	  }
+	  return T;
+	} : Object.assign;
+
+/***/ },
+/* 149 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 7.1.13 ToObject(argument)
+	var defined = __webpack_require__(150);
+	module.exports = function(it){
+	  return Object(defined(it));
+	};
+
+/***/ },
+/* 150 */
+/***/ function(module, exports) {
+
+	// 7.2.1 RequireObjectCoercible(argument)
+	module.exports = function(it){
+	  if(it == undefined)throw TypeError("Can't call method on  " + it);
+	  return it;
+	};
+
+/***/ },
+/* 151 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// fallback for non-array-like ES3 and non-enumerable old V8 strings
+	var cof = __webpack_require__(152);
+	module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
+	  return cof(it) == 'String' ? it.split('') : Object(it);
+	};
+
+/***/ },
+/* 152 */
+/***/ function(module, exports) {
+
+	var toString = {}.toString;
+
+	module.exports = function(it){
+	  return toString.call(it).slice(8, -1);
+	};
+
+/***/ },
+/* 153 */
+/***/ function(module, exports) {
+
+	module.exports = function(exec){
+	  try {
+	    return !!exec();
+	  } catch(e){
+	    return true;
+	  }
 	};
 
 /***/ }

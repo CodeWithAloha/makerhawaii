@@ -8,6 +8,9 @@
       MAKER_STORE.on('add', (val, key) => {
         Vue.set(this.$data, key, val);
       });
+      MAKER_STORE.on('change', (val, old, key) => {
+        Vue.set(this.$data, key, val);
+      });
     },
     components: {space},
     data() {
@@ -22,17 +25,17 @@
 <template>
   <map></map>
   <section class="space__item-container">
-    <article
+    <space
+      v-for="space in makerspaces"
       class="space__item"
-      v-for="space in makerspaces">
-
-      <space :space="space" active="active_space && (space.id === active_space.id)"></space>
-
-    </article>
+      :space="space"
+      :class="{'space__item--active': active_space && active_space.ID == space.ID}"
+    >
+    </space>
   </section>
 </template>
 
-<style scoped>
+<style>
   .space {
     @nest &__item {
       min-height: 100%;
@@ -42,19 +45,11 @@
       }
 
       @nest &-container {
-        height: calc(100vh - 260px);
-        overflow: scroll;
         padding: 0 10px;
+        margin-top: 256px;
       }
     }
 
-    @nest &-text {
-      margin: 0;
-      @nest &--bold {
-        font-weight: 600;
-        margin-bottom: 4px;
-      }
-    }
   }
 
 </style>
