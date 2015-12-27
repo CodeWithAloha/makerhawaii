@@ -29,8 +29,7 @@
       v-for="space in makerspaces"
       class="space__item"
       :space="space"
-      :class="{'space__item--active': active_space && active_space.ID == space.ID}"
-    >
+      :class="{'space__item--active': active_space && active_space.ID == space.ID}">
     </space>
   </section>
 </template>

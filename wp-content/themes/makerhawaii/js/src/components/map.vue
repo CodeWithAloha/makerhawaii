@@ -17,7 +17,7 @@
       L.mapbox.accessToken = MAPBOX_API_KEY;
       this.map = L.mapbox.map(
         this.$el, 'russellvea2.nl7ij7em');
-      this.map.setZoom(5);
+      this.map.setZoom(11);
       MAKER_STORE.on('add', (val, key) => {
         if(key[0] === 'makerspaces') {
           val.forEach((space) => {
@@ -48,13 +48,15 @@
 
 <style>
   .map {
+    height: 100%;
     @nest &__container {
       position: fixed;
       top: 56px;
       left: 0;
       right: 0;
       z-index: 2;
-      height: 300px;
+      height: 250px;
+      margin-bottom: 2px;
     }
   }
 </style>

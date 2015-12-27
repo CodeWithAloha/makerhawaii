@@ -53,7 +53,7 @@
       min-height: 100%;
       padding: 10px 8px;
       transition: opacity 1.2s ease;
-      opacity: 0.4;
+      opacity: 0.2;
 
       @nest &--active {
         opacity: 1;
