@@ -11,7 +11,7 @@
 /* config */
 @import "normalize.css";
 @import "colors.css/myth/variables.css";
-@import "config/structure.css";
+@import "./config/structure.css";
 
 /* fragments */
 @import "./fragments/header.css";

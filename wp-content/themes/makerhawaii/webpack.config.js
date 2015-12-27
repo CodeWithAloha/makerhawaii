@@ -1,3 +1,4 @@
+'use strict'
 var path = require('path');
 var nesting = require('postcss-nesting');
 var rucksack = require('rucksack-css');
@@ -12,20 +13,17 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var BrowserSyncPlugin  = require('browser-sync-webpack-plugin');
 var webpack = require('webpack');
 
-module.exports = {
-  entry: './js/src/index.js',
+let config = {
+  entry: ['./js/src/index.js'],
   output: {
-    filename: './js/bundle.js',
+    publicPath: 'http://local.makerhawaii.com:8080/wp-content/themes/makerhawaii',
+    filename: './js/bundle.js'
   },
   module: {
     loaders: [
       {
         test: /\.png$/,
         loader: 'url',
-      },
-      {
-       test: /\.css$/,
-       loader: ExtractTextPlugin.extract('css?modules!postcss')
       },
       {
         test: /\.json$/,
@@ -42,22 +40,10 @@ module.exports = {
       }
     ]
   },
+  watch: true,
   vue: {
-   postcss: [fonts, scale, props, nesting, rucksack]
+   postcss: [pimport, fonts, scale, props, nesting, rucksack]
   },
-  postcss: function(webpack) {
-    [pimport({
-      addDependencyTo: webpack
-    }), fonts, scale, props, nesting, rucksack]
-  },
-  plugins: [
-    // new webpack.optimize.UglifyJsPlugin(),
-    new ExtractTextPlugin('../style.css'),
-    new BrowserSyncPlugin( {
-      host: 'localhost',
-      port: 3003,
-      proxy: 'http://local.makerhawaii.com',
-      files: ['style.css', 'views/*.twig', 'js/src/*.js']
-    })
-  ]
 }
+
+module.exports = config;

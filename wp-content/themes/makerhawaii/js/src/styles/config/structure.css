@@ -1,0 +1,9 @@
+.app {
+  padding-top: 53px;
+  font-family: "Roboto";
+}
+
+.container {
+  @neat-outer-container;
+  padding: 0 10px;
+}

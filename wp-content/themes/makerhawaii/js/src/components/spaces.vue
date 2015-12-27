@@ -34,22 +34,3 @@
     </space>
   </section>
 </template>
-
-<style>
-  .space {
-    @nest &__item {
-      min-height: 100%;
-
-      @nest &--active {
-        background: #AAA;
-      }
-
-      @nest &-container {
-        padding: 0 10px;
-        margin-top: 256px;
-      }
-    }
-
-  }
-
-</style>

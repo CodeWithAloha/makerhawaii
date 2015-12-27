@@ -45,9 +45,25 @@
 </template>
 
 <style>
+  @import 'normalize.css';
+  @import "colors.css/myth/variables.css";
+
   .space {
-    @nest &__text {
-      margin: 0;
+    @nest &__item {
+      min-height: 100%;
+      padding: 10px 8px;
+      transition: opacity 1.2s ease;
+      opacity: 0.4;
+
+      @nest &--active {
+        opacity: 1;
+      }
+
+      @nest &-container {
+        padding: 0 10px;
+        margin-top: 256px;
+      }
     }
+
   }
 </style>
