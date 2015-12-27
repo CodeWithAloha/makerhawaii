@@ -44,6 +44,14 @@ let config = {
   vue: {
    postcss: [pimport, fonts, scale, props, nesting, rucksack]
   },
+  plugins: [
+    new BrowserSyncPlugin({
+      proxy: 'http://local.makerhawaii.com',
+      port: 3000,
+    }, {
+      reload: false
+    })
+  ]
 }
 
 module.exports = config;
