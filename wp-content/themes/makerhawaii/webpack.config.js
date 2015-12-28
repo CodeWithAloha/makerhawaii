@@ -16,7 +16,7 @@ var webpack = require('webpack');
 let config = {
   entry: ['./js/src/index.js'],
   output: {
-    publicPath: 'http://local.makerhawaii.com:8080/wp-content/themes/makerhawaii',
+    publicPath: 'http://localhost:8080/',
     filename: './js/bundle.js'
   },
   module: {
