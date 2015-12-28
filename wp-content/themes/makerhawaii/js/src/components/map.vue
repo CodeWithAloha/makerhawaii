@@ -13,11 +13,17 @@
       this.markers = {};
     },
     attached() {
+      // instantiate map client
       this.client = new MapboxClient(MAPBOX_API_KEY);
       L.mapbox.accessToken = MAPBOX_API_KEY;
       this.map = L.mapbox.map(
         this.$el, 'russellvea2.nl7ij7em');
-      this.map.setZoom(11);
+
+      const HAWAII_CENTER = [21.013688, -157.537787];
+      this.map.setView(HAWAII_CENTER, 6);
+
+
+      // add markers when they're instantiated
       MAKER_STORE.on('add', (val, key) => {
         if(key[0] === 'makerspaces') {
           val.forEach((space) => {
@@ -30,12 +36,12 @@
           });
         }
       });
+
+      // change map view
       MAKER_STORE.on('change', (val, old, key) => {
         if(val.ID) {
           let marker = this.markers[val.ID];
-          this.map.panTo(marker._latlng);
-          this.map.setZoom(10);
-
+          this.map.setView(marker._latlng, 10);
         }
       });
     },

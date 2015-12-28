@@ -7,7 +7,7 @@
     attached() {
       new Waypoint({
         element: this.$el,
-        offset: '340px',
+        offset: '60%',
         handler: (scrolled) => {
           MAKER_STORE.cursor(['active_space']).update(() => {
             return this.space;
@@ -23,7 +23,7 @@
     <h1 class="space__title">{{space.post_title}}</h1>
 
     <div class="space__info" v-if="space.membership_info">
-      <h3 class="space__text--bold">Membership Info</h3>
+      <h3 class="space__subtitle space__text--bold">Membership Info</h3>
       <p class="space__text">{{space.membership_info}}</p>
     </div>
 
@@ -49,18 +49,26 @@
   @import "colors.css/myth/variables.css";
 
   .space {
+    @nest &__title {
+      margin-bottom: 0;
+    }
+    @nest &__subtitle {
+      margin-bottom: 0;
+    }
     @nest &__item {
-      min-height: calc(100vh - 340px);
-      padding: 10px 8px;
-      transition: opacity 1.2s ease;
+      min-height: calc(100vh - 385px);
+      padding: 0 16px 20px;
+      transition: opacity 1.2s ease, transform 0.5s ease;
       opacity: 0.2;
+      transform: scale(0.90, 0.95);
 
       @nest &--active {
         opacity: 1;
+        transform: scale(1);
       }
 
       @nest &-container {
-        padding: 0 10px;
+        padding: 32px 8px;
         margin-top: 256px;
       }
     }
