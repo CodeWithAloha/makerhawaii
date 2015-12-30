@@ -7,7 +7,7 @@
     attached() {
       new Waypoint({
         element: this.$el,
-        offset: '60%',
+        offset: 120,
         handler: (scrolled) => {
           MAKER_STORE.cursor(['active_space']).update(() => {
             return this.space;
@@ -57,7 +57,7 @@
     }
     @nest &__item {
       min-height: calc(100vh - 385px);
-      padding: 0 16px 20px;
+      padding: 0 16px;
       transition: opacity 1.2s ease, transform 0.5s ease;
       opacity: 0.2;
       transform: scale(0.90, 0.95);
@@ -68,8 +68,7 @@
       }
 
       @nest &-container {
-        padding: 32px 8px;
-        margin-top: 256px;
+        padding: 32px 0 300px;
       }
     }
 

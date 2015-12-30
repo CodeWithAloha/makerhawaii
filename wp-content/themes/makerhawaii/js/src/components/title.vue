@@ -1,6 +1,9 @@
 <template>
   <header class="header">
-    <nav class="header__nav"><a class="header__title" href="/">Maker Hawaii</a></nav>
+    <nav class="header__nav"><a class="header__title" href="/">
+      <span v-if="active_space != null">{{active_space.post_title}}</span>
+      <span v-if="active_space == null">{{title}}</span>
+    </a></nav>
   </header>
 </template>
 
@@ -25,5 +28,16 @@
 
 
 <script>
-  export default {}
+  import {syncData} from '../decorators/update_data.js';
+
+  export default {
+    data() {
+      return {
+        title: 'Maker Hawaii'
+      }
+    },
+    created() {
+      syncData(this);
+    }
+  }
 </script>

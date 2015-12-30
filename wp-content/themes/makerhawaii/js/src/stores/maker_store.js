@@ -9,5 +9,4 @@ req.send();
 req.onload = () => {
   const spaces = JSON.parse(req.responseText);
   MAKER_STORE.cursor(['makerspaces']).update(() => spaces);
-  MAKER_STORE.cursor(['active_space']).update(() => spaces[0]);
 };

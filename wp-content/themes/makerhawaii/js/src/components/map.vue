@@ -6,11 +6,11 @@
   import Vue from 'vue';
 
   export default {
-    data: {
-      markers: {}
-    },
-    created() {
-      this.markers = {};
+    data() {
+      return {
+        markers: {},
+        active: false
+      }
     },
     attached() {
       // instantiate map client
@@ -22,7 +22,6 @@
       const HAWAII_CENTER = [21.013688, -157.537787];
       this.map.setView(HAWAII_CENTER, 6);
 
-
       // add markers when they're instantiated
       MAKER_STORE.on('add', (val, key) => {
         if(key[0] === 'makerspaces') {
@@ -30,17 +29,19 @@
             let {lat, lng} = space.address;
             let marker = new L.marker([lat,lng]);
             marker.addTo(this.map);
-            Object.assign(this.markers, {
+            Object.assign(this.$data.markers, {
               [space.ID]: marker
             });
           });
         }
+        if(key[0] === 'active_space')
+          Object.assign(this.$data, {active: true});
       });
 
       // change map view
       MAKER_STORE.on('change', (val, old, key) => {
         if(val.ID) {
-          let marker = this.markers[val.ID];
+          let marker = this.$data.markers[val.ID];
           this.map.setView(marker._latlng, 10);
         }
       });
@@ -49,15 +50,21 @@
 </script>
 
 <template>
-  <div class="map"></div>
+  <div class="map" :class="{'map--active': active}"></div>
 </template>
 
 <style>
   .map {
     height: 100%;
+    transition: transform 0.3s ease;
+    transform: translateY(100%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    @nest &--active {
+      transform: translateY(0);
+    }
     @nest &__container {
       position: fixed;
-      top: 56px;
+      bottom: 0;
       left: 0;
       right: 0;
       z-index: 2;

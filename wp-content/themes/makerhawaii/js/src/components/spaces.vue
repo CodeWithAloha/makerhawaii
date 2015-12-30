@@ -1,17 +1,9 @@
 <script>
-  import Vue from 'vue';
-  import {MAKER_STORE} from '../stores/maker_store.js';
   import space from './space.vue';
+  import {syncData} from '../decorators/update_data.js';
 
   export default {
-    created() {
-      MAKER_STORE.on('add', (val, key) => {
-        Vue.set(this.$data, key, val);
-      });
-      MAKER_STORE.on('change', (val, old, key) => {
-        Vue.set(this.$data, key, val);
-      });
-    },
+    created() { syncData(this) },
     components: {space},
     data() {
       return {
@@ -29,7 +21,8 @@
       v-for="space in makerspaces"
       class="space__item"
       :space="space"
-      :class="{'space__item--active': active_space && active_space.ID == space.ID}">
+      :class="{'space__item--active':
+        active_space && active_space.ID == space.ID}">
     </space>
   </section>
 </template>
