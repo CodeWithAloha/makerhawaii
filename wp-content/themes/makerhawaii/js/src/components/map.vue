@@ -50,19 +50,27 @@
 </template>
 
 <style>
+  @import "colors.css/myth/variables.css";
   .map {
     height: 100%;
     transition: transform 0.5s ease;
     transform: translateY(100%);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    @media screen and (min-width: 64em) {
+      box-shadow: none;
+      border-right: 2px solid var(--blue);
+      transform: translateY(0);
+    }
     @nest &--active {
       transform: translateY(0);
     }
     @nest &__container {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      position: fixed auto 0 0 0;
+      @media screen and (min-width: 64em) {
+        position: fixed 50px auto auto 0;
+        height: calc(100vh - 50px);
+        width: 50%;
+      }
       z-index: 2;
       height: 250px;
       margin-bottom: 2px;

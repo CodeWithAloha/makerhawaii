@@ -1,5 +1,9 @@
 .app {
   padding-top: 53px;
+  background: #FAFAFA;
+  @media screen and (min-width: 64em) {
+    margin-left: 50%;
+  }
 }
 
 .container {

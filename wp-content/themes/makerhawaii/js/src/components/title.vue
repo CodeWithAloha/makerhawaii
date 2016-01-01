@@ -17,6 +17,7 @@
     background: var(--green);
     text-align: center;
     backface-visibility: hidden;
+    height: 50px;
     @nest &__nav {
       min-height: 33px;
       width: 100%;

@@ -64,7 +64,7 @@
       opacity: 0.2;
       transform: scale(0.90, 0.95);
       font-family: Raleway;
-      color: #2B2B2B;
+      color: #494949;
 
       @nest &--active {
         opacity: 1;
@@ -78,6 +78,10 @@
 
     @nest &__link {
       word-wrap: break-word;
+    }
+
+    @nest &__text:nth-of-type(1) {
+      margin-top: 4px;
     }
 
   }
