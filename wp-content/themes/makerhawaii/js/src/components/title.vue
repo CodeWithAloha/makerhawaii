@@ -1,9 +1,8 @@
 <template>
   <header class="header">
-    <nav class="header__nav"><a class="header__title" href="/">
-      <span v-if="active_space != null">{{active_space.post_title}}</span>
-      <span v-if="active_space == null">{{title}}</span>
-    </a></nav>
+    <nav class="header__nav">
+      <a class="header__title" href="/">{{title}}</a>
+  </nav>
   </header>
 </template>
 
@@ -16,12 +15,19 @@
     z-index: 1;
     position: fixed 0 0 auto 0;
     background: var(--green);
-    padding: 8px 10px;
     text-align: center;
+    backface-visibility: hidden;
+    @nest &__nav {
+      min-height: 33px;
+      width: 100%;
+      padding: 8px 10px;
+    }
     @nest &__title {
-      font-size: 32px;
+      font-size: 28px;
+      font-family: Raleway;
       color: white;
       text-decoration: none;
+      width: 100%;
     }
   }
 </style>
@@ -31,9 +37,10 @@
   import {syncData} from '../decorators/update_data.js';
 
   export default {
-    data() {
-      return {
-        title: 'Maker Hawaii'
+    computed: {
+      title: function() {
+        return this.$data.active_space ?
+          this.$data.active_space.post_title : 'Maker Hawaii';
       }
     },
     created() {

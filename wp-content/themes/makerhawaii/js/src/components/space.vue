@@ -7,7 +7,7 @@
     attached() {
       new Waypoint({
         element: this.$el,
-        offset: 120,
+        offset: '25%',
         handler: (scrolled) => {
           MAKER_STORE.cursor(['active_space']).update(() => {
             return this.space;
@@ -28,14 +28,14 @@
     </div>
 
     <div class="space__info" v-if="space.classes">
-      <h3 class="space__text--bold">Classes</h3>
+      <h3 class="space__subtitle space__text--bold">Classes</h3>
       <p class="space__text">{{space.classes}}</p>
     </div>
 
     <div class="space__info" v-if="space.website">
-      <h3 class="space__text--bold">Website</h3>
+      <h3 class="space__subtitle space__text--bold">Website</h3>
       <p class="space__text">
-        <a target="_blank"
+        <a class="space__link"
            href="{{space.website}}">
            {{space.website}}
         </a>
@@ -50,17 +50,21 @@
 
   .space {
     @nest &__title {
+      font-size: 1.8em;
       margin-bottom: 0;
+      font-family: Raleway;
     }
     @nest &__subtitle {
       margin-bottom: 0;
+      font-family: Lobster;
     }
     @nest &__item {
       min-height: calc(100vh - 385px);
-      padding: 0 16px;
       transition: opacity 1.2s ease, transform 0.5s ease;
       opacity: 0.2;
       transform: scale(0.90, 0.95);
+      font-family: Raleway;
+      color: #2B2B2B;
 
       @nest &--active {
         opacity: 1;
@@ -68,8 +72,12 @@
       }
 
       @nest &-container {
-        padding: 32px 0 300px;
+        padding-bottom: 300px;
       }
+    }
+
+    @nest &__link {
+      word-wrap: break-word;
     }
 
   }

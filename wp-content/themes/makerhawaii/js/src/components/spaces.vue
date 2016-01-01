@@ -15,8 +15,7 @@
 </script>
 
 <template>
-  <map></map>
-  <section class="space__item-container">
+  <section class="container space__item-container">
     <space
       v-for="space in makerspaces"
       class="space__item"
