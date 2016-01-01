@@ -23,27 +23,23 @@
       this.map.setView(HAWAII_CENTER, 6);
 
       // add markers when they're instantiated
-      MAKER_STORE.on('add', (val, key) => {
-        if(key[0] === 'makerspaces') {
-          val.forEach((space) => {
-            let {lat, lng} = space.address;
-            let marker = new L.marker([lat,lng]);
-            marker.addTo(this.map);
-            Object.assign(this.$data.markers, {
-              [space.ID]: marker
-            });
+      MAKER_STORE.reference('makerspaces').observe((val) => {
+        val.forEach((space) => {
+          let {lat, lng} = space.address;
+          let marker = new L.marker([lat,lng]);
+          marker.addTo(this.map);
+          Object.assign(this.$data.markers, {
+            [space.ID]: marker
           });
-        }
-        if(key[0] === 'active_space')
-          Object.assign(this.$data, {active: true});
+        });
       });
 
       // change map view
-      MAKER_STORE.on('change', (val, old, key) => {
-        if(val.ID) {
-          let marker = this.$data.markers[val.ID];
-          this.map.setView(marker._latlng, 10);
-        }
+      MAKER_STORE.reference('active_space').observe((val) => {
+        if(val)
+          Object.assign(this.$data, {active: true});
+        let marker = this.$data.markers[val.ID];
+        this.map.setView(marker._latlng, 10);
       });
     },
   }
@@ -56,7 +52,7 @@
 <style>
   .map {
     height: 100%;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
     transform: translateY(100%);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     @nest &--active {
