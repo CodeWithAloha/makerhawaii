@@ -6,8 +6,7 @@ var cssnano = require('cssnano');
 var pimport = require('postcss-import');
 var props = require('postcss-custom-properties');
 var fonts = require('postcss-font-magician');
-var neat = require('postcss-neat');
-var scale = require('postcss-modular-scale');
+var lost = require('lost');
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var BrowserSyncPlugin  = require('browser-sync-webpack-plugin');
@@ -40,9 +39,9 @@ let config = {
       }
     ]
   },
-  watch: true,
+  watch: false,
   vue: {
-   postcss: [pimport, fonts, scale, props, nesting, rucksack]
+   postcss: [pimport, lost, fonts, props, nesting, rucksack]
   },
   plugins: [
     new BrowserSyncPlugin({
