@@ -1,13 +1,14 @@
 .app {
   padding-top: 53px;
-  font-family: "Roboto";
 }
 
 .container {
-  @neat-outer-container;
+  max-width: 64em;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 18px;
 }
 
-/**, *:before, *:after {
+*, *:before, *:after {
   box-sizing: border-box;
-}*/
+}
