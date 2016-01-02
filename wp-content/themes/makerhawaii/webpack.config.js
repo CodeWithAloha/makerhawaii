@@ -8,8 +8,8 @@ var props = require('postcss-custom-properties');
 var fonts = require('postcss-font-magician');
 var lost = require('lost');
 
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var BrowserSyncPlugin  = require('browser-sync-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var webpack = require('webpack');
 
 let config = {
@@ -51,6 +51,15 @@ let config = {
       reload: false
     })
   ]
+}
+
+if(process.env.NODE_ENV === 'production') {
+  config.plugins.shift();
+  config.plugins.unshift(new webpack.optimize.UglifyJsPlugin())
+  config.vue.loaders = {
+    css: ExtractTextPlugin.extract('css')
+  }
+  config.plugins.unshift(new ExtractTextPlugin('style.css'));
 }
 
 module.exports = config;
