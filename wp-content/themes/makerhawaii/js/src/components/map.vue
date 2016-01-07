@@ -25,7 +25,7 @@
       // add markers when they're instantiated
       MAKER_STORE.reference('makerspaces').observe((val) => {
         val.forEach((space) => {
-          let {lat, lng} = space.address;
+          let {lat, lng} = space.location;
           let marker = new L.marker([lat,lng]);
           marker.addTo(this.map);
           Object.assign(this.$data.markers, {
