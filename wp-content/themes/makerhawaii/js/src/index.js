@@ -1,12 +1,8 @@
 import Vue from 'vue';
-import title from './components/title.vue';
-import intro from './components/intro.vue';
-import map from './components/map.vue';
-import spaces from './components/spaces.vue';
-import space from './components/space.vue';
+import app from './components/app.vue';
 
 new Vue({
   el: 'body',
-  components: {title,intro,map,spaces,space},
+  components: {app},
 });
-Vue.config.debug = false;
+Vue.config.debug = true;

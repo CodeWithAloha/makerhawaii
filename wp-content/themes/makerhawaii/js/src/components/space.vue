@@ -7,11 +7,25 @@
     attached() {
       new Waypoint({
         element: this.$el,
-        offset: '25%',
+        offset: '50%',
         handler: (scrolled) => {
-          MAKER_STORE.cursor(['active_space']).update(() => {
-            return this.space;
-          });
+          if(scrolled === 'down') {
+            MAKER_STORE.cursor(['active_space']).update(() => {
+              return this.space;
+            });
+           }
+         }
+      });
+
+      new Waypoint({
+        element: this.$el,
+        offset: '20%',
+        handler: (scrolled) => {
+          if(scrolled === 'up') {
+            MAKER_STORE.cursor(['active_space']).update(() => {
+              return this.space;
+            });
+          }
         }
       });
     }
@@ -22,10 +36,21 @@
   <div>
     <h1 class="space__title">{{space.post_title}}</h1>
 
+    <div class="space__info">
+      <h3 class="space__subtitle space__text--bold">Address</h3>
+      <p class="space__text">{{space.location.address}}</p>
+    </div>
+
     <div class="space__info" v-if="space.membership_info">
       <h3 class="space__subtitle space__text--bold">Membership Info</h3>
       <p class="space__text">{{space.membership_info}}</p>
     </div>
+
+    <div class="space__info" v-if="space.howtovisit">
+      <h3 class="space__subtitle space__text--bold">How To Visit</h3>
+      <p class="space__text">{{space.howtovisit}}</p>
+    </div>
+
 
     <div class="space__info" v-if="space.classes">
       <h3 class="space__subtitle space__text--bold">Classes</h3>
@@ -59,7 +84,10 @@
       font-family: Lobster;
     }
     @nest &__item {
-      min-height: calc(100vh - 385px);
+      min-height: 100vh;
+      @nest &:last-of-type {
+        min-height: 0px;
+      }
       transition: opacity 1.2s ease, transform 0.5s ease;
       opacity: 0.2;
       transform: scale(0.90, 0.95);

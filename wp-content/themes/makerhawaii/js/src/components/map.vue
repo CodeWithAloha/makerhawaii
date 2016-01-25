@@ -39,7 +39,7 @@
         if(val)
           Object.assign(this.$data, {active: true});
         let marker = this.$data.markers[val.ID];
-        this.map.setView(marker._latlng, 10);
+        this.map.setView(marker._latlng, 13);
       });
     },
   }
@@ -67,7 +67,7 @@
     @nest &__container {
       position: fixed auto 0 0 0;
       @media screen and (min-width: 64em) {
-        position: fixed 50px auto auto 0;
+        position: fixed 0 auto auto 0;
         height: calc(100vh - 50px);
         width: 50%;
       }
