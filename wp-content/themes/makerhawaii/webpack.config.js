@@ -8,7 +8,6 @@ var props = require('postcss-custom-properties');
 var fonts = require('postcss-font-magician');
 var lost = require('lost');
 
-var BrowserSyncPlugin  = require('browser-sync-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var webpack = require('webpack');
 
@@ -43,18 +42,10 @@ let config = {
   vue: {
    postcss: [pimport, lost, fonts, props, nesting, rucksack]
   },
-  plugins: [
-    new BrowserSyncPlugin({
-      proxy: 'http://local.makerhawaii.com',
-      port: 3000,
-    }, {
-      reload: false
-    })
-  ]
+  plugins: [],
 }
 
 if(process.env.NODE_ENV === 'production') {
-  config.plugins.shift();
   config.plugins.unshift(new webpack.optimize.UglifyJsPlugin())
   config.vue.loaders = {
     css: ExtractTextPlugin.extract('css')

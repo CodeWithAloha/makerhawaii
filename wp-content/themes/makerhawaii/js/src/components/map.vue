@@ -1,7 +1,7 @@
 <script>
-  import MapboxClient from 'mapbox';
   import {MAPBOX_API_KEY} from './config/mapbox.js';
-  import mapbox from 'mapbox.js';
+  import mapbox from 'mapbox-gl/dist/mapbox-gl.js';
+  const {Map, Navigation} = mapbox;
   import {MAKER_STORE} from '../stores/maker_store.js';
   import Vue from 'vue';
 
@@ -14,32 +14,76 @@
     },
     attached() {
       // instantiate map client
-      this.client = new MapboxClient(MAPBOX_API_KEY);
-      L.mapbox.accessToken = MAPBOX_API_KEY;
-      this.map = L.mapbox.map(
-        this.$el, 'russellvea2.nl7ij7em');
+      mapbox.accessToken = MAPBOX_API_KEY;
 
-      const HAWAII_CENTER = [21.013688, -157.537787];
-      this.map.setView(HAWAII_CENTER, 6);
-
-      // add markers when they're instantiated
-      MAKER_STORE.reference('makerspaces').observe((val) => {
-        val.forEach((space) => {
-          let {lat, lng} = space.location;
-          let marker = new L.marker([lat,lng]);
-          marker.addTo(this.map);
-          Object.assign(this.$data.markers, {
-            [space.ID]: marker
-          });
-        });
+      const center = [-157.9415345585941, 21.392663115780692];
+      this.map = new Map({
+        container: this.$el,
+        center,
+        zoom: 9,
+        style: 'mapbox://styles/russellvea2/cihib8squ00tdjnkx9bwq8tvt'
       });
 
+      const markers = {
+        type: "FeatureCollection",
+        features: []
+      }
+
+      this.map.addControl(new Navigation());
+
+      this.map.on('load', () => {
+        this.map.addSource("markers", {
+          type: "geojson",
+          data: markers
+        })
+
+        this.map.addLayer({
+          id: "markers",
+          interactive: true,
+          type: "symbol",
+          source: "markers",
+          layout: {
+            "icon-image": "star-15"
+          }
+        })
+      });
+
+
+
+      // add markers when they're instantiated
+      MAKER_STORE
+        .reference('makerspaces')
+        .observe((val) => {
+          val.forEach((space) => {
+            let {lat, lng} = space.location;
+            let latlng = [lng, lat];
+            markers.features =
+              markers.features.concat([
+                {
+                  type: "Feature",
+                  geometry: {
+                    type: "Point",
+                    coordinates: latlng
+                  }
+                }
+              ])
+            Object.assign(this.$data.markers, {
+              [space.ID]: latlng
+            });
+          });
+        });
+
       // change map view
-      MAKER_STORE.reference('active_space').observe((val) => {
-        if(val)
-          Object.assign(this.$data, {active: true});
-        let marker = this.$data.markers[val.ID];
-        this.map.setView(marker._latlng, 13);
+      MAKER_STORE
+        .reference('active_space')
+        .observe((val) => {
+          if(val) {
+            Object.assign(this.$data, {active: true});
+          }
+
+          let latlng = this.$data.markers[val.ID];
+          this.map.setZoom(13);
+          this.map.panTo(latlng);
       });
     },
   }
@@ -77,4 +121,5 @@
     }
   }
 </style>
-<style src="mapbox.js/theme/style.css"></style>
+
+<style src="mapbox-gl/dist/mapbox-gl.css"></style>
