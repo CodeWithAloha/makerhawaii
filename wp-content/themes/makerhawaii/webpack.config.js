@@ -12,10 +12,11 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var webpack = require('webpack');
 
 let config = {
-  entry: ['./js/src/index.js'],
+  entry: path.resolve('./js/src/index.js'),
   output: {
-    publicPath: 'http://localhost:8080/',
-    filename: './js/bundle.js'
+    publicPath: 'http://local.makerhawaii.com:8080/js',
+    path: path.resolve(__dirname  + '/js'),
+    filename: 'bundle.js'
   },
   module: {
     loaders: [
