@@ -1,14 +1,19 @@
 <script>
   import {MAPBOX_API_KEY} from './config/mapbox.js';
   import mapbox from 'mapbox-gl/dist/mapbox-gl.js';
-  const {Map, Navigation} = mapbox;
+
+  const {
+    Map,
+    Navigation
+  } = mapbox;
+
   import {MAKER_STORE} from '../stores/maker_store.js';
-  import Vue from 'vue';
 
   export default {
     data() {
       return {
         markers: {},
+        spaces: {},
         active: false
       }
     },
@@ -48,28 +53,65 @@
         })
       });
 
+      this.map.on('click', (e) => {
+        this.map.featuresAt(e.point, {
+          layer: 'markers',
+          radius: 10,
+          includeGeometry: true
+        }, (err, features) => {
 
+          if(err) {
+            throw err;
+          }
+
+          if(features.length === 0) {
+            return;
+          }
+
+          const space = this.$data.spaces[features[0].properties.ID];
+
+          MAKER_STORE
+            .cursor('scrolled_space')
+            .update(() => space);
+
+          MAKER_STORE
+            .cursor('active_space')
+            .update(() => space);
+        })
+      });
 
       // add markers when they're instantiated
       MAKER_STORE
         .reference('makerspaces')
         .observe((val) => {
           val.forEach((space) => {
-            let {lat, lng} = space.location;
-            let latlng = [lng, lat];
+
+            const {
+              lat,
+              lng
+            } = space.location;
+
             markers.features =
               markers.features.concat([
                 {
                   type: "Feature",
                   geometry: {
                     type: "Point",
-                    coordinates: latlng
+                    coordinates: [lng, lat]
+                  },
+                  properties: {
+                    ID: space.ID
                   }
                 }
               ])
+
             Object.assign(this.$data.markers, {
-              [space.ID]: latlng
+              [space.ID]: [lng, lat]
             });
+
+            Object.assign(this.$data.spaces, {
+              [space.ID]: space
+            })
           });
         });
 
@@ -112,7 +154,7 @@
       position: fixed auto 0 0 0;
       @media screen and (min-width: 64em) {
         position: fixed 0 auto auto 0;
-        height: calc(100vh - 50px);
+        height: 100%;
         width: 50%;
       }
       z-index: 2;

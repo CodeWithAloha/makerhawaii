@@ -7,12 +7,25 @@
     attached() {
       new Waypoint({
         element: this.$el,
-        offset: '50%',
+        offset: '40%',
         handler: (scrolled) => {
+          const scrolling =
+            MAKER_STORE
+              .cursor('scrolling')
+              .deref();
+
+          if(scrolling) {
+            return;
+          }
+
           if(scrolled === 'down') {
-            MAKER_STORE.cursor(['active_space']).update(() => {
-              return this.space;
-            });
+            MAKER_STORE
+              .cursor('active_space')
+              .update(() => this.space)
+
+                      MAKER_STORE
+              .cursor('scrolled_space')
+              .update(() => this.space);
            }
          }
       });
@@ -21,10 +34,25 @@
         element: this.$el,
         offset: '20%',
         handler: (scrolled) => {
+
+          const scrolling =
+            MAKER_STORE
+              .cursor('scrolling')
+              .deref();
+
+            if(scrolling) {
+              return true;
+            }
+
           if(scrolled === 'up') {
-            MAKER_STORE.cursor(['active_space']).update(() => {
-              return this.space;
-            });
+            MAKER_STORE
+              .cursor('active_space')
+              .update(() => this.space)
+
+
+            MAKER_STORE
+              .cursor('scrolled_space')
+              .update(() => this.space);
           }
         }
       });

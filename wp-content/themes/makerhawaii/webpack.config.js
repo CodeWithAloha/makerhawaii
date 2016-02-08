@@ -15,8 +15,7 @@ let config = {
   entry: path.resolve('./js/src/index.js'),
   output: {
     publicPath: 'http://local.makerhawaii.com:8080/js',
-    path: path.resolve(__dirname  + '/js'),
-    filename: 'bundle.js'
+    filename: './js/bundle.js'
   },
   module: {
     loaders: [

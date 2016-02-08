@@ -1,15 +1,20 @@
-import {Structure} from 'immstruct';
+import immstruct, {Structure} from 'immstruct';
 export const MAKER_STORE =
   new Structure({
-    makerspaces: [],
-    active_space: null
+    key: 'makers',
+    data: {
+      makerspaces: [],
+      scrolling: false,
+      mobile: window.innerWidth < 1280,
+      active_space: null
+    }
   });
-
+  
 //initialize makerspaces
-const req = new XMLHttpRequest();
-req.open('GET', '/makerspaces', true);
-req.send();
-req.onload = () => {
-  const spaces = JSON.parse(req.responseText);
-  MAKER_STORE.cursor('makerspaces').update(() => spaces);
-};
+fetch('/makerspaces')
+  .then((res) => res.json())
+  .then((spaces) => {
+    MAKER_STORE
+      .cursor('makerspaces')
+      .update(() => spaces);
+  })
