@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import app from './components/app.vue';
-import 'whatwg-fetch';
 
 new Vue({
   el: 'body',
@@ -8,4 +7,4 @@ new Vue({
 });
 
 Vue.config.debug =
-  process.env.NODE_ENV === 'production';
+  process.env.NODE_ENV != 'production';

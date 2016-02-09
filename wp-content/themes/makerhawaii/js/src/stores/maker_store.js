@@ -9,12 +9,14 @@ export const MAKER_STORE =
       active_space: null
     }
   });
-  
+
 //initialize makerspaces
-fetch('/makerspaces')
-  .then((res) => res.json())
-  .then((spaces) => {
-    MAKER_STORE
-      .cursor('makerspaces')
-      .update(() => spaces);
-  })
+let req = new XMLHttpRequest();
+req.open('GET', 'makerspaces', 1);
+req.send();
+req.onload = () => {
+  const spaces = JSON.parse(req.responseText);
+  MAKER_STORE
+    .cursor('makerspaces')
+    .update(() => spaces);
+};
