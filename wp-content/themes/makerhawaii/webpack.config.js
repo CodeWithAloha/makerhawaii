@@ -52,7 +52,7 @@ if(process.env.NODE_ENV === 'production') {
   config.vue.loaders = {
     css: ExtractTextPlugin.extract('css')
   }
-  config.plugins.unshift(new ExtractTextPlugin('style.css'));
+  config.plugins.unshift(new ExtractTextPlugin('../style.css'));
 }
 
 module.exports = config;
