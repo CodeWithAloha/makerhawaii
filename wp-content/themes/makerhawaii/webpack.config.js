@@ -14,8 +14,9 @@ var webpack = require('webpack');
 let config = {
   entry: path.resolve('./js/src/index.js'),
   output: {
-    publicPath: 'http://local.makerhawaii.com:8080/js',
-    filename: './js/bundle.js'
+    publicPath: 'http://local.makerhawaii.com:8080/js/',
+    path: path.resolve('./js'),
+    filename: 'bundle.js'
   },
   module: {
     loaders: [
@@ -42,11 +43,12 @@ let config = {
   vue: {
    postcss: [pimport, lost, fonts, props, nesting, rucksack]
   },
-  plugins: [],
+  plugins: []
 }
 
 if(process.env.NODE_ENV === 'production') {
-  config.plugins.unshift(new webpack.optimize.UglifyJsPlugin())
+  config.plugins.unshift(new webpack.optimize.UglifyJsPlugin());
+  config.output.publicPath = '/wp-content/themes/makerhawaii/js/';
   config.vue.loaders = {
     css: ExtractTextPlugin.extract('css')
   }
