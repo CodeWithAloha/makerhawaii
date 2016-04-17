@@ -1,7 +1,6 @@
 <script>
   import {MAPBOX_API_KEY} from './config/mapbox.js';
 
-
   import {MAKER_STORE} from '../stores/maker_store.js';
 
   export default {
@@ -119,10 +118,12 @@
         MAKER_STORE
           .reference('active_space')
           .observe((val) => {
-            if(val) {
-              Object.assign(this.$data, {active: true});
+            if(!val) {
+              Object.assign(this.$data, {active: false});
+              return
             }
 
+            Object.assign(this.$data, {active: true});
             let latlng = this.$data.markers[val.ID];
             this.map.setZoom(13);
             this.map.panTo(latlng);

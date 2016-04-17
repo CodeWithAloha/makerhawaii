@@ -5,16 +5,21 @@
   export default {
     props:  ['space'],
     attached() {
+
+      const body = document.querySelector('body')
+
       new Waypoint({
         element: this.$el,
         offset: '40%',
         handler: (scrolled) => {
+
+
           const scrolling =
             MAKER_STORE
               .cursor('scrolling')
               .deref();
 
-          if(scrolling) {
+          if(scrolling === true) {
             return;
           }
 
@@ -23,7 +28,7 @@
               .cursor('active_space')
               .update(() => this.space)
 
-                      MAKER_STORE
+            MAKER_STORE
               .cursor('scrolled_space')
               .update(() => this.space);
            }
@@ -32,7 +37,7 @@
 
       new Waypoint({
         element: this.$el,
-        offset: '20%',
+        offset: (body.offsetWidth < 1280) ? '0%' : '20%',
         handler: (scrolled) => {
 
           const scrolling =
@@ -97,24 +102,28 @@
   </div>
 </template>
 
-<style>
+<style scoped>
   @import 'normalize.css';
   @import "colors.css/myth/variables.css";
 
   .space {
-    @nest &__title {
+     &__title {
       font-size: 1.8em;
       margin-bottom: 0;
       font-family: Raleway;
     }
-    @nest &__subtitle {
+
+    &__subtitle {
       margin-bottom: 0;
       font-family: Lobster;
     }
-    @nest &__item {
+
+    &__item {
+      min-height: 600px;
       min-height: 100vh;
       @nest &:last-of-type {
         min-height: 0px;
+        padding-bottom: 50vh;
       }
       transition: opacity 1.2s ease, transform 0.5s ease;
       opacity: 0.2;
@@ -132,11 +141,11 @@
       }
     }
 
-    @nest &__link {
+    &__link {
       word-wrap: break-word;
     }
 
-    @nest &__text:nth-of-type(1) {
+    &__text:nth-of-type(1) {
       margin-top: 4px;
     }
 

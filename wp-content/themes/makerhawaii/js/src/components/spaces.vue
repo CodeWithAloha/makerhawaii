@@ -10,7 +10,7 @@
       MAKER_STORE
         .reference('scrolled_space')
         .observe((space) => {
-          // scroll to space if clicked on mapj
+          // scroll to space if clicked on map
           if(space !== this.$data.active_space)  {
 
             // prevent Waypoint from triggering while scrolling
