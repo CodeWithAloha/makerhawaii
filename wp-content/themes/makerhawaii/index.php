@@ -16,7 +16,9 @@
 
 
 $context = Timber::get_context();
-$context['spaces'] = Timber::get_posts('post_type=makerspace');
+$context['spaces'] = Timber::get_posts('post_type=makerspace&posts_per_page=-1');
+$pages = Timber::get_posts('post_type=page&name=homepage');
+$context['post'] = array_shift($pages);
 Timber::render('index.twig', $context);
 
 ?>

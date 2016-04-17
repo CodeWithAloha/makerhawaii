@@ -13,7 +13,6 @@
         offset: '40%',
         handler: (scrolled) => {
 
-
           const scrolling =
             MAKER_STORE
               .cursor('scrolling')

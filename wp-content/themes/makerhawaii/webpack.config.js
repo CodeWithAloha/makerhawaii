@@ -49,6 +49,7 @@ let config = {
 if(process.env.NODE_ENV === 'production') {
   config.plugins.unshift(new webpack.optimize.UglifyJsPlugin());
   config.output.publicPath = '/wp-content/themes/makerhawaii/js/';
+  config.output.path = path.resolve('./js'),
   config.vue.loaders = {
     css: ExtractTextPlugin.extract('css')
   }

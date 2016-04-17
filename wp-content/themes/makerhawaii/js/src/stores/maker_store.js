@@ -1,9 +1,13 @@
 import immstruct, {Structure} from 'immstruct';
+
+const content = document.querySelector('.post-content')
+
 export const MAKER_STORE =
   new Structure({
     key: 'makers',
     data: {
       makerspaces: [],
+      intro_text: (content) ? content.textContent : 'Please scroll down',
       scrolling: false,
       mobile: window.innerWidth < 1280,
       active_space: null
