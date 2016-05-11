@@ -7,7 +7,7 @@ export const MAKER_STORE =
     key: 'makers',
     data: {
       makerspaces: [],
-      intro_text: (content) ? content.textContent : 'Please scroll down',
+      intro_text: (content) ? content.innerHTML : 'Please scroll down',
       scrolling: false,
       mobile: window.innerWidth < 1280,
       active_space: null

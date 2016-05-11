@@ -8,7 +8,44 @@
       return {
         markers: {},
         spaces: {},
-        active: false
+        active: false,
+        makers_added: false,
+        map_loaded: false
+      }
+    },
+    methods: {
+      add_markers(val, markers) {
+        if(!this.$data.map_loaded) {
+          return
+        }
+
+        Object.assign(this.$data, {markers_added: true})
+        val.forEach((space) => {
+
+          const { lng, lat} = space.location
+
+          markers.features =
+            markers.features.concat([
+              {
+                type: "Feature",
+                geometry: {
+                  type: "Point",
+                  coordinates: [lng, lat]
+                },
+                properties: {
+                  ID: space.ID
+                }
+              }
+            ])
+
+          Object.assign(this.$data.markers, {
+            [space.ID]: [lng, lat]
+          });
+
+          Object.assign(this.$data.spaces, {
+            [space.ID]: space
+          })
+        });
       }
     },
     attached() {
@@ -20,11 +57,11 @@
         } = mapbox;
         mapbox.accessToken = MAPBOX_API_KEY;
 
-        const center = [-157.9415345585941, 21.392663115780692];
+        const center = [-157.371200, 20.865516]
         this.map = new Map({
           container: this.$el,
           center,
-          zoom: 9,
+          zoom: 6,
           style: 'mapbox://styles/russellvea2/cihib8squ00tdjnkx9bwq8tvt'
         });
 
@@ -36,6 +73,18 @@
         this.map.addControl(new Navigation());
 
         this.map.on('load', () => {
+
+          Object.assign(this.$data, {map_loaded: true})
+
+          if(!this.$data.markers_added) {
+            const makerspaces =
+              MAKER_STORE
+                .reference('makerspaces')
+                .cursor()
+                .deref()
+            this.add_markers(makerspaces, markers)
+          }
+
           this.map.addSource("markers", {
             type: "geojson",
             data: markers
@@ -78,41 +127,6 @@
               .update(() => space);
           })
         });
-
-        // add markers when they're instantiated
-        MAKER_STORE
-          .reference('makerspaces')
-          .observe((val) => {
-            val.forEach((space) => {
-
-              const {
-                lat,
-                lng
-              } = space.location;
-
-              markers.features =
-                markers.features.concat([
-                  {
-                    type: "Feature",
-                    geometry: {
-                      type: "Point",
-                      coordinates: [lng, lat]
-                    },
-                    properties: {
-                      ID: space.ID
-                    }
-                  }
-                ])
-
-              Object.assign(this.$data.markers, {
-                [space.ID]: [lng, lat]
-              });
-
-              Object.assign(this.$data.spaces, {
-                [space.ID]: space
-              })
-            });
-          });
 
         // change map view
         MAKER_STORE

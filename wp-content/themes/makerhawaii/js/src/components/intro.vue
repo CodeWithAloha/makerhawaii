@@ -14,7 +14,7 @@
 <template>
   <div class="container">
     <h1 class="title">Welcome to Maker Hawaii!</h1>
-    <p class="text"> {{intro_text}} </p>
+    <div class="" v-html="intro_text"></div>
   </div>
 </template>
 
