@@ -9,7 +9,7 @@
         markers: {},
         spaces: {},
         active: false,
-        makers_added: false,
+        markers_added: false,
         map_loaded: false
       }
     },
@@ -76,7 +76,7 @@
 
           Object.assign(this.$data, {map_loaded: true})
 
-          if(!this.$data.markers_added) {
+          if(this.$data.markers_added === false) {
             const makerspaces =
               MAKER_STORE
                 .reference('makerspaces')
