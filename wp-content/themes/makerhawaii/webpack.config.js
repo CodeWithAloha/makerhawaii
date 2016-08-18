@@ -53,7 +53,7 @@ if(process.env.NODE_ENV === 'production') {
     css: ExtractTextPlugin.extract('css')
   }
   config.plugins.unshift(new ExtractTextPlugin('./style.css'));
-  // config.plugins.unshift(new webpack.optimize.UglifyJsPlugin());
+  config.plugins.unshift(new webpack.optimize.UglifyJsPlugin());
 }
 
 module.exports = config;

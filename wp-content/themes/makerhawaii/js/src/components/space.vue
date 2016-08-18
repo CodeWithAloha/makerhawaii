@@ -94,12 +94,10 @@
 
     <div class="space__info" v-if="space.website">
       <h3 class="space__subtitle space__text--bold">Website</h3>
-      <p class="space__text">
-        <a class="space__link"
-           href="{{space.website}}">
-           {{space.website}}
-        </a>
-      </p>
+      <a class="space__link"
+         href="{{space.website}}">
+         {{space.website}}
+      </a>
     </div>
   </div>
 </template>
@@ -147,8 +145,13 @@
       word-wrap: break-word;
     }
 
-    &__text:nth-of-type(1) {
-      margin-top: 4px;
+    &__text {
+      white-space: pre-line;
+      line-height: 1.5;
+
+      &:nth-of-type(1) {
+        margin-top: 4px;
+      }
     }
 
     &__badge {

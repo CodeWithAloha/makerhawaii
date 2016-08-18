@@ -40711,12 +40711,10 @@
 	//
 	//     <div class="space__info" v-if="space.website">
 	//       <h3 class="space__subtitle space__text--bold">Website</h3>
-	//       <p class="space__text">
-	//         <a class="space__link"
-	//            href="{{space.website}}">
-	//            {{space.website}}
-	//         </a>
-	//       </p>
+	//       <a class="space__link"
+	//          href="{{space.website}}">
+	//          {{space.website}}
+	//       </a>
 	//     </div>
 	//   </div>
 	// </template>
@@ -40764,8 +40762,13 @@
 	//       word-wrap: break-word;
 	//     }
 	//
-	//     &__text:nth-of-type(1) {
-	//       margin-top: 4px;
+	//     &__text {
+	//       white-space: pre-line;
+	//       line-height: 1.5;
+	//
+	//       &:nth-of-type(1) {
+	//         margin-top: 4px;
+	//       }
 	//     }
 	//
 	//     &__badge {
@@ -41535,7 +41538,7 @@
 /* 157 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  <div _v-004a71f8=\"\">\n    <h1 class=\"space__title\" _v-004a71f8=\"\">{{space.post_title}}</h1>\n\n    <div class=\"space__info\" _v-004a71f8=\"\">\n      <h3 class=\"space__subtitle space__text--bold\" _v-004a71f8=\"\">Address</h3>\n      <p class=\"space__text\" _v-004a71f8=\"\">{{space.location.address}}</p>\n    </div>\n\n    <div class=\"space__info\" v-if=\"space.membership_info\" _v-004a71f8=\"\">\n      <h3 class=\"space__subtitle space__text--bold\" _v-004a71f8=\"\">Membership Info</h3>\n      <p class=\"space__text\" _v-004a71f8=\"\">{{space.membership_info}}</p>\n    </div>\n\n    <div class=\"space__info\" v-if=\"space.howtovisit\" _v-004a71f8=\"\">\n      <h3 class=\"space__subtitle space__text--bold\" _v-004a71f8=\"\">How To Visit</h3>\n      <p class=\"space__text\" _v-004a71f8=\"\">{{space.howtovisit}}</p>\n    </div>\n\n\n    <div class=\"space__info\" v-if=\"space.classes\" _v-004a71f8=\"\">\n      <h3 class=\"space__subtitle space__text--bold\" _v-004a71f8=\"\">Classes</h3>\n      <p class=\"space__text\" _v-004a71f8=\"\">{{space.classes}}</p>\n    </div>\n\n    <div class=\"space__info\" v-if=\"space.website\" _v-004a71f8=\"\">\n      <h3 class=\"space__subtitle space__text--bold\" _v-004a71f8=\"\">Website</h3>\n      <p class=\"space__text\" _v-004a71f8=\"\">\n        <a class=\"space__link\" href=\"{{space.website}}\" _v-004a71f8=\"\">\n           {{space.website}}\n        </a>\n      </p>\n    </div>\n  </div>\n";
+	module.exports = "\n  <div _v-004a71f8=\"\">\n    <h1 class=\"space__title\" _v-004a71f8=\"\">{{space.post_title}}</h1>\n\n    <div class=\"space__info\" _v-004a71f8=\"\">\n      <h3 class=\"space__subtitle space__text--bold\" _v-004a71f8=\"\">Address</h3>\n      <p class=\"space__text\" _v-004a71f8=\"\">{{space.location.address}}</p>\n    </div>\n\n    <div class=\"space__info\" v-if=\"space.membership_info\" _v-004a71f8=\"\">\n      <h3 class=\"space__subtitle space__text--bold\" _v-004a71f8=\"\">Membership Info</h3>\n      <p class=\"space__text\" _v-004a71f8=\"\">{{space.membership_info}}</p>\n    </div>\n\n    <div class=\"space__info\" v-if=\"space.howtovisit\" _v-004a71f8=\"\">\n      <h3 class=\"space__subtitle space__text--bold\" _v-004a71f8=\"\">How To Visit</h3>\n      <p class=\"space__text\" _v-004a71f8=\"\">{{space.howtovisit}}</p>\n    </div>\n\n\n    <div class=\"space__info\" v-if=\"space.classes\" _v-004a71f8=\"\">\n      <h3 class=\"space__subtitle space__text--bold\" _v-004a71f8=\"\">Classes</h3>\n      <p class=\"space__text\" _v-004a71f8=\"\">{{space.classes}}</p>\n    </div>\n\n    <div class=\"space__info\" v-if=\"space.website\" _v-004a71f8=\"\">\n      <h3 class=\"space__subtitle space__text--bold\" _v-004a71f8=\"\">Website</h3>\n      <a class=\"space__link\" href=\"{{space.website}}\" _v-004a71f8=\"\">\n         {{space.website}}\n      </a>\n    </div>\n  </div>\n";
 
 /***/ },
 /* 158 */
