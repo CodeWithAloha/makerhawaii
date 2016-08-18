@@ -1,5 +1,9 @@
 <?php
-  Timber::add_route('/makerspaces', function() {
-    die(json_encode(Timber::get_posts('post_type=makerspace')));
+  Routes::map('/makerspaces', function() {
+    Routes::load('makerspaces.php');
+  });
+
+  Routes::map('/update_makerspace', function () {
+    Routes::load('update.php');
   });
 ?>

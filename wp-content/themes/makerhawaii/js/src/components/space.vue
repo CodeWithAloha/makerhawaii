@@ -4,10 +4,13 @@
 
   export default {
     props:  ['space'],
+    methods: {
+      toggle_filter(slug) {
+        console.log(slug)
+      }
+    },
     attached() {
-
       const body = document.querySelector('body')
-
       new Waypoint({
         element: this.$el,
         offset: '40%',
@@ -146,6 +149,15 @@
 
     &__text:nth-of-type(1) {
       margin-top: 4px;
+    }
+
+    &__badge {
+      text-decoration: none;
+      background: var(--blue);
+      color: var(--white);
+      padding: 4px 6px;
+      border-radius: 4px;
+      margin-right: 8px;
     }
 
   }

@@ -22,4 +22,5 @@
   </section>
 </template>
 
+<style src="../styles/config/colors.css"></style>
 <style src="../styles/config/structure.css"></style>

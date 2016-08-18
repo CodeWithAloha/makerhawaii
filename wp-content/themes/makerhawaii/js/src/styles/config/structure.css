@@ -1,5 +1,4 @@
 .app {
-  background: #FAFAFA;
   @media screen and (min-width: 64em) {
     margin-left: 50%;
   }

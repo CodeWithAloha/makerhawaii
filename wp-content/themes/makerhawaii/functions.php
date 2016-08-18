@@ -7,8 +7,8 @@ if ( ! class_exists( 'Timber' ) ) {
 	return;
 }
 
-Timber::$dirname = array('templates', 'views');
 require_once(dirname(__FILE__) . '/inc/routes.php');
+Timber::$dirname = array('templates', 'views');
 
 class StarterSite extends TimberSite {
 
@@ -71,68 +71,63 @@ class StarterSite extends TimberSite {
 
 	function register_taxonomies() {
 		$labels = array(
-		'name'                       => _x( 'Makerspace types', 'taxonomy general name' ),
-		'singular_name'              => _x( 'Makerspace type', 'taxonomy singular name' ),
-		'search_items'               => __( 'Search Makerspace types' ),
-		'popular_items'              => __( 'Popular Makerspace types' ),
-		'all_items'                  => __( 'All Makerspace types' ),
-		'parent_item'                => null,
-		'parent_item_colon'          => null,
-		'edit_item'                  => __( 'Edit Makerspace type' ),
-		'update_item'                => __( 'Update Makerspace type' ),
-		'add_new_item'               => __( 'Add New Makerspace type' ),
-		'new_item_name'              => __( 'New Makerspace type Name' ),
-		'separate_items_with_commas' => __( 'Separate Makerspace types with commas' ),
-		'add_or_remove_items'        => __( 'Add or remove Makerspace types' ),
-		'choose_from_most_used'      => __( 'Choose from the most used Makerspace types' ),
-		'not_found'                  => __( 'No Makerspace types found.' ),
-		'menu_name'                  => __( 'Makerspace types' ),
-	);
+			'name'                       => _x( 'Makerspace types', 'taxonomy general name' ),
+			'singular_name'              => _x( 'Makerspace type', 'taxonomy singular name' ),
+			'search_items'               => __( 'Search Makerspace types' ),
+			'popular_items'              => __( 'Popular Makerspace types' ),
+			'all_items'                  => __( 'All Makerspace types' ),
+			'parent_item'                => null,
+			'parent_item_colon'          => null,
+			'edit_item'                  => __( 'Edit Makerspace type' ),
+			'update_item'                => __( 'Update Makerspace type' ),
+			'add_new_item'               => __( 'Add New Makerspace type' ),
+			'new_item_name'              => __( 'New Makerspace type Name' ),
+			'separate_items_with_commas' => __( 'Separate Makerspace types with commas' ),
+			'add_or_remove_items'        => __( 'Add or remove Makerspace types' ),
+			'choose_from_most_used'      => __( 'Choose from the most used Makerspace types' ),
+			'not_found'                  => __( 'No Makerspace types found.' ),
+			'menu_name'                  => __( 'Makerspace types' ),
+		);
 
-	$args = array(
-		'hierarchical'          => false,
-		'labels'                => $labels,
-		'show_ui'               => true,
-		'show_admin_column'     => true,
-		'update_count_callback' => '_update_post_term_count',
-		'query_var'             => true,
-		'rewrite'               => array( 'slug' => 'Makerspace type' ),
-	);
+		$args = array(
+			'hierarchical'          => false,
+			'labels'                => $labels,
+			'show_ui'               => true,
+			'show_admin_column'     => true,
+			'update_count_callback' => '_update_post_term_count',
+			'query_var'             => true,
+		);
 
-	register_taxonomy( 'Makerspace type', 'makerspace', $args );
+		register_taxonomy('maker_type', 'makerspace', $args );
 
-		$labels = array(
-		'name'                       => _x( 'Makerspace Tags', 'taxonomy general name' ),
-		'singular_name'              => _x( 'Makerspace Tag', 'taxonomy singular name' ),
-		'search_items'               => __( 'Search Makerspace Tags' ),
-		'popular_items'              => __( 'Popular Makerspace Tags' ),
-		'all_items'                  => __( 'All Makerspace Tags' ),
-		'parent_item'                => null,
-		'parent_item_colon'          => null,
-		'edit_item'                  => __( 'Edit Makerspace tag' ),
-		'update_item'                => __( 'Update Makerspace tag' ),
-		'add_new_item'               => __( 'Add New Makerspace tag' ),
-		'new_item_name'              => __( 'New Makerspace Tag Name' ),
-		'separate_items_with_commas' => __( 'Separate Makerspace Tags with commas' ),
-		'add_or_remove_items'        => __( 'Add or remove Makerspace Tags' ),
-		'choose_from_most_used'      => __( 'Choose from the most used Makerspace Tags' ),
-		'not_found'                  => __( 'No Makerspace Tags found.' ),
-		'menu_name'                  => __( 'Makerspace Tags' ),
-	);
+		$tag_labels = array(
+			'name'                       => _x( 'Makerspace Tags', 'taxonomy general name' ),
+			'singular_name'              => _x( 'Makerspace Tag', 'taxonomy singular name' ),
+			'search_items'               => __( 'Search Makerspace Tags' ),
+			'popular_items'              => __( 'Popular Makerspace Tags' ),
+			'all_items'                  => __( 'All Makerspace Tags' ),
+			'parent_item'                => null,
+			'parent_item_colon'          => null,
+			'edit_item'                  => __( 'Edit Makerspace tag' ),
+			'update_item'                => __( 'Update Makerspace tag' ),
+			'add_new_item'               => __( 'Add New Makerspace tag' ),
+			'new_item_name'              => __( 'New Makerspace Tag Name' ),
+			'separate_items_with_commas' => __( 'Separate Makerspace Tags with commas' ),
+			'add_or_remove_items'        => __( 'Add or remove Makerspace Tags' ),
+			'choose_from_most_used'      => __( 'Choose from the most used Makerspace Tags' ),
+			'not_found'                  => __( 'No Makerspace Tags found.' ),
+			'menu_name'                  => __( 'Makerspace Tags' ),
+		);
 
-	$args = array(
-		'hierarchical'          => false,
-		'labels'                => $labels,
-		'show_ui'               => true,
-		'show_admin_column'     => true,
-		'update_count_callback' => '_update_post_term_count',
-		'query_var'             => true,
-		'rewrite'               => array( 'slug' => 'Makerspace tag' ),
-	);
-
-	register_taxonomy('maker_tag', 'makerspace', $args );
-
-
+		$tag_args = array(
+			'hierarchical'          => false,
+			'labels'                => $tag_labels,
+			'show_ui'               => true,
+			'show_admin_column'     => true,
+			'update_count_callback' => '_update_post_term_count',
+			'query_var'             => true
+		);
+		register_taxonomy('maker_tag', 'makerspace', $tag_args);
 	}
 
 	function add_to_context( $context ) {
@@ -145,7 +140,6 @@ class StarterSite extends TimberSite {
 		/* this is where you can add your own fuctions to twig */
 		return $twig;
 	}
-
 }
 
 new StarterSite();

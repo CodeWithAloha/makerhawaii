@@ -1,15 +1,9 @@
---red: #DD2C2D;
---red-accent: #FD9ACA;
---green: #45964C;
---blue: #568EDA;
---white: #fff;
---black: #111;
---gray: #DCDCDC;
 .app {
+  background: #FAFAFA
 }
   @media screen and (min-width: 64em) {
   .app {
-    margin-left: 50%;
+    margin-left: 50%
   }
   }
 
@@ -602,6 +596,7 @@ th {
 
 }
   .app {
+  background: #FAFAFA
 }
   @media screen and (min-width: 64em) {
 
@@ -2267,13 +2262,4 @@ th[_v-004a71f8] {
 
   .space__text[_v-004a71f8]:nth-of-type(1) {
   margin-top: 4px;
-}
-
-  .space__badge[_v-004a71f8] {
-  text-decoration: none;
-  background: #0074d9;
-  color: #fff;
-  padding: 4px 6px;
-  border-radius: 4px;
-  margin-right: 8px;
 }

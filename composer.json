@@ -24,6 +24,7 @@
   ],
   "require": {
       "jarednova/timber": "0.22.*",
-      "advanced-custom-fields/advanced-custom-fields-pro": "5.1.3"
+      "advanced-custom-fields/advanced-custom-fields-pro": "5.1.3",
+        "upstatement/routes": "0.3.*"
   }
 }

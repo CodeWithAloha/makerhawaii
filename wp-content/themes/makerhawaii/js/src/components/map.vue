@@ -79,7 +79,7 @@
       position: fixed auto 0 0 0;
       @media screen and (min-width: 64em) {
         position: fixed 0 auto auto 0;
-        height: calc(100vh - 50px);
+        height: 100%;
         width: 50%;
       }
       z-index: 2;

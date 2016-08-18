@@ -1,0 +1,33 @@
+; <<>> DiG 9.9.9-P1 <<>> ANY makerhawaii.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 44766
+;; flags: qr rd ra; QUERY: 1, ANSWER: 8, AUTHORITY: 2, ADDITIONAL: 3
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;makerhawaii.com.		IN	ANY
+
+;; ANSWER SECTION:
+makerhawaii.com.	14400	IN	TXT	"v=spf1 include:spf.efwd.registrar-servers.com +a +mx"
+makerhawaii.com.	3600	IN	MX	30 smx3.web-hosting.com.
+makerhawaii.com.	3600	IN	MX	20 smx2.web-hosting.com.
+makerhawaii.com.	3600	IN	MX	10 smx1.web-hosting.com.
+makerhawaii.com.	1200	IN	A	68.65.120.201
+makerhawaii.com.	604800	IN	SOA	dns1.namecheaphosting.com. audit.namecheaphosting.com. 2015122700 86400 7200 3600000 86400
+makerhawaii.com.	172800	IN	NS	dns2.namecheaphosting.com.
+makerhawaii.com.	172800	IN	NS	dns1.namecheaphosting.com.
+
+;; AUTHORITY SECTION:
+makerhawaii.com.	172800	IN	NS	dns2.namecheaphosting.com.
+makerhawaii.com.	172800	IN	NS	dns1.namecheaphosting.com.
+
+;; ADDITIONAL SECTION:
+dns1.namecheaphosting.com. 172800 IN	A	216.87.155.33
+dns2.namecheaphosting.com. 172800 IN	A	216.87.152.33
+
+;; Query time: 21 msec
+;; SERVER: 71.252.219.43#53(71.252.219.43)
+;; WHEN: Sat Jun 11 23:48:30 CDT 2016
+;; MSG SIZE  rcvd: 357
